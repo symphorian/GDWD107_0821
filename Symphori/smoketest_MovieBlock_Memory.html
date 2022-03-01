@@ -1,0 +1,76 @@
+<html>                                                                  
+<head>   
+	<script type="text/javascript" src="Source/BlocksJS.js"></script>
+	  
+  	<script type="text/javascript">
+  		//CANVASMANAGER.showNoMessages();
+  		//CANVASMANAGER.showInfoMessages();
+  		CANVASMANAGER.showErrorMessages();
+  		//LOG.setDisplayObjects(true);
+  		//LOG.setDisplayBlocks(true);
+		LOG.write("Starting smoketest 1");
+		CANVASMANAGER.setStartUpFunction(function() {
+			LOG.write("smoketest 1 onstartup called")
+			CANVASMANAGER.assetManager.assetsLoadedEvent.subscribe(function () {
+				var bird = new MovieBlock("Bird1","Bird2","Bird3","Bird4","Bird5","Bird6","Bird7","Bird8","Bird9");
+				bird.z = 1;
+				
+				bird.setMemoryCapacity(1000);
+				bird.showDebuggingDisplay = true;
+				
+				var t1 = new TextBlock("MovieBlock - Movement/Memory Test", "Verdana", 36, "red","center");
+				t1.z = 1;
+				t1.y = -200;
+
+				var t2 = new ParagraphBlock(CANVASMANAGER.width,"Move bird through space using LEFT, RIGHT, UP, DOWN.\nRotate bird through space using (A) for CCW and (S) for CW.\nPut bird to sleep and wake it using (1).\nWhile the bird is sleeping, move back through memory\nusing (2) and forward using (3).", "Verdana", 36, "red","center");
+				t2.z = 1.5;
+				t2.y = 150;
+
+				
+				bird.addBehavior(simplePhysicsUpdate);
+				bird.addConstraint(dampVelocity);
+				bird.addKeyDownReaction(KEYCODES.LEFT, applyForceLeft);
+				bird.addKeyDownReaction(KEYCODES.RIGHT, applyForceRight);
+				bird.addKeyDownReaction(KEYCODES.UP, applyForceAway);
+				bird.addKeyDownReaction(KEYCODES.DOWN, applyForceToward);
+				bird.addKeyUpReaction(KEYCODES.LEFT, removeForceLeft);
+				bird.addKeyUpReaction(KEYCODES.RIGHT, removeForceRight);
+				bird.addKeyUpReaction(KEYCODES.UP, removeForceAway);
+				bird.addKeyUpReaction(KEYCODES.DOWN, removeForceToward);
+				bird.addKeyDownReaction(KEYCODES.A, applyForceCCW);
+				bird.addKeyDownReaction(KEYCODES.S, applyForceCW);
+				bird.addKeyUpReaction(KEYCODES.A, removeForceCCW);
+				bird.addKeyUpReaction(KEYCODES.S, removeForceCW);
+				bird.addKeyPressReaction(KEYCODES.ONE, toggleObjectSleepState);
+				bird.addKeyPressReaction(KEYCODES.TWO, moveObjectInTime);
+				bird.addKeyPressReaction(KEYCODES.THREE, moveObjectInTime);
+				bird.addKeyPressReaction(KEYCODES.FOUR, toggleObjectDebugDisplay);
+				
+
+				var bkgd = new MovieBlock("Background");
+
+
+				CANVASMANAGER.addNewCanvasFrame();
+
+				CANVASMANAGER.adoptBlockChild(bkgd,0);
+				CANVASMANAGER.adoptBlockChild(t1,1);
+				CANVASMANAGER.adoptBlockChild(t2,1);
+				CANVASMANAGER.adoptBlockChild(bird,1);
+
+				CANVASMANAGER.start(30);
+			});
+
+			CANVASMANAGER.loadAssets("imgXMLsmoketest.xml","audioXMLsmoketest.xml","videoXMLsmoketest.xml");
+
+		});
+
+
+	</script> 
+
+</head>                                                                 
+<body style="margin:0px">                            
+</body>     
+
+    
+
+</html>

@@ -1,0 +1,8670 @@
+﻿0
+
+0
+
+n.
+
+ネル/オ
+
+Central Standard Note
+
+1
+
+1
+
+adj.
+
+ノイ/イ
+
+Central Standard Note
+
+10
+
+10
+
+adj.
+
+デク/デ
+
+Central Standard Note
+
+100
+
+100
+
+adj.
+
+ヘク/ヘー
+
+Central Standard Note
+
+1000
+
+1000
+
+adj.
+
+キク/キィ
+
+Central Standard Note
+
+10000
+
+10000
+
+adj.
+
+ミク/ミィ
+
+Central Standard Note
+
+2
+
+2
+
+adj.
+
+ジ
+
+Central Standard Note
+
+3
+
+3
+
+adj.
+
+ドリ
+
+Central Standard Note
+
+4
+
+4
+
+adj.
+
+フェフ
+
+Central Standard Note
+
+5
+
+5
+
+adj.
+
+ヴィラ
+
+Central Standard Note
+
+6
+
+6
+
+adj.
+
+イクサ
+
+Central Standard Note
+
+7
+
+7
+
+adj.
+
+ヘプト
+
+Central Standard Note
+
+8
+
+8
+
+adj.
+
+オクタ
+
+Central Standard Note
+
+9
+
+9
+
+adj.
+
+ネイ
+
+Central Standard Note
+
+<-x
+
+(anaphor indicator)
+
+cnstr.
+
+(ス)パグ
+
+New Testament of Pastalie
+
+a.u.k.
+
+be
+
+E.V.
+
+アウク
+
+New Testament of Pastalie
+
+accrroad
+
+to raise, give
+
+v.
+
+アクロード
+
+Central Standard Note
+
+acra
+
+certainly, surely
+
+adv.
+
+アクラ
+
+Central Standard Note
+
+ADDR
+
+address designation
+
+cnstr.
+
+?
+
+Unknown [Unofficial]
+
+adyya
+
+today
+
+n.
+
+アディーア
+
+Central Standard Note
+
+afezeria
+
+to bless
+
+v.
+
+アフェゼリア
+
+Central Standard Note
+
+ag
+
+and
+
+conj.
+
+アグ
+
+New Testament of Pastalie
+
+aiph
+
+if
+
+conj.
+
+アィフ
+
+Central Standard Note
+
+aje
+
+new
+
+adj.
+
+アジェ
+
+New Testament of Pastalie
+
+akata
+
+tale, story, legend
+
+n.
+
+アカタ
+
+Central Standard Note
+
+ale
+
+sound, note
+
+n.
+
+アーレ
+
+New Testament of Pastalie
+
+alroen
+
+proof, evidence
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+alroetsue
+
+redemptive, atoning
+
+adj.
+
+アゥロエットューエ
+
+Metafalss Note
+
+ammue
+
+sound waves
+
+n.
+
+アミュ
+
+Cult Ciel Note
+
+amyure
+
+repentance, penitence
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+an
+
+together, sharing
+
+adv.
+
+アン
+
+Central Standard Note
+
+anw
+
+(direct object identifier) ~を
+
+prep.
+
+アンワ、アンゥ
+
+Metafalss Note
+
+apea
+
+blessed, bathed in happiness
+
+E.S. (II)
+
+アペア
+
+Cult Ciel Note
+
+ar
+
+only, unique
+
+adj., adv.
+
+アル
+
+Central Standard Note
+
+araus
+
+exchange
+
+n., v.
+
+?
+
+Unknown [Unofficial]
+
+arhou
+
+hope, wish, aspiration
+
+n.
+
+アーフー
+
+New Testament of Pastalie
+
+arrya
+
+arrow
+
+n.
+
+ありゃ
+
+Central Standard Note
+
+arsye
+
+to share
+
+v.
+
+アーシェ
+
+Central Standard Note
+
+art
+
+because of, due to
+
+adv., prep.
+
+アルト
+
+Central Standard Note
+
+asyar
+
+melt into
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+aterra
+
+accept, receive
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+ates
+
+accept, receive
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+au
+
+sad
+
+E.S. (II)
+
+アウ
+
+Alpha Note (EOLIA)
+
+aulla
+
+open, disclose, reveal
+
+v.
+
+アウラ
+
+Central Standard Note
+
+ayulsa
+
+eternity, permanence
+
+adj., n.
+
+アユルサ
+
+New Testament of Pastalie
+
+balduo
+
+dark, black, unable to be seen
+
+adj., n.
+
+バルドゥー
+
+New Testament of Pastalie
+
+bale
+
+ball, sphere, globe
+
+n.
+
+バレ
+
+Central Standard Note
+
+bansh
+
+to forcefully/violently open
+
+v.
+
+バンシュ
+
+Central Standard Note
+
+basilic
+
+big snake, (also: gun, cannon)
+
+n.
+
+バジリク
+
+Central Standard Note
+
+bautifal
+
+beautiful, pretty
+
+adj.
+
+バティファル
+
+Central Standard Note
+
+beja
+
+to tarnish, to pollute, to defile, to stain
+
+v.
+
+ベジャ
+
+Cult Ciel Note
+
+beng
+
+before, previous, past, ago
+
+adv., n.
+
+ベング
+
+Central Standard Note
+
+bengnuih
+
+evening, dusk, to fade to twilight, wane
+
+n.
+
+ベヌイ
+
+Central Standard Note
+
+bexm
+
+(time) to come, to arrive, to visit 
+
+v.
+
+ベズム
+
+Central Standard Note
+
+biron
+
+to continue, to last, to go on
+
+v.
+
+ビロン
+
+Central Standard Note
+
+bister
+
+beast, monster, wild animal
+
+n.
+
+ビステル
+
+Central Standard Note
+
+boches
+
+mouth, hole
+
+n.
+
+ボチェス
+
+Central Standard Note
+
+boh
+
+tremendous, explosive, supernatural
+
+adj.
+
+ボッフ
+
+Metafalss Note
+
+brinch
+
+branch, bow, limb, twig
+
+n.
+
+ブリンク
+
+Central Standard Note
+
+briyante
+
+cries/voice of joy, delight, rapture
+
+n.
+
+ブリイャンテ
+
+Metafalss Note
+
+briyua
+
+happy, joyful
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+burle
+
+blue, green, immature, inexperienced
+
+adj., n.
+
+ブゥレ
+
+Central Standard Note
+
+byui
+
+blame
+
+n.
+
+?
+
+Pastalia [Unofficial]
+
+c.z.
+
+to change, transform, mutate
+
+E.V.
+
+スズ
+
+New Testament of Pastalie
+
+calamila
+
+catastrophe
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+cause
+
+to curse, torment, harrass
+
+v.
+
+カウゼ
+
+Metafalss Note
+
+cecet
+
+shield
+
+n.
+
+ケケト
+
+Central Standard Note
+
+ceku
+
+friend, partner, comrade
+
+n.
+
+セク
+
+New Testament of Pastalie
+
+celetille
+
+vivid, brilliant, clear, lovely
+
+adj.
+
+セレティル
+
+Central Standard Note
+
+celle
+
+heavenly (like the high heavens)
+
+adv.
+
+セルレ
+
+Central Standard Note
+
+cenjue
+
+to change, transform, revise, alter
+
+v.
+
+チェンジュエ
+
+Metafalss Note
+
+cerchio
+
+possibility, probability
+
+n.
+
+チェルキオ
+
+Central Standard Note
+
+cest
+
+truth, reality
+
+adj., n.
+
+セスト
+
+Central Standard Note
+
+cexm
+
+(person) to arrive, visit 
+
+v.
+
+セズム
+
+Central Standard Note
+
+chanti
+
+praise, commendation, to speak well of
+
+n., v.
+
+シャンティ
+
+Central Standard Note
+
+chess
+
+kiss
+
+n., v.
+
+?
+
+Unknown [Unofficial]
+
+chiess
+
+kiss
+
+n., v.
+
+チェス
+
+Central Standard Note
+
+ChronicleKey
+
+Hymmnos - ChronicleKey
+
+n.
+
+クロニクルキー
+
+Alpha Note (EOLIA)
+
+chs
+
+to become
+
+v.
+
+チス
+
+Central Standard Note
+
+chsee
+
+to transform into
+
+v.
+
+チーセ
+
+Central Standard Note
+
+chyet
+
+chosen, special
+
+adj.
+
+シェッ
+
+Cult Ciel Note
+
+cia
+
+sky, emptiness, empty air
+
+n.
+
+シア
+
+New Testament of Pastalie
+
+ciel
+
+world, sky
+
+n.
+
+シェール
+
+Central Standard Note
+
+ciellenne
+
+air, the skies, firmament, ether
+
+n.
+
+シエルレーニェ
+
+Central Standard Note
+
+cietta
+
+because, but, although
+
+conj.
+
+?
+
+Unknown [Unofficial]
+
+clalliss
+
+colour, to shade, color
+
+n., v.
+
+クラリス
+
+Central Standard Note
+
+clamour
+
+knee, lap
+
+n.
+
+クラマー
+
+Central Standard Note
+
+clare
+
+clear, transparent
+
+adj., adv.
+
+クラレ
+
+Central Standard Note
+
+clemezen
+
+insane, insanity, mad, madness
+
+adj., n.
+
+クレムゼン
+
+Central Standard Note
+
+clyncye
+
+pure, genuine, colorless
+
+adj.
+
+クリンシェ
+
+Cult Ciel Note
+
+coall
+
+to return
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+colga
+
+ice, hail
+
+n.
+
+クオルガ
+
+Central Standard Note
+
+colgen
+
+freeze, frozen, to freeze
+
+adj., v.
+
+?
+
+Unknown [Unofficial]
+
+coree
+
+within my heart
+
+prep.
+
+?
+
+Unknown [Unofficial]
+
+corle
+
+shard, fragment
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+corpu
+
+body, flesh
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+crannidale
+
+to share
+
+v.
+
+クラニダーレ
+
+Metafalss Note
+
+cremia
+
+relief, aid, salvation
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+crown
+
+cup, goblet
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+crudea
+
+anguish, distress, agony, pain
+
+n.
+
+クルーデア
+
+Metafalss Note
+
+crushue
+
+to spin, to create (yarn)
+
+v.
+
+クルシューエ
+
+Metafalss Note
+
+cupla
+
+sin, crime, fault, indiscretion
+
+n.
+
+キュプル
+
+Central Standard Note
+
+cyuie
+
+sad, sorrowful, heartrending
+
+adj.
+
+キュイ
+
+Central Standard Note
+
+cyurio
+
+reason, logic, order
+
+n.
+
+キュリオ
+
+Central Standard Note
+
+d.n.
+
+to dance
+
+E.V.
+
+ドゥン
+
+New Testament of Pastalie
+
+d.n.g.
+
+pierce
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+d.r.s.n.
+
+passed down, passed on
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+d.s.s.n.
+
+seek resolution
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+d.z.
+
+to die
+
+E.V.
+
+ズ
+
+New Testament of Pastalie
+
+daedu
+
+an ugly or unattractive thing
+
+n.
+
+ダェドゥス
+
+New Testament of Pastalie
+
+daf
+
+for, that
+
+prep.
+
+?
+
+Unknown [Unofficial]
+
+dand
+
+door
+
+n.
+
+ダンド
+
+Central Standard Note
+
+dauan
+
+dawn, daybreak
+
+n.
+
+ダウアン
+
+Central Standard Note
+
+dauane
+
+like or related to dawn, daybreak
+
+adj.
+
+ダウアネ
+
+Central Standard Note
+
+dazua
+
+dark, shady
+
+adj., n.
+
+?
+
+Pastalia [Unofficial]
+
+dea
+
+with, by means of
+
+prep., prt.
+
+?
+
+Unknown [Unofficial]
+
+deata
+
+pass judgment, convict
+
+v.
+
+ダーテ
+
+Cult Ciel Note
+
+deggeez
+
+betray, oppose
+
+n., v.
+
+ディジーズ
+
+Central Standard Note
+
+degle
+
+destroy, overthrow (destruction, annihilation)
+
+v. (n?)
+
+デグル
+
+Cult Ciel Note
+
+dejuy
+
+atonement
+
+n.
+
+デジュィ
+
+New Testament of Pastalie
+
+deleir
+
+calamity, catastrophe, disaster, wickedness
+
+n.
+
+デレイア
+
+Alpha Note (EOLIA)
+
+delij
+
+loathe, hate, shun
+
+v.
+
+ドゥエリッジ
+
+Alpha Note (EOLIA)
+
+den
+
+but, although, however
+
+conj.
+
+デン
+
+Central Standard Note
+
+denera
+
+evil being or thing
+
+n.
+
+デネラ
+
+Central Standard Note
+
+der
+
+according to, by (means of)
+
+prt.
+
+デァ
+
+Metafalss Note
+
+desfel
+
+hate, detest, unpleasant
+
+adj., v.
+
+ディスフェル
+
+Metafalss Note
+
+dest
+
+destroy, obliterate, bring to an end
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+deu
+
+thus, therefore, and
+
+prep., prt.
+
+?
+
+Unknown [Unofficial]
+
+dewee
+
+kneel
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+dgal
+
+country, region
+
+n.
+
+?
+
+Pastalia [Unofficial]
+
+dhezeall
+
+captive, prisoner (of love or lust?)
+
+n.
+
+ディージアル
+
+Metafalss Note
+
+Dia
+
+king, throne, ruler
+
+n.
+
+ディア
+
+Central Standard Note
+
+diasee
+
+child of god
+
+n.
+
+ディアズィエー
+
+Metafalss Note
+
+didalia
+
+big, large, grand
+
+adj.
+
+ダイダリア
+
+Cult Ciel Note
+
+dilete
+
+breath of god, divine protection/shield
+
+n.
+
+ディレーテ
+
+Central Standard Note
+
+discest
+
+lie, cheat, deceive, disguise
+
+n., v.
+
+ディセスト
+
+Central Standard Note
+
+dius
+
+divine, precious, sacred, noble
+
+adj., n.
+
+ディウス
+
+Cult Ciel Note
+
+diviega
+
+sacred sword, great wisdom (derivative meaning)
+
+n.
+
+ディヴィエーガ
+
+Cult Ciel Note
+
+dje
+
+body
+
+n.
+
+?
+
+Pastalia [Unofficial]
+
+dn
+
+(instrument/location/cause/time identifier)
+
+prep.
+
+ドゥン
+
+New Testament of Pastalie
+
+doodu
+
+ground, earth
+
+n.
+
+ドードゥ
+
+New Testament of Pastalie
+
+dople
+
+remove, exclude, reject
+
+v.
+
+ドプレ
+
+Central Standard Note
+
+dor
+
+land mass, continent
+
+n.
+
+ドール
+
+Central Standard Note
+
+dorn
+
+tree, wood
+
+n.
+
+ドルン
+
+Central Standard Note
+
+dornpica
+
+seed, nut, berry
+
+n.
+
+ドゥルンピカ
+
+Cult Ciel Note
+
+dralee
+
+offering
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+drone
+
+download, absorb, take in, capture
+
+v.
+
+ドゥローネ
+
+Central Standard Note
+
+dsier
+
+desire, appetite, lust
+
+n.
+
+ヂェア
+
+Central Standard Note
+
+du
+
+(direct object identifier)
+
+prep.
+
+ドゥ
+
+New Testament of Pastalie
+
+dyya
+
+day
+
+n.
+
+ディーア
+
+Central Standard Note
+
+dyyal
+
+(day-count indicator)
+
+n.
+
+ディーアル
+
+Central Standard Note
+
+D_CELL
+
+D-Cellophane
+
+cnstr.
+
+Dセロファン
+
+Unknown [Unofficial]
+
+eazas
+
+mutual
+
+adj.
+
+イーザス
+
+Central Standard Note
+
+echrra
+
+to resonate, to be in sympathy
+
+v.
+
+エクラ
+
+Central Standard Note
+
+ee
+
+to make great, praise, extol
+
+v.
+
+ィエエ
+
+Metafalss Note
+
+eetor
+
+other side, opposite side
+
+n.
+
+エトゥー
+
+Central Standard Note
+
+eje
+
+heart, mind, spirit, self, feeling, sensation, mood
+
+n.
+
+エジェ
+
+New Testament of Pastalie
+
+elle
+
+from, derived, origin
+
+prep.
+
+エル
+
+Central Standard Note
+
+elye
+
+hitherto, 'til now, still
+
+adv.
+
+エリェ
+
+New Testament of Pastalie
+
+en
+
+and, so, therefore, for
+
+conj.
+
+エン
+
+Central Standard Note
+
+enclone
+
+to wrap around, wrap up
+
+v.
+
+エンクロゥネ
+
+Metafalss Note
+
+endia
+
+to stop, end, finish, close
+
+v.
+
+エンディア
+
+Metafalss Note
+
+ene
+
+to think, feel strongly
+
+v.
+
+エヌ
+
+Cult Ciel Note
+
+enegd
+
+to become numb
+
+v.
+
+エネグドゥ
+
+Central Standard Note
+
+enerel
+
+always
+
+adv.
+
+エネレル
+
+Cult Ciel Note
+
+enesse
+
+emotion, thought, love, desire, wish, hope, imagination
+
+n.
+
+エネッセ
+
+Cult Ciel Note
+
+engassya
+
+raid, plunder, steal (command)
+
+n., v.
+
+エンガーシャ
+
+Central Standard Note
+
+engua
+
+predestined, inevitable, unchangeable
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+enne
+
+prayer, wish, supplication
+
+n., v.
+
+エニェ
+
+Central Standard Note
+
+enrer
+
+always, usually
+
+adv.
+
+エンリャ
+
+Cult Ciel Note
+
+enter
+
+to enter, come into, penetrate
+
+v.
+
+エンテル
+
+Central Standard Note
+
+envied
+
+stupid, idiotic
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+enw
+
+while (doing something)
+
+conj.
+
+エンウ
+
+Central Standard Note
+
+erlla
+
+very much, more, further
+
+adj., adv.
+
+?
+
+Unknown [Unofficial]
+
+erphy
+
+memory, rememberance
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+erra
+
+I want this to continue for eternity
+
+E.S. (III)
+
+エーラ
+
+Central Standard Note
+
+ess
+
+in, at
+
+prep.
+
+エース
+
+New Testament of Pastalie
+
+et
+
+large, grand, big
+
+adj.
+
+エ
+
+Central Standard Note
+
+eta
+
+to eat
+
+v.
+
+エータ
+
+Central Standard Note
+
+etealune
+
+eternity
+
+n.
+
+エテルネェ
+
+Metafalss Note
+
+eterne
+
+eternity
+
+n.
+
+エテールネ
+
+Alpha Note (EOLIA)
+
+eux
+
+eye
+
+n.
+
+ユクス
+
+Central Standard Note
+
+ewle
+
+long
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+exali
+
+radiant, dazzling
+
+adj.
+
+?
+
+Pastalia [Unofficial]
+
+EXA_PICO
+
+Exa Pico
+
+n.
+
+エクサピーコ
+
+Unknown [Unofficial]
+
+exec
+
+execute, realize, invoke
+
+v.
+
+エグゼク
+
+Central Standard Note
+
+f.p.n.
+
+fall (as rain), downpour
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+f.r.l.
+
+to be frightened
+
+E.V.
+
+フルル
+
+New Testament of Pastalie
+
+f.s.
+
+to whisper, murmur
+
+E.V.
+
+エフス
+
+New Testament of Pastalie
+
+f.w.r.
+
+to accept, receive
+
+E.V.
+
+フウル
+
+New Testament of Pastalie
+
+f.w.r.n.
+
+to wrap up, tuck in, cover
+
+E.V.
+
+フウルン
+
+New Testament of Pastalie
+
+faf
+
+scary, frightening, eerie, dreadful
+
+adj.
+
+ファフ
+
+Cult Ciel Note
+
+faiy
+
+momentary, instantaneous
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+faja
+
+to advance, progress, go forward
+
+v.
+
+ファージャ
+
+Cult Ciel Note
+
+falfa
+
+peace
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+famfa
+
+to fly (flap wings)
+
+v.
+
+ファンファ
+
+Central Standard Note
+
+fanalea
+
+loud, sonorous
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+fandel
+
+many, much, numerous
+
+adj., n.
+
+ファンデル
+
+Metafalss Note
+
+fane
+
+affection, kindness, love
+
+n.
+
+ファーネ
+
+Central Standard Note
+
+fatele
+
+father
+
+n.
+
+ファテレー
+
+Metafalss Note
+
+fatere
+
+if not (x) then (y), (x) otherwise (y)
+
+conj.
+
+ファーテレ
+
+Central Standard Note
+
+fau
+
+bird
+
+n.
+
+ファウ
+
+Metafalss Note
+
+faura
+
+small bird
+
+n.
+
+ファウラ
+
+Metafalss Note
+
+fayra
+
+fire, flame
+
+n.
+
+ファイラ
+
+Central Standard Note
+
+fedyya
+
+tomorrow
+
+n.
+
+フィディーア
+
+Central Standard Note
+
+fee
+
+wind
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+ferda
+
+to dwell (as in a home)
+
+v.
+
+フェルダ
+
+Metafalss Note
+
+fernia
+
+to smile
+
+v.
+
+フェーニャ
+
+Cult Ciel Note
+
+fhau
+
+light
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+fhauri
+
+light-borne
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+fhyu
+
+wind, breeze
+
+n.
+
+ヒュフ
+
+Central Standard Note
+
+firanzia
+
+end of an era, end of the world
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+firga
+
+past
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+firle
+
+to feel, sense, experience
+
+v.
+
+フィルレ
+
+Metafalss Note
+
+flare
+
+to float, levitate
+
+v.
+
+フラレ
+
+Central Standard Note
+
+flip
+
+to reverse, command for flip-flop conversion (conversely?)
+
+v.
+
+フリプ
+
+Central Standard Note
+
+flip
+
+in exchange (for)
+
+prep.
+
+フリプ
+
+Cult Ciel Note
+
+fluy
+
+spring, pool, well
+
+n.
+
+フリュイ
+
+Central Standard Note
+
+focs
+
+deep, thick
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+fogabe
+
+to forgive, pardon
+
+v.
+
+フォーゲイブ
+
+Central Standard Note
+
+folten
+
+before (directional), in front
+
+prep.
+
+フォルテン
+
+Central Standard Note
+
+forgandal
+
+because of...(!)
+
+conj., prep.
+
+フォーガンダル
+
+Cult Ciel Note
+
+forlindel
+
+village leader, head of family (?)
+
+n.
+
+フォーリンデル
+
+Cult Ciel Note
+
+forlinden
+
+village
+
+n.
+
+フォーリンデン
+
+Cult Ciel Note
+
+Fou
+
+a little
+
+E.S. (I)
+
+フォウ
+
+Central Standard Note
+
+foul
+
+wonder, mystery, miracle
+
+n.
+
+フォウル
+
+Cult Ciel Note
+
+fountaina
+
+cover, bury, submerge
+
+adj., v.
+
+ファウンティナ
+
+Central Standard Note
+
+fowrlle
+
+comfort, rest, relaxation
+
+n., v.
+
+フォワール
+
+Central Standard Note
+
+frawr
+
+flower
+
+n.
+
+ラーワ
+
+Central Standard Note
+
+frawrle
+
+springtime
+
+n.
+
+ラワール
+
+Cult Ciel Note
+
+frissoner
+
+to shiver, shake, tremble
+
+v.
+
+フリッソネア
+
+Central Standard Note
+
+frreie
+
+to release
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+fs
+
+gentle breeze, soft wind, breath of air, zephyr
+
+n.
+
+フス
+
+New Testament of Pastalie
+
+ftt
+
+to vanish, disappear
+
+v.
+
+フッ
+
+Central Standard Note
+
+fulual
+
+to receive (as having a wish come true)
+
+v.
+
+フルアル
+
+Central Standard Note
+
+fusya
+
+to wrap, tuck in, cover, hide
+
+v.
+
+フーシャ
+
+Central Standard Note
+
+futare
+
+future
+
+n., prep.
+
+フターレ
+
+Central Standard Note
+
+fwal
+
+wing
+
+n.
+
+フワル
+
+Cult Ciel Note
+
+fwillra
+
+feather, down, petal, flake
+
+n.
+
+フィラ
+
+Cult Ciel Note
+
+g.k.n.
+
+to eat
+
+E.V.
+
+ガッン
+
+New Testament of Pastalie
+
+g.v.w.
+
+fight, battle
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+g.w.f.r.
+
+to judge
+
+E.V.
+
+グウフル
+
+New Testament of Pastalie
+
+g.w.n.
+
+lead, guide
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+ga
+
+I want to escape this quickly
+
+E.S. (III)
+
+ガ
+
+Central Standard Note
+
+gagis
+
+I am indifferent (I am alright if this stays the same)
+
+E.S. (III)
+
+ギャギス
+
+Metafalss Note
+
+ganna
+
+strong, stubborn, solid, rock
+
+adj., n.
+
+ガナ
+
+Central Standard Note
+
+garlden
+
+town
+
+n.
+
+ガルデン
+
+Central Standard Note
+
+gasar
+
+doll, stuffed animal, plush toy
+
+n.
+
+ガサル
+
+New Testament of Pastalie
+
+gat
+
+curse, spell, malediction
+
+n.
+
+ガット
+
+Central Standard Note
+
+gatyunla
+
+cursed place, Hell
+
+n.
+
+ガチュンラ
+
+Cult Ciel Note
+
+gatyuny
+
+curse, spell, malediction
+
+n.
+
+ガチュニ
+
+Cult Ciel Note
+
+gaunji
+
+torment, torture
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+gauto
+
+dark skies, overcast, dark clouds
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+gauv
+
+sin, blame
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+gauzewiga
+
+despair, hopelessness
+
+n., v.
+
+ガゥンゼーヴィーガ
+
+Metafalss Note
+
+gaya
+
+I never want this to happen again
+
+E.S. (III)
+
+ガヤ
+
+Central Standard Note
+
+geeow
+
+oath, vow, determination
+
+n., v.
+
+ギオ
+
+Central Standard Note
+
+getrra
+
+dirty, tainted
+
+adj.
+
+ゲットラ
+
+Central Standard Note
+
+gfine
+
+time
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+gigeadeth
+
+steel, iron
+
+adj., n.
+
+ギガディス
+
+Central Standard Note
+
+giue
+
+body
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+giz
+
+fear, dread
+
+n., v.
+
+?
+
+Unknown [Unofficial]
+
+gkgul
+
+cracked
+
+adj.
+
+グックル
+
+New Testament of Pastalie
+
+glansee
+
+divine, glorious, great
+
+adj.
+
+グランズィ
+
+New Testament of Pastalie
+
+glasden
+
+supreme, highest
+
+adj.
+
+グラスデン
+
+Metafalss Note
+
+goa
+
+only (thing)
+
+adj., adv.
+
+ゴア
+
+New Testament of Pastalie
+
+gool
+
+starved, parched
+
+adj.
+
+グール
+
+Central Standard Note
+
+got
+
+to acquire, obtain
+
+v.
+
+ゴット
+
+Cult Ciel Note
+
+gott
+
+get off! go away! (dirty feeling)
+
+intj.
+
+ゴット
+
+Central Standard Note
+
+govan
+
+vehement
+
+adj.
+
+?
+
+Pastalia [Unofficial]
+
+govaz
+
+fiancee
+
+n.
+
+ゴーヴァズ
+
+Cult Ciel Note
+
+gral
+
+all, entirely, whole
+
+adj.
+
+グラル
+
+New Testament of Pastalie
+
+gran
+
+begin (a performance) (literally, to pull back the curtain)
+
+v.
+
+グラン
+
+Cult Ciel Note
+
+grandee
+
+parent, guardian
+
+n.
+
+グランディエー
+
+Metafalss Note
+
+grandus
+
+to defend, protect
+
+v.
+
+グランドゥス
+
+Metafalss Note
+
+granme
+
+wanting to protect, brave
+
+E.S. (II)
+
+グランメ
+
+Central Standard Note
+
+grave
+
+indoors, cave, shelter
+
+n.
+
+グレィヴ
+
+Cult Ciel Note
+
+grlanza
+
+to dance
+
+v.
+
+グランツァ
+
+Central Standard Note
+
+grow
+
+insolent, arrogant
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+grrena
+
+green, green blue
+
+adj., n.
+
+グレナ
+
+Central Standard Note
+
+grruw
+
+to raise (as a parent raising a child)
+
+v.
+
+グルゥ
+
+Central Standard Note
+
+guard
+
+protection, defense, safeguard
+
+n.
+
+グアルド
+
+Central Standard Note
+
+guatrz
+
+anger, hatred
+
+n.
+
+ゴーッ
+
+Central Standard Note
+
+guaysu
+
+to express shame, hang one's head in shame, cast one's eyes downward
+
+v.
+
+グァイス
+
+Central Standard Note
+
+guol
+
+to close (as a door/gate)
+
+v.
+
+グォル
+
+Central Standard Note
+
+guwo
+
+angry, resentful, indignant
+
+E.S. (II)
+
+グウォ
+
+Central Standard Note
+
+gyaje
+
+error, mistake
+
+n.
+
+ギャジェ
+
+Central Standard Note
+
+gyajlee
+
+sinner, criminal
+
+adj., n.
+
+ギャジェレ
+
+Cult Ciel Note
+
+gyas
+
+evil spirit, bad nature
+
+n.
+
+ギャス
+
+Central Standard Note
+
+gyen
+
+to create, to realize (as with magic)
+
+v.
+
+ジェン
+
+Cult Ciel Note
+
+gyenel
+
+wizard (one who spins magic)
+
+n.
+
+ジェネル
+
+Cult Ciel Note
+
+gyengyat
+
+to devour greedily, imbibe (slake lust?)
+
+v.
+
+ジェンジャット
+
+Cult Ciel Note
+
+gyuss
+
+embrace
+
+n.
+
+ギュス
+
+Central Standard Note
+
+gyusya
+
+to rule, control
+
+v.
+
+ギュシャ
+
+Central Standard Note
+
+h.k.t.t.
+
+to embrace, hug, hold someone close
+
+E.V.
+
+ハクト
+
+New Testament of Pastalie
+
+h.l.s.s.
+
+to sigh, lament, grieve
+
+E.V.
+
+フルス
+
+New Testament of Pastalie
+
+h.m.m.r.
+
+to express (through song?)
+
+E.V.
+
+フムル
+
+New Testament of Pastalie
+
+h.p.p.
+
+to think, feel
+
+E.V.
+
+フプ
+
+New Testament of Pastalie
+
+h.p.ps.
+
+to think about (someone), send one's heart out to (someone)
+
+E.V.
+
+フップス
+
+New Testament of Pastalie
+
+h.r.n.t.
+
+to go on a journey
+
+E.V.
+
+ハント
+
+New Testament of Pastalie
+
+h.w.s.s.
+
+to mature, grow
+
+E.V.
+
+フウス
+
+New Testament of Pastalie
+
+haf
+
+to pick up, possess, hold
+
+v.
+
+ハフ
+
+Central Standard Note
+
+Haibanation
+
+Hymmnos - Hibernation
+
+n.
+
+ハイバーネション
+
+Unknown [Unofficial]
+
+handeres
+
+defeat, loss
+
+n., v.
+
+ヘンデレス
+
+Central Standard Note
+
+hao
+
+above, higher rank, higher grade, superior
+
+adj.
+
+ハオ
+
+Central Standard Note
+
+harmon
+
+to do together (communal effort)
+
+v.
+
+ハーモン
+
+Central Standard Note
+
+Harmonious
+
+Hymmnos - Harmonious
+
+n.
+
+ハーモニウス
+
+Central Standard Note
+
+harphe
+
+morning
+
+n.
+
+ハルフェ
+
+New Testament of Pastalie
+
+harr
+
+she
+
+pron.
+
+ハルル
+
+Central Standard Note
+
+harra
+
+they (feminine)
+
+pron.
+
+ハルルラ
+
+Central Standard Note
+
+hars
+
+her (plural)
+
+n.
+
+ハルス
+
+Central Standard Note
+
+hartes
+
+love
+
+v.
+
+ハーテス
+
+Cult Ciel Note
+
+harton
+
+love, affection
+
+n.
+
+ハートン
+
+Central Standard Note
+
+has
+
+her
+
+n.
+
+ハス
+
+Central Standard Note
+
+hasyu
+
+fish
+
+n.
+
+ハシュ
+
+Central Standard Note
+
+heath
+
+very hot, red hot, scorching
+
+adj.
+
+ヒース
+
+Central Standard Note
+
+heetha
+
+healthy, vigorous
+
+adj., n.
+
+ヒィーサ
+
+Central Standard Note
+
+heighte
+
+to wound, injure (to hurt someone's feelings)
+
+v.
+
+ヘイテ
+
+Metafalss Note
+
+her
+
+this
+
+pron.
+
+イァ
+
+Central Standard Note
+
+here
+
+here
+
+n.
+
+イア
+
+Central Standard Note
+
+herr
+
+he
+
+pron.
+
+へルル
+
+Central Standard Note
+
+herra
+
+they (masculine)
+
+pron.
+
+へルルラ
+
+Central Standard Note
+
+hers
+
+him (plural)
+
+n.
+
+へルス
+
+Central Standard Note
+
+hes
+
+him
+
+n.
+
+ヘス
+
+Central Standard Note
+
+hieg
+
+sad, to be sad
+
+adj., v.
+
+ヒーグ
+
+Central Standard Note
+
+hierle
+
+sad, to be sad
+
+adj., v.
+
+ヘィアルレー
+
+Metafalss Note
+
+hiew
+
+saddness, grief
+
+n.
+
+ヒーウ
+
+New Testament of Pastalie
+
+hiewi
+
+heart-breaking, sad
+
+adj.
+
+ヒーウィ
+
+New Testament of Pastalie
+
+hiralg
+
+thirst
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+hopb
+
+heart, mind (as an experience)
+
+n.
+
+ホップ
+
+Cult Ciel Note
+
+houd
+
+embrace
+
+v.
+
+ホウド
+
+Central Standard Note
+
+how
+
+like
+
+prep., prt.
+
+?
+
+Unknown [Unofficial]
+
+hueaf
+
+futile, pointless, inevitable (failure)
+
+adj.
+
+ヒャフ
+
+Central Standard Note
+
+hyear
+
+"hey", "you, there"
+
+intj.
+
+イェア、ヤ
+
+Central Standard Note
+
+hyma
+
+listen (to words)
+
+v.
+
+ヒュマ
+
+Central Standard Note
+
+hymma
+
+small bird
+
+n.
+
+ヒュンマ
+
+Central Standard Note
+
+hymme
+
+sing, play an instrument, resonate
+
+n., v.
+
+ヒュム
+
+Central Standard Note
+
+hymmne
+
+melody, tune, sound waves
+
+n.
+
+ヒュムネ
+
+Central Standard Note
+
+hymmnos
+
+Hymmnos, song
+
+n.
+
+ヒュムノス
+
+Central Standard Note
+
+hynne
+
+voice
+
+n.
+
+ヒュン
+
+Central Standard Note
+
+hyzik
+
+body, form
+
+n.
+
+フィジク
+
+Alpha Note (EOLIA)
+
+i
+
+impatient
+
+E.S. (II)
+
+イ
+
+Central Standard Note
+
+iasien
+
+morning dew
+
+n.
+
+イアシェン
+
+Cult Ciel Note
+
+ides
+
+past, previous, (one's) past, bygone days
+
+n., prep.
+
+イデス
+
+Central Standard Note
+
+idesy
+
+belonging to the past (ie of the past)
+
+adj.
+
+イデシー
+
+Central Standard Note
+
+ieeya
+
+hope, wish, aspiration
+
+n.
+
+イーヤ
+
+Central Standard Note
+
+iem
+
+present (time), now
+
+n.
+
+イェム
+
+Metafalss Note
+
+Implanta
+
+Hymmnos - Implanta, God's tree, fruit, seed
+
+n.
+
+イムプランタ
+
+Unknown [Unofficial]
+
+infel
+
+love, affection
+
+n.
+
+インフェル
+
+Metafalss Note
+
+inferiare
+
+beloved
+
+adj.
+
+インフェリアーレ
+
+Metafalss Note
+
+ini
+
+to initialise, tomake pure, innocent
+
+v.
+
+イニ
+
+Cult Ciel Note
+
+innna
+
+inner world, within the heart
+
+n.
+
+インナ
+
+Cult Ciel Note
+
+irs
+
+exist
+
+v.
+
+イルス
+
+Central Standard Note
+
+j.d.r.
+
+apprehend, capture
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+j.l.j.
+
+to be captured, apprehended, to be stubborn, persistent, to get caught
+
+E.V.
+
+ジェルジェ
+
+New Testament of Pastalie
+
+j.l.r.
+
+to calm down, regain senses, return to your true heart (sanity)
+
+E.V.
+
+ジュール
+
+New Testament of Pastalie
+
+j.w.
+
+entrust
+
+E.V.
+
+ジェウ
+
+New Testament of Pastalie
+
+j.z.t.
+
+invoke, realize, execute
+
+E.V.
+
+ジェズト
+
+New Testament of Pastalie
+
+jam
+
+together
+
+adv.
+
+ジャム
+
+Central Standard Note
+
+jambea
+
+foot, leg
+
+n.
+
+ジャンベァ
+
+Central Standard Note
+
+jass
+
+to seek, demand, want
+
+v.
+
+ジャス
+
+Central Standard Note
+
+jastil
+
+come on!, let's go!
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+jefea
+
+lamentable, grievous
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+jenge
+
+enemy, rival, threat
+
+n.
+
+ジェンジェ
+
+Cult Ciel Note
+
+jenhah
+
+sorrow, misfortune, disaster, calamity
+
+adj., n.
+
+ジェンハー
+
+Cult Ciel Note
+
+jouee
+
+divine power
+
+n.
+
+ジュエ
+
+Central Standard Note
+
+jue
+
+water
+
+n.
+
+?
+
+Pastalia [Unofficial]
+
+jyel
+
+lonely
+
+E.S. (II)
+
+ジェール
+
+Central Standard Note
+
+k.f.k.k.
+
+sneer at, ridicule
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+k.r.
+
+to be playful, frolic, joke
+
+E.V.
+
+クル
+
+New Testament of Pastalie
+
+k.v.n.r.
+
+to challenge, defy, (sexual connotation?)
+
+E.V.
+
+ケヴンル
+
+New Testament of Pastalie
+
+k.v.r.
+
+wrap, cover
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+kajya
+
+necessary, essential, indispensable
+
+adj.
+
+カジャ
+
+New Testament of Pastalie
+
+kapa
+
+water (cold, fresh)
+
+n.
+
+カパ
+
+Cult Ciel Note
+
+karf
+
+that, these
+
+prt.
+
+?
+
+Unknown [Unofficial]
+
+keen
+
+to shine, glitter, sparkle
+
+v.
+
+ケーン
+
+Central Standard Note
+
+keenis
+
+radiance
+
+n.
+
+ケニス
+
+Central Standard Note
+
+keg
+
+branch, limb
+
+n.
+
+ケグ
+
+New Testament of Pastalie
+
+khal
+
+protect, defend
+
+v.
+
+クァル
+
+Central Standard Note
+
+ki
+
+focused, earnest, concentrating
+
+E.S. (II)
+
+キ
+
+Central Standard Note
+
+kiafa
+
+hear, listen
+
+v.
+
+キアファ
+
+Metafalss Note
+
+kiakkya
+
+friend
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+kiala
+
+gold, golden
+
+adj., n.
+
+?
+
+Unknown [Unofficial]
+
+kierre
+
+instant, moment
+
+n.
+
+キェーッレ
+
+Metafalss Note
+
+kil
+
+to kill
+
+v.
+
+キル
+
+Central Standard Note
+
+knawa
+
+to know, understand, feel
+
+v.
+
+ノーワ
+
+Central Standard Note
+
+kneet
+
+to be slow, be late, be delayed
+
+v.
+
+ニート
+
+Central Standard Note
+
+koffl
+
+drink
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+konla
+
+love
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+koora
+
+stream, brook
+
+n.
+
+コーラ
+
+Central Standard Note
+
+kouf
+
+sigh
+
+n., v.
+
+クーフ
+
+New Testament of Pastalie
+
+ks
+
+to hint, suggest
+
+v.
+
+ケス
+
+Cult Ciel Note
+
+kuhle
+
+poison
+
+n.
+
+キューレ
+
+Central Standard Note
+
+kvvia
+
+regret, repentance
+
+n., v.
+
+?
+
+Unknown [Unofficial]
+
+kvyeire
+
+end, demise
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+kyll
+
+cut, detach, sever
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+l.k.k.
+
+admire, look up at
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+l.l.n.
+
+bless
+
+E.V.
+
+リリン
+
+New Testament of Pastalie
+
+l.n.c.a.
+
+to be linked, connected
+
+E.V.
+
+ルンカ
+
+New Testament of Pastalie
+
+la
+
+that (used to add emphasis)
+
+adj., adv.
+
+ラ
+
+Central Standard Note
+
+lamenza
+
+lament, grief
+
+n.
+
+ラメンツァー
+
+Metafalss Note
+
+lamenzeo
+
+borne of laments, borne of grief
+
+adj., adv.
+
+?
+
+Unknown [Unofficial]
+
+lapo
+
+to meet by chance, happen to encounter
+
+v.
+
+ラポ
+
+Cult Ciel Note
+
+lasye
+
+boy
+
+n.
+
+ラシェ
+
+Central Standard Note
+
+lau
+
+fear, dread
+
+E.S. (II)
+
+?
+
+Unknown [Unofficial]
+
+lautyca
+
+fall down
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+layy
+
+false, fictional, illusionary
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+leaff
+
+book, picture book
+
+n.
+
+リーフ
+
+Metafalss Note
+
+leat
+
+to play (an instrument, especially stringed instruments)
+
+v.
+
+リー
+
+Central Standard Note
+
+lequera
+
+good person, doer of good
+
+n.
+
+リクウィラ
+
+Cult Ciel Note
+
+lhasya
+
+connect, tie together
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+li
+
+that (used to add emphasis)
+
+adj., adv.
+
+リ
+
+Central Standard Note
+
+Linca
+
+Hymmnos - Linker
+
+n.
+
+リンカ
+
+Central Standard Note
+
+linen
+
+to talk, speak, tell, recite
+
+v.
+
+リーネン
+
+Cult Ciel Note
+
+lir
+
+light
+
+n.
+
+ライル
+
+Alpha Note (EOLIA)
+
+lirle
+
+summer, summertime
+
+n.
+
+リレール
+
+Cult Ciel Note
+
+llizz
+
+might, possibly, maybe
+
+adv.
+
+リズ
+
+Central Standard Note
+
+lof
+
+place, location
+
+n.
+
+ロフ
+
+Cult Ciel Note
+
+lonfa
+
+soul
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+lornya
+
+honey
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+loss
+
+dead, lost
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+lulurnya
+
+joy, happiness
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+lurrea
+
+to fear
+
+v.
+
+ルーッレア
+
+Metafalss Note
+
+lusye
+
+light
+
+n.
+
+ルーシェ
+
+Metafalss Note
+
+lyafre
+
+butterfly
+
+n.
+
+リャフレ
+
+Cult Ciel Note
+
+lyrnya
+
+gentle, peaceful
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+lyuma
+
+star, planet
+
+n.
+
+リュマ
+
+New Testament of Pastalie
+
+m.a.m.
+
+to exist
+
+E.V.
+
+マム
+
+New Testament of Pastalie
+
+m.f.l.
+
+cover, shroud
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+m.n.g.
+
+to gulp down, swallow deeply, to learn, take in, understand
+
+E.V.
+
+ング
+
+New Testament of Pastalie
+
+m.r.r.
+
+project, reflect
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+m.t.y.y.
+
+to create, produce, realize, dream up
+
+E.V.
+
+マトウィ
+
+New Testament of Pastalie
+
+Ma
+
+discretionary
+
+E.S. (I)
+
+マ
+
+Central Standard Note
+
+maen
+
+full moon
+
+n.
+
+マエン
+
+New Testament of Pastalie
+
+mahin
+
+hand
+
+n.
+
+マァイン
+
+Central Standard Note
+
+manac
+
+true name, name of a soul
+
+n.
+
+マナク
+
+Cult Ciel Note
+
+manaf
+
+life, existence, destiny
+
+n.
+
+マナフ
+
+Metafalss Note
+
+manafaln
+
+to transmigrate the soul, reincarnate
+
+v.
+
+マナファルン
+
+Cult Ciel Note
+
+manafeeze
+
+to live
+
+v.
+
+マナフィーツェ
+
+Metafalss Note
+
+maoh
+
+Maoh, Rhaplanca's partner in Meta Falss mythology 
+
+n.
+
+マオ
+
+Metafalss Note
+
+marfo
+
+beloved, dear
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+marta
+
+mother, motherly
+
+adj., n.
+
+マルタ
+
+Metafalss Note
+
+maun
+
+eyelid
+
+n.
+
+マウン
+
+Cult Ciel Note
+
+maxim
+
+most, extreme
+
+adj., adv.
+
+マクシム
+
+Central Standard Note
+
+maya
+
+magic, the supernatural
+
+n.
+
+マヤ
+
+Cult Ciel Note
+
+mea
+
+me, myself
+
+n.
+
+ミーァ
+
+Central Standard Note
+
+mean
+
+us, ourselves
+
+n.
+
+ミーン
+
+Central Standard Note
+
+meaql
+
+gentle
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+melenas
+
+to love, care for very deeply
+
+v.
+
+メレナス
+
+Cult Ciel Note
+
+melifan
+
+history
+
+n.
+
+メリファン
+
+Metafalss Note
+
+melvaz
+
+bride, wife
+
+n.
+
+メルヴァズ
+
+Cult Ciel Note
+
+memora
+
+memory, recollection, remembrance
+
+n.
+
+メモーラ
+
+Central Standard Note
+
+meo
+
+dream, ideal
+
+n.
+
+メオ
+
+Central Standard Note
+
+merfa
+
+pure, pure wish
+
+adj., n.
+
+?
+
+Pastalia [Unofficial]
+
+merra
+
+us (subject form)
+
+n.
+
+?
+
+Central Standard Note
+
+meryu
+
+memory, recollection, remembrance
+
+n.
+
+メリュ
+
+New Testament of Pastalie
+
+meso
+
+to clutter, scatter around, leave untidy
+
+v.
+
+メソ
+
+Central Standard Note
+
+messe
+
+to convey, transmit, report, impart
+
+v.
+
+メッセー
+
+Central Standard Note
+
+Metafalica
+
+Hymmnos - Metafalica
+
+n.
+
+メタファリカ
+
+Metafalss Note
+
+milra
+
+fragrance
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+mirie
+
+warm, gentle
+
+adj., n.
+
+?
+
+Pastalia [Unofficial]
+
+morto
+
+die, death
+
+n., v.
+
+モルト
+
+Central Standard Note
+
+murfan
+
+to think, feel, believe
+
+v.
+
+ムルファン
+
+Metafalss Note
+
+murfanare
+
+thoughts, feelings
+
+n.
+
+ムルファナーレ
+
+Metafalss Note
+
+mutrk
+
+warm, gentle
+
+adj.
+
+?
+
+Pastalia [Unofficial]
+
+n.d.n.
+
+lay down, lay flat
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+n.e.g.
+
+pray
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+n.m.l.
+
+to be dye
+
+E.V.
+
+ンム
+
+New Testament of Pastalie
+
+n.t.n.
+
+continue onwards
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+na
+
+negation, not
+
+adv.
+
+ナ
+
+Central Standard Note
+
+naave
+
+because
+
+prep.
+
+ナァベ
+
+New Testament of Pastalie
+
+nafa
+
+tender, kind, gentle
+
+adj.
+
+ナファ
+
+New Testament of Pastalie
+
+nafan
+
+tenderly, with kindness, gently
+
+adv.
+
+ナファン
+
+New Testament of Pastalie
+
+naflansee
+
+happiness, good fortune, luck, blessing
+
+n.
+
+ナフランズィー
+
+New Testament of Pastalie
+
+naja
+
+to retreat, fall back, flee
+
+v.
+
+ナージャ
+
+Cult Ciel Note
+
+near
+
+life, existence, destiny
+
+n.
+
+ニェァー
+
+Central Standard Note
+
+neath
+
+red hot, scorching
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+nedle
+
+to need, require
+
+v.
+
+ニドゥル
+
+Alpha Note (EOLIA)
+
+neee
+
+to call out (to), invoke, summon
+
+v.
+
+ネエ
+
+Central Standard Note
+
+neen
+
+too much, excessive, beyond reason
+
+adj., adv.
+
+ニーン
+
+Cult Ciel Note
+
+neia
+
+to approach, draw near, get acquainted with
+
+v.
+
+ネイア
+
+Central Standard Note
+
+nene
+
+not understood, unclear
+
+adj.
+
+ネネ
+
+Cult Ciel Note
+
+nepo
+
+to get wet, damp, watered
+
+v.
+
+ネポ
+
+Central Standard Note
+
+netvear
+
+to give up, be crushed or broken, become discouraged
+
+v.
+
+ネトヴィア
+
+Central Standard Note
+
+nezz
+
+nose
+
+n.
+
+ネズ
+
+Central Standard Note
+
+nha
+
+to accept, summon, permit entry (spiritual)
+
+v.
+
+ニャ
+
+Cult Ciel Note
+
+nhaf
+
+surprised, dazed
+
+adj., v.
+
+?
+
+Unknown [Unofficial]
+
+nille
+
+to resemble, be similar
+
+v.
+
+ニル
+
+Central Standard Note
+
+Nn
+
+reluctant
+
+E.S. (I)
+
+ン
+
+Central Standard Note
+
+nnoini
+
+first time
+
+adv., n.
+
+ノイニ
+
+Central Standard Note
+
+noce
+
+nature, spontaneity (on its own), chance
+
+n.
+
+ノーセ
+
+Cult Ciel Note
+
+noes
+
+self
+
+n.
+
+ノイス
+
+Central Standard Note
+
+noglle
+
+black, dark, wicked
+
+adj.
+
+ノグル
+
+Central Standard Note
+
+nooge
+
+to lie down, sleep
+
+v.
+
+ヌーグ
+
+Cult Ciel Note
+
+nor
+
+or, either
+
+conj.
+
+?
+
+Unknown [Unofficial]
+
+nosaash
+
+goddess
+
+n.
+
+ノーサッシュ
+
+Cult Ciel Note
+
+nozess
+
+to discard, lose, to bring to naught
+
+v.
+
+ノーゼス
+
+Central Standard Note
+
+nuih
+
+evening, night
+
+n.
+
+ヌイ
+
+Central Standard Note
+
+num
+
+nil, nothing, zero
+
+E.S. (II)
+
+ナム
+
+Central Standard Note
+
+nx
+
+next, subsequent
+
+n.
+
+ヌクス
+
+Central Standard Note
+
+nyamo
+
+meowing
+
+n., v.
+
+?
+
+Unknown [Unofficial]
+
+nyamonyas
+
+friend
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+nyanyas
+
+cute, adorable
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+nyasri
+
+sad, depressed, downhearted
+
+adj.
+
+ニャスリ
+
+Cult Ciel Note
+
+nyasyamorina
+
+very happy
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+ocurp
+
+river mouth
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+ogbl
+
+coil into
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+olo
+
+evening, night
+
+n.
+
+オロ
+
+New Testament of Pastalie
+
+omness
+
+life, existence
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+omnis
+
+whole, all, entirely
+
+adj., n.
+
+オムニス
+
+Metafalss Note
+
+oriye
+
+ear
+
+n.
+
+オリイェ
+
+Central Standard Note
+
+orn
+
+only, sole, unique
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+orviclle
+
+problem, question, obstacle
+
+n.
+
+オーヴィクル
+
+Central Standard Note
+
+oter
+
+originating from
+
+prep.
+
+?
+
+Unknown [Unofficial]
+
+oucc
+
+together
+
+adv.
+
+オゥク
+
+New Testament of Pastalie
+
+oure
+
+more than anything, above all
+
+adj., adv.
+
+オゥレ
+
+Central Standard Note
+
+ousye
+
+to charge (as in rush), to fall onto
+
+v.
+
+オゥシェ
+
+Alpha Note (EOLIA)
+
+ouvyu
+
+ruins, abandoned building
+
+n.
+
+オゥヴェ
+
+New Testament of Pastalie
+
+ouwua
+
+a lot, many
+
+adj.
+
+オウェア
+
+New Testament of Pastalie
+
+oz
+
+of (indicates possession)(の)
+
+prep.
+
+オズ
+
+Central Standard Note
+
+p.s.w.t.
+
+to grab, seize, acquire
+
+E.V.
+
+ピスウト
+
+New Testament of Pastalie
+
+pagle
+
+to talk to, speak with, chatter
+
+v.
+
+パグレ
+
+Central Standard Note
+
+Paja
+
+Hymmnos - Purger
+
+n.
+
+パージャ
+
+Central Standard Note
+
+pak
+
+to make time (for something)
+
+v.
+
+パク
+
+Central Standard Note
+
+paks
+
+excited, nervous, (doki,doki)
+
+E.S. (II)
+
+パクス
+
+Central Standard Note
+
+pakz
+
+to divide, segragate
+
+v.
+
+パクズ
+
+Cult Ciel Note
+
+papana
+
+rain
+
+n.
+
+パパナ
+
+Cult Ciel Note
+
+papas
+
+belief
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+papulipua
+
+worry, bother
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+parce
+
+proof, evidence, testimony
+
+n.
+
+パーシェ
+
+Central Standard Note
+
+parge
+
+to detach, cut loose, unleash, free (violent connotation)
+
+v.
+
+パジェ
+
+Cult Ciel Note
+
+parith
+
+honesty, sincerity
+
+adj., n.
+
+パリス
+
+Cult Ciel Note
+
+pat
+
+to release, liberate, deallocate computer memory
+
+v.
+
+パッ
+
+Cult Ciel Note
+
+paul
+
+to feel, sense, experience
+
+v.
+
+パウル
+
+Cult Ciel Note
+
+pauwee
+
+child of power/strength
+
+n.
+
+パゥウェー
+
+Metafalss Note
+
+pauwel
+
+power/strength
+
+n.
+
+パゥウェル
+
+Metafalss Note
+
+pawr
+
+power, strength
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+pecee
+
+to hatch (as from an egg), incubate
+
+v.
+
+ピシ
+
+Central Standard Note
+
+Phantasmagoria
+
+Hymmnos - Phantasmagoria
+
+n.
+
+ファンタスマゴリア
+
+Alpha Note (EOLIA)
+
+phira
+
+seed, type, tone
+
+n.
+
+ピラ
+
+Metafalss Note
+
+phiz
+
+body, health
+
+n.
+
+フィズ
+
+Cult Ciel Note
+
+phyue
+
+congratulations
+
+n., v.
+
+ヒュゥ
+
+Central Standard Note
+
+pic
+
+to notice, observe, realize
+
+v.
+
+ピク
+
+Central Standard Note
+
+pikca
+
+fruit, nut, seed, positive result
+
+n.
+
+ピッカ
+
+New Testament of Pastalie
+
+pilt
+
+to notice, realize, perceive
+
+v.
+
+ピルト
+
+Cult Ciel Note
+
+pipel
+
+pipe, cylinder
+
+adj., n.
+
+ピペル
+
+Central Standard Note
+
+pipit
+
+small quantity, a little
+
+adj.
+
+ピピット
+
+New Testament of Pastalie
+
+pirtue
+
+spirit (as in ghost)
+
+n.
+
+ピリチュエ
+
+Metafalss Note
+
+pitod
+
+beside, with, together
+
+adv.
+
+ピトッド
+
+Cult Ciel Note
+
+plina
+
+greenery (vegetation)
+
+n.
+
+プリナ
+
+Central Standard Note
+
+poe
+
+seed, type, tone
+
+n.
+
+ポエ
+
+New Testament of Pastalie
+
+polon
+
+isolation, loneliness
+
+n.
+
+ポロン
+
+Cult Ciel Note
+
+pomb
+
+to create, produce, give birth
+
+v.
+
+ポム
+
+Central Standard Note
+
+pono
+
+egg
+
+n.
+
+ポノ
+
+Central Standard Note
+
+pop
+
+bubble, froth, foam
+
+n.
+
+ポプ
+
+New Testament of Pastalie
+
+porter
+
+to put on, wear (as in clothes)
+
+v.
+
+ポルテア
+
+Central Standard Note
+
+prasrity
+
+prosper, prosperity
+
+n., v.
+
+プラスリティー
+
+Central Standard Note
+
+presia
+
+please do (an action)
+
+adv.
+
+プレシア
+
+Metafalss Note
+
+prooth
+
+blood
+
+n.
+
+プルース
+
+Cult Ciel Note
+
+pruna
+
+funny
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+ptrapica
+
+treasure
+
+n.
+
+プトラピカ
+
+Cult Ciel Note
+
+ptrapile
+
+autumn, fall
+
+n.
+
+プトラピル
+
+Cult Ciel Note
+
+pupe
+
+tear, teardrop
+
+n.
+
+ピューペ
+
+New Testament of Pastalie
+
+pyuf
+
+head for, head to
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+q.g.s.
+
+end, finish
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+q.l.s.
+
+shake tremendously
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+qejyu
+
+humanity, human being
+
+n.
+
+ケジェウ
+
+New Testament of Pastalie
+
+qoga
+
+end, demise
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+qraffa
+
+leaf
+
+n.
+
+クラッファ
+
+New Testament of Pastalie
+
+quals
+
+revive, resurrect
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+quel
+
+earnest, eager, frantic, desperate
+
+E.S. (II)
+
+クエル
+
+Central Standard Note
+
+quen
+
+to produce, create
+
+v.
+
+クーン
+
+Central Standard Note
+
+quesa
+
+earth-shaker, thunder, lightning strike
+
+n.
+
+クエーサー
+
+Central Standard Note
+
+quivale
+
+winter
+
+n.
+
+クィバーレ
+
+Cult Ciel Note
+
+quive
+
+silence, stillness
+
+n., v.
+
+クウィバ
+
+Cult Ciel Note
+
+quowjaz
+
+justice, righteousness
+
+n.
+
+クォウジャズ
+
+Cult Ciel Note
+
+r.f.m.
+
+to see, look, observe, watch
+
+E.V.
+
+ルフン
+
+New Testament of Pastalie
+
+r.f.r.m.
+
+recognize, know, understand
+
+E.V.
+
+ルフルン
+
+New Testament of Pastalie
+
+r.l.t.y.
+
+revive, restore, resurrect
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+r.w.
+
+to help, rescue, save
+
+E.V.
+
+ルゥ
+
+New Testament of Pastalie
+
+ra
+
+I want this to continue
+
+E.S. (III)
+
+ラ
+
+Central Standard Note
+
+race
+
+necklace, wreathe
+
+n., v.
+
+レース
+
+Central Standard Note
+
+raklya
+
+to cry tears, weep
+
+v.
+
+ラクリャ
+
+Cult Ciel Note
+
+rana
+
+to run, dash
+
+v.
+
+ラーナ
+
+Central Standard Note
+
+rannef
+
+reward
+
+n.
+
+ラニェフ
+
+Central Standard Note
+
+rasse
+
+to yell, shout
+
+v.
+
+ラッセー
+
+Central Standard Note
+
+raudl
+
+appearance, shape, form
+
+n.
+
+ラウドゥル
+
+New Testament of Pastalie
+
+rawah
+
+flower, blossom, petal
+
+n.
+
+ラワ
+
+New Testament of Pastalie
+
+re
+
+(passive modifier)
+
+adv.
+
+レ
+
+Central Standard Note
+
+Re=Nation
+
+Hymmnos - Re=Nation
+
+n.
+
+リネイション
+
+Central Standard Note
+
+reen
+
+hear, listen
+
+v.
+
+リーン
+
+Central Standard Note
+
+repoear
+
+gratitude
+
+n.
+
+レポエア
+
+Central Standard Note
+
+reta
+
+please (action)
+
+prep.
+
+レタ
+
+New Testament of Pastalie
+
+rete
+
+forget, leave carelessly, forgetful
+
+adj., v.
+
+レテ
+
+Cult Ciel Note
+
+revatail
+
+Reyvateil
+
+n.
+
+レーヴァテイル
+
+Metafalss Note
+
+reveris
+
+nightmare, illusion, delusion
+
+n.
+
+レベリス
+
+Central Standard Note
+
+revm
+
+dream
+
+n.
+
+レム
+
+Central Standard Note
+
+rhaplanca
+
+A goddess in Meta Falss mythology
+
+n.
+
+ラプランカ
+
+Metafalss Note
+
+ridalnae
+
+irreplaceable
+
+adj.
+
+リダルナーエ
+
+Metafalss Note
+
+rifaiah
+
+to be resurrected, borne of revival
+
+adj., adv.
+
+?
+
+Unknown [Unofficial]
+
+rifaien
+
+revive, resurrect
+
+v.
+
+リーファイエン
+
+Metafalss Note
+
+Rig=Veda
+
+Hymmnos - Rig=Veda
+
+n.
+
+リグヴェーダ
+
+Metafalss Note
+
+rinc
+
+synchronize, sympathize
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+riomo
+
+to bring, give, deliver (an object, report, information...)
+
+v.
+
+リオーモ
+
+Cluster Note
+
+rippllys
+
+to give a reply, response
+
+n., v.
+
+リプリス
+
+Central Standard Note
+
+riura
+
+face, facial expression
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+rivire
+
+river
+
+n.
+
+リヴィレ
+
+Central Standard Note
+
+riya
+
+sincerity
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+rol
+
+like
+
+adv.
+
+ロル
+
+Central Standard Note
+
+roon
+
+mansion
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+rooshellan
+
+cradle
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+rosa
+
+rose, rose petal
+
+n.
+
+ロサ
+
+Central Standard Note
+
+rre
+
+(subject identifier)
+
+cnstr.
+
+レ
+
+Central Standard Note
+
+Rrha
+
+trance-like
+
+E.S. (I)
+
+ラ
+
+Central Standard Note
+
+rudje
+
+red, crimson
+
+adj., n.
+
+ルジェ
+
+Central Standard Note
+
+ruinie
+
+destruction, disruption, crash (as a computer)
+
+v.
+
+ルイニェ
+
+Central Standard Note
+
+ruinien
+
+destruction
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+rum
+
+flame
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+ryewa
+
+overgrown, thick (as vegetation)
+
+adj.
+
+リェワ
+
+New Testament of Pastalie
+
+ryushe
+
+depart on a journey
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+ryusse
+
+travels, trip, journey
+
+n.
+
+リュージー
+
+Cult Ciel Note
+
+s.l.
+
+to believe, trust
+
+E.V.
+
+シル
+
+New Testament of Pastalie
+
+s.l.y.
+
+award, give
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+s.n.k.k.
+
+to bud, sprout
+
+E.V.
+
+スンク
+
+New Testament of Pastalie
+
+s.s.w.
+
+to say, talk, communicate, declare
+
+E.V.
+
+スーウ
+
+New Testament of Pastalie
+
+sa
+
+karma
+
+n.
+
+サ
+
+Central Standard Note
+
+saash
+
+god
+
+n.
+
+サーシュ
+
+Central Standard Note
+
+sabl
+
+sand, grit
+
+n.
+
+サブル
+
+Central Standard Note
+
+sacra
+
+blood
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+sallogna
+
+lie down, stretch, rest
+
+v.
+
+サログナ
+
+Central Standard Note
+
+sanctum
+
+ark
+
+n.
+
+サンクトゥム
+
+Central Standard Note
+
+sar
+
+sky, the heavens, emptiness
+
+n.
+
+サー
+
+Alpha Note (EOLIA)
+
+sara
+
+grass
+
+n.
+
+サラ
+
+Central Standard Note
+
+sarla
+
+song, poem
+
+n.
+
+サルラ
+
+Metafalss Note
+
+sarr
+
+sunlight, sunshine, radiance
+
+n.
+
+サール
+
+New Testament of Pastalie
+
+sarrifis
+
+offer (as sacrifice)
+
+v.
+
+サリフィス
+
+Central Standard Note
+
+sarsa
+
+rain
+
+n.
+
+サーサ
+
+New Testament of Pastalie
+
+sash
+
+scatter
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+sasye
+
+girl, maiden
+
+n.
+
+サシェ
+
+Central Standard Note
+
+savath
+
+to disperse, scatter, overflow
+
+v.
+
+サーバス
+
+Cult Ciel Note
+
+sechel
+
+city
+
+n.
+
+セケル
+
+New Testament of Pastalie
+
+sefanl
+
+forest
+
+n.
+
+セファンル
+
+New Testament of Pastalie
+
+selena
+
+play (an instrument, especially strings)
+
+v.
+
+セレナ
+
+Metafalss Note
+
+sephaje
+
+creation of the world
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+sev
+
+at the time of
+
+conj.
+
+セヴ
+
+New Testament of Pastalie
+
+sguela
+
+precious, important
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+shazra
+
+thorny vine, briar, splinter
+
+n.
+
+シャズラ
+
+Central Standard Note
+
+sheak
+
+sun
+
+n.
+
+シェァク
+
+Cult Ciel Note
+
+sheaken
+
+left
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+shefra
+
+creation of the world
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+shell
+
+shell (inside of)
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+shellan
+
+basket, cage, cell
+
+n.
+
+シェラン
+
+Metafalss Note
+
+shen
+
+light
+
+n.
+
+シェン
+
+Central Standard Note
+
+shyun
+
+sadness, grief
+
+adj., n.
+
+?
+
+Unknown [Unofficial]
+
+sial
+
+a little bit, a little while
+
+adj.
+
+シャル
+
+Central Standard Note
+
+siance
+
+sanctuary, holy land, paradise
+
+n.
+
+シャンシェ
+
+New Testament of Pastalie
+
+siann
+
+light
+
+n.
+
+シャン
+
+New Testament of Pastalie
+
+sielp
+
+small stream, brooklet
+
+n.
+
+シェルプ
+
+Central Standard Note
+
+sik
+
+to leave, become separated
+
+v.
+
+シク
+
+Cult Ciel Note
+
+siss
+
+erase, extinguish, shut down
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+skit
+
+contract, promise, vow
+
+n., v.
+
+スキット
+
+Cult Ciel Note
+
+slep
+
+sleep
+
+v.
+
+スレプ
+
+Central Standard Note
+
+slepir
+
+to put to sleep, halt, stop
+
+v.
+
+スレピア
+
+Metafalss Note
+
+so
+
+in such a way, to that degree
+
+adv., prt.
+
+?
+
+Unknown [Unofficial]
+
+soare
+
+hymn, prayer
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+sol
+
+shining daylight, cascading of radiant brilliance
+
+n., v.
+
+ソル
+
+Metafalss Note
+
+sonwe
+
+sing
+
+v.
+
+ソンウェ
+
+Metafalss Note
+
+sor
+
+that
+
+pron.
+
+ソァ
+
+Central Standard Note
+
+sos
+
+for the sake of
+
+conj., prep.
+
+ソス
+
+Central Standard Note
+
+sosar
+
+sorcery, magical power
+
+n.
+
+ソサル
+
+Central Standard Note
+
+sphaela
+
+the world, the universe (perceived reality)
+
+n.
+
+スファイェラ
+
+New Testament of Pastalie
+
+sphilar
+
+mind, heart, spirit
+
+n.
+
+スフィーラ
+
+Metafalss Note
+
+spiritum
+
+soul, of the soul
+
+adj., n.
+
+スピリトゥム
+
+Central Standard Note
+
+spitze
+
+freedom, liberty
+
+n.
+
+シュピッツエ
+
+Central Standard Note
+
+ssvid
+
+outlive
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+stel
+
+to steal, take
+
+v.
+
+ステル
+
+Central Standard Note
+
+stelled
+
+to compete for, struggle over
+
+v.
+
+ステレド
+
+Central Standard Note
+
+Suspend
+
+Hymmnos - Suspend
+
+n.
+
+サスペンド
+
+Central Standard Note
+
+suwant
+
+to save, rescue, assist
+
+v.
+
+スワント
+
+Central Standard Note
+
+swant
+
+to save, rescue, assist
+
+v.
+
+スワント
+
+Central Standard Note
+
+syalea
+
+decision, determination
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+syana
+
+echo, resound
+
+n., v.
+
+?
+
+Unknown [Unofficial]
+
+syast
+
+to gather, assemble, congregate
+
+v.
+
+シャスト
+
+Central Standard Note
+
+syec
+
+depths, abyss, ravine
+
+n.
+
+セク
+
+Cult Ciel Note
+
+syezo
+
+soup
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+synk
+
+to overlap, be piled up
+
+v.
+
+シンク
+
+Central Standard Note
+
+syunaht
+
+to disappear, scatter, vanish
+
+v.
+
+シュナット
+
+Cult Ciel Note
+
+t.h.s.
+
+go outside
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+t.k.d.
+
+to reach (as a destination), arrive
+
+E.V.
+
+トクト
+
+New Testament of Pastalie
+
+t.n.
+
+to stop, end, halt
+
+E.V.
+
+トゥン
+
+New Testament of Pastalie
+
+t.n.m.n.
+
+to plant, grow
+
+E.V.
+
+トンムン
+
+New Testament of Pastalie
+
+t.r.m.
+
+to develop, bloom, implement
+
+E.V.
+
+トルム
+
+New Testament of Pastalie
+
+tafane
+
+glitter, sparkle
+
+n., v.
+
+?
+
+Pastalia [Unofficial]
+
+talam
+
+sunrise, color of dawn
+
+n.
+
+ターラン
+
+New Testament of Pastalie
+
+tanta
+
+to dance, whirl, flutter
+
+v.
+
+タンタ
+
+Central Standard Note
+
+tapa
+
+water
+
+n.
+
+タパ
+
+New Testament of Pastalie
+
+tarfe
+
+to stop, halt
+
+v.
+
+ターフェ
+
+Central Standard Note
+
+targue
+
+even if
+
+conj.
+
+ターグエ
+
+New Testament of Pastalie
+
+tasyue
+
+to make an offering, sacrifice
+
+v.
+
+ターシュエ
+
+Metafalss Note
+
+tatakaria
+
+existences, beings, lives
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+tek
+
+to go
+
+v.
+
+テク
+
+Central Standard Note
+
+tes
+
+to, at
+
+prep., prt.
+
+テス
+
+Central Standard Note
+
+teyys
+
+to remain, stay, stop in place, suspend
+
+v.
+
+テイス
+
+Central Standard Note
+
+ther
+
+that
+
+prep., prt.
+
+ジァ
+
+Central Standard Note
+
+tictim
+
+to operate, process, function autonomously
+
+v.
+
+ティクティム
+
+Central Standard Note
+
+tie
+
+catch, bind
+
+v.
+
+ティ
+
+Cult Ciel Note
+
+tie
+
+(topic identifier)
+
+prep.
+
+ティエ
+
+New Testament of Pastalie
+
+tienar
+
+without stopping, without end
+
+adv.
+
+?
+
+Unknown [Unofficial]
+
+tilanta
+
+flow into
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+tim
+
+time
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+titia
+
+good will, good intentions
+
+n.
+
+ティティア
+
+New Testament of Pastalie
+
+titil
+
+accessory, small item
+
+n.
+
+ティティル
+
+Cult Ciel Note
+
+titilia
+
+small, tiny
+
+adj.
+
+ティティリア
+
+Cult Ciel Note
+
+toe
+
+rise above, stand over
+
+adj., v.
+
+?
+
+Unknown [Unofficial]
+
+tonelico
+
+divine tree (possibly also 'tower')
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+tou
+
+(indicates relative physical position)
+
+prep.
+
+トゥ
+
+Central Standard Note
+
+touwaka
+
+hopeful, desiring hidden wishes in the heart
+
+E.S. (II)
+
+トゥワカ
+
+Central Standard Note
+
+trina
+
+notice, become aware
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+ttu
+
+being done for the sake of (するために)
+
+conj.
+
+ツトウ
+
+New Testament of Pastalie
+
+ture
+
+bonds
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+tussu
+
+change, transformation, metamorphosis
+
+n.
+
+トゥッス
+
+New Testament of Pastalie
+
+tyui
+
+small, little, tiny
+
+adj.
+
+トゥュイ
+
+New Testament of Pastalie
+
+tyuss
+
+kind, gentle
+
+adj.
+
+?
+
+Pastalia [Unofficial]
+
+U-TA
+
+song
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+ugi
+
+to decide
+
+v.
+
+ウージ
+
+Cult Ciel Note
+
+uje
+
+cruel, evil
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+ujes
+
+malice, ill will, spite
+
+adv., n.
+
+ウジェス
+
+New Testament of Pastalie
+
+unloee
+
+to submit (as to a higher power), prostrate oneself before
+
+v.
+
+アンロイ
+
+Central Standard Note
+
+urgn
+
+grief, lamentation
+
+n.
+
+ウルグン
+
+New Testament of Pastalie
+
+urr
+
+to manifest, incarnate, (the revealing of an unseen force), take form
+
+v.
+
+ウル
+
+Central Standard Note
+
+ut
+
+to, at
+
+prep., prt.
+
+ウトゥ
+
+New Testament of Pastalie
+
+uteu
+
+to doze off
+
+n., v.
+
+ウテゥ
+
+Cult Ciel Note
+
+v.a.
+
+to produce, craft (spin), 
+
+E.V.
+
+ヴァ
+
+New Testament of Pastalie
+
+v.s.k.
+
+to truly experience, feel, sense
+
+E.V.
+
+ヴィスク
+
+New Testament of Pastalie
+
+v.t.
+
+to live, exist
+
+E.V.
+
+ヴッ
+
+New Testament of Pastalie
+
+vaffa
+
+clear away, sweep away
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+vale
+
+bed
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+valwa
+
+to purify, cleanse
+
+v.
+
+バルワ
+
+Central Standard Note
+
+van
+
+even if (x) should happen, (usage: x van, y)
+
+conj., prep.
+
+ヴァン
+
+Metafalss Note
+
+varda
+
+big tree
+
+n.
+
+ヴァルダ
+
+Metafalss Note
+
+vega
+
+here, this
+
+n.
+
+ヴェガ
+
+New Testament of Pastalie
+
+vege
+
+there, that
+
+n.
+
+ヴェジェ
+
+New Testament of Pastalie
+
+vianchiel
+
+pure, clean, undefiled
+
+adj.
+
+ヴィアンシエール
+
+Metafalss Note
+
+viega
+
+blade, sword
+
+n.
+
+ヴィエーガ
+
+Metafalss Note
+
+Viena
+
+Hymmnos - Viena
+
+n.
+
+ヴィーナ
+
+Unknown [Unofficial]
+
+vigiga
+
+cold
+
+adj., n.
+
+?
+
+Unknown [Unofficial]
+
+vinan
+
+white
+
+adj.
+
+ヴィナン
+
+Central Standard Note
+
+vine
+
+wine, alcohol
+
+n.
+
+ヴィーネ
+
+Central Standard Note
+
+viss
+
+to read, read one's mind, read between the lines
+
+v.
+
+ヴィス
+
+Central Standard Note
+
+vit
+
+to look, view, see
+
+v.
+
+ヴィット
+
+Cult Ciel Note
+
+viuy
+
+darkened, obscured
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+vl
+
+since, from
+
+adv.
+
+?
+
+Unknown [Unofficial]
+
+vonn
+
+dark, shady
+
+adj.
+
+ヴォン
+
+Central Standard Note
+
+w.f.
+
+to desire to do
+
+E.V.
+
+ウフ
+
+New Testament of Pastalie
+
+w.h.h.
+
+to feel, sense, experience
+
+E.V.
+
+ヲゥ
+
+New Testament of Pastalie
+
+w.n.s.
+
+to (re)visit, echo
+
+E.V.
+
+ウンス
+
+New Testament of Pastalie
+
+w.r.l.
+
+to aim for, track
+
+E.V.
+
+ウルル
+
+New Testament of Pastalie
+
+w.r.m.
+
+to illuminate, shine
+
+E.V.
+
+ワルム
+
+New Testament of Pastalie
+
+w.s.
+
+to give, grant, bestow
+
+E.V.
+
+ウス
+
+New Testament of Pastalie
+
+w.s.s.
+
+praise
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+w.w.j.n.c.
+
+to resonate, sympathize
+
+E.V.
+
+ウージャンク
+
+New Testament of Pastalie
+
+wa
+
+I can tolerate this
+
+E.S. (III)
+
+ワ
+
+Central Standard Note
+
+waa
+
+happy
+
+E.S. (II)
+
+ワア
+
+Metafalss Note
+
+waath
+
+refresh, restore to life
+
+v.
+
+ワース
+
+Central Standard Note
+
+waats
+
+important, valuable
+
+adj.
+
+ワーツ
+
+Central Standard Note
+
+wael
+
+joy, delight
+
+n., v.
+
+ワェール
+
+Central Standard Note
+
+walaen
+
+lifecycle
+
+n.
+
+ワラエン
+
+Cult Ciel Note
+
+walaka
+
+walk
+
+v.
+
+ワラカ
+
+Central Standard Note
+
+walasye
+
+person, character of a person
+
+n.
+
+ワラーシェ
+
+Cult Ciel Note
+
+walphish
+
+mermaid, merman
+
+n.
+
+ワルフィッシュ
+
+Cult Ciel Note
+
+warce
+
+(conferrence of) blessing, celebration, congratulations
+
+n., v.
+
+ワーシェ
+
+Central Standard Note
+
+ware
+
+during, in tandem with
+
+prep.
+
+ワーレ
+
+Central Standard Note
+
+warma
+
+warm, soothing, mild, genial
+
+adj.
+
+ワーマ
+
+Central Standard Note
+
+wart
+
+word, language, dialect
+
+n.
+
+ワート
+
+Central Standard Note
+
+Was
+
+very much
+
+E.S. (I)
+
+ワス
+
+Central Standard Note
+
+wasara
+
+abundant, plentiful, affluent
+
+adj., n.
+
+ワサラ
+
+Central Standard Note
+
+wase
+
+strong, intense, severe
+
+adj.
+
+ウェイズ
+
+Cult Ciel Note
+
+wassa
+
+festival
+
+n.
+
+ワッサ
+
+Cult Ciel Note
+
+wassee
+
+praise
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+watt
+
+to be surprised, startled
+
+v.
+
+ワット
+
+Cult Ciel Note
+
+waze
+
+(indicates multiplicity)
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+we
+
+moreso than
+
+prep.
+
+ウェ
+
+Central Standard Note
+
+weak
+
+moon, month (when used as a period counter)
+
+n.
+
+ウィアク
+
+Central Standard Note
+
+weaken
+
+right
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+weal
+
+happy, glad
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+wearequewie
+
+to wish, desire, pray, hope
+
+v.
+
+ワーレクワイエ
+
+Metafalss Note
+
+Wee
+
+reasonable
+
+E.S. (I)
+
+ウィ
+
+Central Standard Note
+
+weel
+
+"...come true!", "...happen!"
+
+v.
+
+ウィー
+
+Central Standard Note
+
+ween
+
+in (as in "inside of")
+
+prep.
+
+ウィン
+
+Central Standard Note
+
+wefa
+
+warm, soothing
+
+adj.
+
+?
+
+Pastalia [Unofficial]
+
+werllra
+
+tear, drop of water
+
+n.
+
+ウィルラ
+
+Metafalss Note
+
+werlwe
+
+to cry, shed tears, weep
+
+v.
+
+ウィルウェ
+
+Metafalss Note
+
+whai
+
+the reason why is (x)
+
+prep.
+
+ファイ
+
+Central Standard Note
+
+whalt
+
+what
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+wharn
+
+arm
+
+n.
+
+ワーン
+
+Central Standard Note
+
+whou
+
+performed by, who
+
+adj., v.
+
+フォウ
+
+Central Standard Note
+
+wi
+
+that, that one there
+
+n.
+
+ウィ
+
+Central Standard Note
+
+wiene
+
+melody, tone, timbre
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+willie
+
+delicate, ephemeral
+
+adj.
+
+ウィリ
+
+Central Standard Note
+
+wim
+
+daughter, girl, maiden
+
+n.
+
+ウィム
+
+Central Standard Note
+
+windiling
+
+spirit of the wind
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+wirtamarls
+
+tranquil, tranquility
+
+adj., n.
+
+?
+
+Unknown [Unofficial]
+
+wis
+
+it is (literal qualifier)
+
+adj.
+
+ヴィス
+
+Metafalss Note
+
+wol
+
+fervourous, hot blooded, rushing madly ahead
+
+E.S. (II)
+
+ヴォル
+
+Central Standard Note
+
+won
+
+on (as in "on top of")
+
+prep.
+
+ウォン
+
+Central Standard Note
+
+x.
+
+(subject identifier)
+
+E.V.
+
+ズ
+
+New Testament of Pastalie
+
+x.y.n.
+
+hurt, injure
+
+E.V.
+
+?
+
+Pastalia [Unofficial]
+
+xava
+
+wound
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+xe
+
+please (used to show respect)
+
+adv.
+
+ジ
+
+Cluster Note
+
+xel
+
+since (elapsed time)
+
+prep., prt.
+
+?
+
+Unknown [Unofficial]
+
+xest
+
+change, transform
+
+v.
+
+ゼスト
+
+Cult Ciel Note
+
+xevxl
+
+despair
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+xl
+
+ever since (relative to an event)
+
+adv.
+
+クセル
+
+Central Standard Note
+
+xorg
+
+proud
+
+adj.
+
+?
+
+Unknown [Unofficial]
+
+y.m.q.
+
+to bear fruit, ripen
+
+E.V.
+
+ヤンク
+
+New Testament of Pastalie
+
+y.y.
+
+to heal, cure
+
+E.V.
+
+ヤヤ
+
+New Testament of Pastalie
+
+y.z.t.
+
+to wish, request, beg, pray
+
+E.V.
+
+ヤズット
+
+New Testament of Pastalie
+
+yaha
+
+to laugh, smile
+
+v.
+
+ヤハ
+
+Central Standard Note
+
+yanje
+
+always, forever
+
+adv.
+
+ヤニェ
+
+Central Standard Note
+
+yant
+
+panicked, scared
+
+E.S. (II)
+
+ヤント
+
+Metafalss Note
+
+yanwe
+
+to treat with care, respect (literally, to make important)
+
+v.
+
+ヤンウェ
+
+Central Standard Note
+
+yanyaue
+
+important, valuable
+
+adj.
+
+ヤンヤゥエ
+
+Metafalss Note
+
+yart
+
+to meet by chance, to happen to encounter
+
+v.
+
+ヤート
+
+Central Standard Note
+
+yaserwe
+
+to relax, feel at ease
+
+v.
+
+ヤサーウェ
+
+Central Standard Note
+
+yasra
+
+tender, kind, gentle, affectionate
+
+adj.
+
+ヤスラ
+
+Metafalss Note
+
+yassa
+
+to clear, complete, achieve
+
+v.
+
+ヤッサ
+
+Central Standard Note
+
+yatse
+
+to give affirmative feelings, support (emotionally)
+
+v.
+
+ヤッセ
+
+Central Standard Note
+
+yea
+
+happy
+
+E.S. (II)
+
+イェア
+
+Central Standard Note
+
+yeal
+
+line, wire, cable, connection
+
+n.
+
+イェーア
+
+Cult Ciel Note
+
+yeeel
+
+far, distant
+
+adj.
+
+イェール
+
+Cult Ciel Note
+
+yehah
+
+happiness, good fortune, luck, blessing
+
+n.
+
+イェハー
+
+Central Standard Note
+
+yehar
+
+to release, liberate, deallocate (of computer memory)
+
+v.
+
+イェハール
+
+Metafalss Note
+
+yerwe
+
+to vocalize (produce vocal sound), sing (used with birds/animals)
+
+v.
+
+イェーウェ
+
+Metafalss Note
+
+yesse
+
+rear, raise
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+yetere
+
+in that case/situation, (if x) then (y)
+
+conj.
+
+イェーテレ
+
+Central Standard Note
+
+yor
+
+you
+
+n.
+
+ヨア
+
+Central Standard Note
+
+yora
+
+you (plural)
+
+n.
+
+ヨラ
+
+Central Standard Note
+
+yorr
+
+you (subject)
+
+pron.
+
+ヨルル
+
+Central Standard Note
+
+yorra
+
+you (subject, plural)
+
+pron.
+
+ヨルルラ
+
+Central Standard Note
+
+yos
+
+your
+
+adv.
+
+ヨス
+
+Central Standard Note
+
+yosyua
+
+to comfort, console, amuse
+
+v.
+
+ヨシュア
+
+Central Standard Note
+
+yuez
+
+mutually
+
+adv.
+
+ユェゼ
+
+Central Standard Note
+
+yulun
+
+dissolve, homogenise
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+yura
+
+balance
+
+n.
+
+ユラ
+
+Central Standard Note
+
+z.z.x.
+
+to despair, lose all hope
+
+E.V.
+
+ズィークス
+
+New Testament of Pastalie
+
+zaam
+
+sea, ocean
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+zadius
+
+hatred
+
+n.
+
+ザディウス
+
+Metafalss Note
+
+zaffur
+
+struggle, oppose
+
+v.
+
+?
+
+Unknown [Unofficial]
+
+zahha
+
+to advance, progress
+
+v.
+
+ザッハ
+
+Cult Ciel Note
+
+zalez
+
+waterfall
+
+n.
+
+ザーレズ
+
+New Testament of Pastalie
+
+zarle
+
+to fall (as in rain), to downpour
+
+v.
+
+ザール
+
+Central Standard Note
+
+zarnn
+
+storm, tempest
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+zash
+
+pain, painful, sore
+
+adj., n.
+
+ザッシュ
+
+Central Standard Note
+
+zassyen
+
+to swim
+
+v.
+
+ザッシェン
+
+Central Standard Note
+
+zauve
+
+clever, sagacious, cleverness
+
+adj., n.
+
+ザーベ
+
+Cult Ciel Note
+
+zeeth
+
+chain
+
+n.
+
+ジーズ
+
+Central Standard Note
+
+zenva
+
+to rise above, transcend
+
+v.
+
+ツェンヴァ
+
+Central Standard Note
+
+zess
+
+like, (in order to?)
+
+adv.
+
+ゼス
+
+New Testament of Pastalie
+
+zethpa
+
+to slash, cut at
+
+v.
+
+ゼスパ
+
+Central Standard Note
+
+zetsfy
+
+cruelty, harshness
+
+n.
+
+ゼッツファイ
+
+Cult Ciel Note
+
+zixxa
+
+attitude, disposition, spirit
+
+n.
+
+?
+
+Unknown [Unofficial]
+
+zodal
+
+death of, process of dying
+
+n., v.
+
+ゾダル
+
+Metafalss Note
+
+zodaw
+
+death
+
+n.
+
+ゾダウ
+
+Metafalss Note
+
+zuieg
+
+power, authority, jurisdiction
+
+adj., n.
+
+ズウィーグ
+
+Alpha Note (EOLIA)
+
+zweie
+
+determined, sincere
+
+E.S. (II)
+
+ツヴァイエ
+
+Central Standard Note
+
+zwihander
+
+victory, win
+
+n.
+
+ツヴァイヘンデル
+
+Central Standard Note
+
+zz
+
+negation, not
+
+adv.
+
+ズー
+
+New Testament of Pastalie
+

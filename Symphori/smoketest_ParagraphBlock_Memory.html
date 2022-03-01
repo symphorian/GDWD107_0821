@@ -1,0 +1,84 @@
+<html>                                                                  
+<head>   
+	<script type="text/javascript" src="Source/BlocksJS.js"></script>
+	  
+  	<script type="text/javascript">
+  		//CANVASMANAGER.showNoMessages();
+  		//CANVASMANAGER.showInfoMessages();
+  		CANVASMANAGER.showErrorMessages();
+  		//LOG.setDisplayObjects(true);
+  		//LOG.setDisplayBlocks(true);
+		LOG.write("Starting smoketest 5");
+		CANVASMANAGER.setStartUpFunction(function() {
+			LOG.write("smoketest 5 onstartup called")
+			CANVASMANAGER.assetManager.assetsLoadedEvent.subscribe(function () {
+				
+				var t = new ParagraphBlock(500, "Hello world, goodbye earth.\nSomething else to\ntake up space.", "Verdana", 24, "blue","right",0);
+				t.z = 1;
+
+				var t1 = new TextBlock("ParagraphBlock - Movement/Memory Test", "Verdana", 36, "red","center");
+				t1.z = 1;
+				t1.y = -200;
+
+				var t2 = new ParagraphBlock(CANVASMANAGER.width,"Move text through space using LEFT, RIGHT, UP, DOWN.\nRotate text through space using (A) for CCW and (S) for CW.\nChange the text color by pressing (5). Cycle through alignments by pressing (6).\nCycle through sizes by pressing (7). Cycle through fonts by pressing (8).\nPut text to sleep and wake it using (1).\nWhile the text is sleeping, move back through memory\nusing (2) and forward using (3).", "Verdana", 24, "red","center");
+				t2.z = 1.5;
+				t2.y = 150;
+
+				t.setMemoryCapacity(1000);
+
+
+				t.addBehavior(simplePhysicsUpdate);
+				t.addConstraint(dampVelocity);
+
+				t.addKeyDownReaction(KEYCODES.LEFT, applyForceLeft);
+				t.addKeyDownReaction(KEYCODES.RIGHT, applyForceRight);
+				t.addKeyDownReaction(KEYCODES.UP, applyForceAway);
+				t.addKeyDownReaction(KEYCODES.DOWN, applyForceToward);
+				t.addKeyUpReaction(KEYCODES.LEFT, removeForceLeft);
+				t.addKeyUpReaction(KEYCODES.RIGHT, removeForceRight);
+				t.addKeyUpReaction(KEYCODES.UP, removeForceAway);
+				t.addKeyUpReaction(KEYCODES.DOWN, removeForceToward);
+
+				t.addKeyDownReaction(KEYCODES.A, applyForceCCW);
+				t.addKeyDownReaction(KEYCODES.S, applyForceCW);
+				t.addKeyUpReaction(KEYCODES.A, removeForceCCW);
+				t.addKeyUpReaction(KEYCODES.S, removeForceCW);
+
+				t.addAnyKeyPressReaction(typeIntoObject);
+				t.addKeyPressReaction(KEYCODES.ZERO, toggleTypeable);
+
+				t.addKeyPressReaction(KEYCODES.ONE, toggleObjectSleepState);
+				t.addKeyPressReaction(KEYCODES.TWO, moveObjectInTime);
+				t.addKeyPressReaction(KEYCODES.THREE, moveObjectInTime);
+				t.addKeyPressReaction(KEYCODES.FOUR, toggleObjectDebugDisplay);
+
+				t.addKeyPressReaction(KEYCODES.FIVE, setRandomTextColor);
+				t.addKeyPressReaction(KEYCODES.SIX, cycleThroughTextAlignments);
+				t.addKeyPressReaction(KEYCODES.SEVEN, cycleThroughTextSizes);
+				t.addKeyPressReaction(KEYCODES.EIGHT, cycleThroughTextFonts);
+
+				var bkgd = new MovieBlock("Background");
+
+				CANVASMANAGER.addNewCanvasFrame();
+				CANVASMANAGER.adoptBlockChild(bkgd,0);
+				CANVASMANAGER.adoptBlockChild(t1,1);
+				CANVASMANAGER.adoptBlockChild(t2,1);
+				CANVASMANAGER.adoptBlockChild(t,1);
+
+				CANVASMANAGER.start(30);
+				//b.addMouseClickBehavior(addRedFilter);
+			});
+			CANVASMANAGER.loadAssets("imgXMLsmoketest.xml","audioXMLsmoketest.xml","videoXMLsmoketest.xml");
+
+		});
+
+
+	</script> 
+
+</head>                                                                 
+<body style="margin:0px">                            
+</body>     
+
+    
+
+</html>

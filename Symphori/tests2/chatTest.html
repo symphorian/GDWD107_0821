@@ -1,0 +1,237 @@
+<html>
+	<head>
+		<style>
+			div.chatHeader {
+				width: 250px;
+				height: 30px;
+			}
+			div.user1 {
+				color: blue;
+				float: left;
+				font-weight: bold;
+			}
+			div.user2 {
+				color: red;
+				float: right;
+				font-weight: bold;
+			}
+			div.chatHistory {
+				background-color: #F9F9F9;
+				width: 250px;
+				height: 350px;
+				overflow-y: scroll;
+				overflow-x: hidden;
+				margin-bottom: 2px;
+			}
+			p.user1 {
+				line-height: 0.94;
+				text-align: left;
+				color:blue;
+				margin: 6px 4px;
+			}
+			p.user2 {
+				line-height: 0.94;
+				text-align: right;
+				color:red;
+				margin: 6px 4px;
+			}
+			#messagecontent {
+				width: 250px;
+				height:50px;
+			}
+			
+		</style>
+
+		<script type="text/javascript" src="Request.js"></script>
+		<script>
+
+			var userID = 0;
+			var username = "";
+			var chatUserID = 0;
+			var charUsername = "";
+			var conversationID = 0;
+
+			var chatHistory = new Array();
+			var chatIndex = 0;
+
+			var displayConversationHeader = function() {
+				document.getElementById("conversationHeader").innerHTML += "<div class='user1'>" + username + "</div><div class='user2'>" + chatUsername + "</div>";
+			}
+
+			var displayMessageInChatHistory = function(index) {
+				var message = chatHistory[index];
+
+				if (message.userID == "1") {
+					document.getElementById("conversationHistory").innerHTML += "<p class='user1'>" + message.content + "</p>";
+				}
+				else {
+					document.getElementById("conversationHistory").innerHTML += "<p class='user2'>" + message.content + "</p>";
+				}
+
+				document.getElementById("conversationHistory").scrollTop = document.getElementById("conversationHistory").scrollHeight;
+				
+			}
+
+			var saveResponseTextToChatHistory = function(string) {
+				if (string.trim() != "") {
+					var messages = string.trim().split("\n");
+					for (var i = 0; i < messages.length; i++) {
+						if (messages[i].trim() != "") {
+							var fields = messages[i].trim().split("|");
+							var message = new Object();
+							message.userID = fields[0];
+							message.name = fields[1];
+							message.content = fields[2].trim();
+							chatHistory[chatIndex] = message;
+							displayMessageInChatHistory(chatIndex);
+							chatIndex++;
+						}
+					}
+				}
+			}
+
+			var login = function() {
+				var name = "";
+				var password = "";
+
+				name = document.getElementById("name").value;
+				password = document.getElementById("password").value;
+
+				if (name == "") {
+					document.getElementById("loginresult").innerHTML = "No Name was supplied.";
+					return;
+				}
+
+				document.getElementById("loginresult").innerHTML = "";
+
+				REQUEST.callPHPFileAsyncForFormPost("login.php","name=" + name + "&password=" + password, function(request) {
+					if (request.readyState == 4 && request.status == 200) {
+						var result = request.responseText.split(",");
+						if (result[0] == 'SUCCESS') {
+							userID = result[1];
+							username = result[2];
+							document.getElementById("content1").innerHTML = "Hello, " + username + "!";
+							document.getElementById("content2").innerHTML = "<br/><div>Would you like to chat with someone?</div><br /><form>Name: <input id='name' type='text' /><input type='button' onclick='beginChat();' value='Begin Chat'></input></form><div id='userlookupresult' />";
+						}
+						else {
+							document.getElementById("loginresult").innerHTML = "Login failed."
+						}
+					}
+				});
+			}
+
+			var beginChat = function() {
+				var name = "";
+
+				name = document.getElementById("name").value;
+
+				if (name == "") {
+					document.getElementById("userlookupresult").innerHTML = "No Name was supplied.";
+					return;
+				}
+
+				document.getElementById("userlookupresult").innerHTML = "";
+
+				REQUEST.callPHPFileAsyncForFormPost("getUserIDByName.php","name=" + name, function(request) {
+					if (request.readyState == 4 && request.status == 200) {
+						var result = request.responseText.split(",");
+						if (result[0] == 'SUCCESS') {
+							chatUserID = result[1];
+							chatUsername = name;
+							document.getElementById("content1").innerHTML = "";
+							document.getElementById("content2").innerHTML = "";
+							document.getElementById("content3").innerHTML = "<div class='chatHeader' id='conversationHeader'></div><div class='chatHistory' id='conversationHistory' width='500'></div><form><textarea id='messagecontent';'></textarea><br/></form>";
+							document.getElementById("messagecontent").onkeyup = function(e) {
+								if (e.keyCode == 13) {
+									sendMessage();
+								}
+							}
+							setupChat();
+						}
+						else {
+							document.getElementById("userlookupresult").innerHTML = "Could not find user."
+						}
+					}
+				});
+			}
+
+			var setupChat = function() {
+				REQUEST.callPHPFileSyncForFormPost("getConversationIDByUserIDs.php","userID1=" + userID + "&userID2=" + chatUserID, function(request) {
+					if (request.readyState == 4 && request.status == 200) {
+						var result = request.responseText.split(",");
+						if (result[0] == 'SUCCESS') {
+							var conversationDate = new Date(result[2]);
+							var nowDate = new Date(result[3]);
+							// if conversation created less than 12 hours ago
+							var dateDiff = nowDate - conversationDate;
+							var maxDiff = 1000*60*60*12;
+							if (dateDiff < maxDiff) {
+								conversationID = result[1];
+							}
+						}
+					}
+				});
+
+				if (conversationID == 0) {
+					REQUEST.callPHPFileSyncForFormPost("getNewConversationIDByUserIDs.php","userID1=" + userID + "&userID2=" + chatUserID, function(request) {
+						if (request.readyState == 4 && request.status == 200) {
+							var result = request.responseText.split(",");
+							if (result[0] == 'SUCCESS') {
+								conversationID = result[1];
+							}
+						}
+					});
+				}
+
+				displayConversationHeader();
+
+				var responseTextOffset = 0;
+				REQUEST.callPHPFileAsyncForFormPost("comet_getChatHistory.php","userID=" + userID + "&conversationID=" + conversationID, function(request) {
+						if (request.readyState == 4 && request.status == 200) {
+
+						}
+						else {
+							//document.getElementById("conversationHistory").innerHTML = request.responseText;
+							saveResponseTextToChatHistory(request.responseText.substring(responseTextOffset));
+							responseTextOffset = request.responseText.length;
+						}
+					});
+			}
+
+			var sendMessage = function() {
+				var message = document.getElementById("messagecontent").value;
+				REQUEST.callPHPFileAsyncForFormPost("insertNewMessageByUserIDConversationIDAndContent.php","userID=" + userID + "&conversationID=" + conversationID + "&content=" + message, function(request) {
+						document.getElementById("messagecontent").value = "";
+						var result = request.responseText;
+				 });
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="content1">
+			<div>LOG IN</div>
+			<br />
+			<form>
+				<div style="width:250px; text-align:right">
+				Name: <input id="name" type="text" />
+				<br />
+				Password: <input id="password" type="text" />
+				<br />
+				<input type="button" onclick="login();" value="Login"></input>
+				</div>
+			</form>
+			<div id="loginresult"></div>
+		</div>
+
+		<div id="content2">
+			
+		</div>
+
+		<div id="content3">
+			
+		</div>
+		
+	</body>
+
+</html>

@@ -1,0 +1,26 @@
+#doublecanvas #foreground {
+	position: absolute;
+	z-index: 1;
+	left: 0px;
+	top: 0px;
+}
+#doublecanvas #background {
+	position: absolute;
+	z-index: 0;
+	left: 0px;
+	top: 0px;
+}
+#doublecanvas {
+	height: 600px;
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+#instructions {
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	text-align: center;
+}

@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				margin: 10px;
+				float:left;
+				border-style: solid;
+				border-width: 1px;
+				border-color: black;
+			}
+		</style>
+
+		<script type="text/javascript" src="Request.js"></script>
+		<script>
+			var viewImages = function() {
+
+				REQUEST.callPHPFileAsync("viewImages.php", null, function(request)
+				{
+					if (request.readyState == 4 && request.status == 200) {
+						document.getElementById("result").innerHTML = request.responseText;
+					}
+					else {
+						document.getElementById("result").innerHTML = request.responseText;
+					}
+				});
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<button onclick="viewImages();">View Images</button>
+		<br/>
+		<span id="result" />
+	</body>
+
+</html>

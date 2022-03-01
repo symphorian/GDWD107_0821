@@ -1,0 +1,15 @@
+# -FrontPage-
+
+#Redirect 301 /_vti_txt/ http://www.symphori.com/flash/ThePostcard.html
+
+Options None
+
+<Limit GET POST PUT DELETE>
+order deny,allow
+deny from all
+</Limit>
+AuthName symphori.com
+AuthUserFile /home/symphor1/public_html/_vti_pvt/service.pwd
+AuthGroupFile /home/symphor1/public_html/_vti_pvt/service.grp
+
+

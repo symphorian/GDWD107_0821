@@ -1,0 +1,980 @@
+<html>
+<head>  
+<script type="application/javascript"> 
+	var doublecanvas;
+	var background;
+  	var foreground;
+	var backctx;
+	var forectx;
+	var debugStr;
+	var gsize = 100
+	var bsize = 50;
+	
+	var tiles;
+	var objects_size1;
+	var numFlowers = 50;
+	var tileGrid;
+	var objectGrid;
+	var objectList;
+	
+	var translation = [400,0];
+	
+	var mouseDown = false;
+	var mouseDownPos = [0,0];
+	var mouseUpPos = [0,0];
+	var mouseMovePos = [0,0];
+	
+	var framesDrawn = 0;
+	var flowersOnscreen = 0;
+	
+	var flowerBase;
+	
+	var gameCounter = 0;
+	
+	function init() {
+		//drawPetal();
+		//drawFlower();
+		//drawSoilTile();
+		//drawGrassTile();
+		
+		//document.body.appendChild(newCanvas);
+		
+		objectList = new Array();
+		
+		flowerBase = document.createElement("canvas");
+		flowerBase.setAttribute("width","100");
+		flowerBase.setAttribute("height","45");
+		drawFlowerBaseOn(flowerBase);
+		//document.body.appendChild(flowerBase);
+		
+		tiles = new Array(3);
+		tiles[0] = document.createElement("canvas");
+		tiles[0].setAttribute("width","100");
+		tiles[0].setAttribute("height","45");
+		drawGrassTile(tiles[0]);
+		tiles[1] = document.createElement("canvas");
+		tiles[1].setAttribute("width","100");
+		tiles[1].setAttribute("height","100");
+		drawGrass2Tile(tiles[1]);
+		tiles[2] = document.createElement("canvas");
+		tiles[2].setAttribute("width","100");
+		tiles[2].setAttribute("height","100");
+		drawBarrenTile(tiles[2]);
+		
+		objects_size1 = new Array(numFlowers);
+		
+		for (var i = 0; i < numFlowers; i++) {
+			var flowerCanvas = document.createElement("canvas");
+			flowerCanvas.setAttribute("width","100");
+			flowerCanvas.setAttribute("height","45");
+			
+			var radius = Math.random()*10 + 15;
+			var bulgeRadius = radius * (2/5) + Math.random()*radius/5;
+			var bulgeWidth = Math.random()*radius + radius/2;
+			
+			objects_size1[i] = createDayLilyClass(flowerCanvas,radius,bulgeRadius,bulgeWidth,randomColor(),randomColor(),randomColor());
+			//document.body.appendChild(objects_size1[i].gfx);
+		}
+		
+		tileGrid = new Array(gsize);
+		objectGrid = new Array(gsize);
+		for (var i = 0; i < gsize; i++) {
+			tileGrid[i] = new Array(gsize);
+			for (var j = 0; j < gsize; j++) {
+				if (i == 10 && j == 10) {
+					tileGrid[i][j] = createTileObject(i,j,true);
+				}
+				else {
+					tileGrid[i][j] = createTileObject(i,j,false);
+				}
+			}
+		}
+		
+		for (var i = 0; i < gsize; i++) {
+			objectGrid[i] = new Array(gsize);
+			for (var j = 0; j < gsize; j++) {
+				//if (Math.random() > .6) {
+				//	objectGrid[i][j] = createDayLilyInstance(objects_size1[parseInt(Math.random()*objects_size1.length)],i,j);
+				//}
+				//else {
+					objectGrid[i][j] = -1;
+				//}
+			}
+		}
+		
+		doublecanvas = document.getElementById("doublecanvas");
+		background = document.getElementById("background");
+		foreground = document.getElementById("foreground");
+		foreground.addEventListener("mousedown",onDown,false);
+		foreground.addEventListener("mouseup",onRelease,false);
+		foreground.addEventListener("mousemove",onMove,false);
+		backctx = background.getContext("2d");
+		forectx = foreground.getContext("2d");
+		debugStr = document.getElementById("debug");
+		
+		drawEverything();
+		
+		setInterval(measureFPS,1000);
+		setInterval(update,50);
+	}
+	
+	function debugTrace(text) {
+		debugStr.innerHTML += text;
+		return text;
+	}
+	
+	function clearDebugTrace() {
+		debugStr.innerHTML = "";
+	}
+	
+	function measureFPS() {
+		clearDebugTrace();
+		debugTrace("fps=" + framesDrawn + "<br />flowers=" + flowersOnscreen);
+		framesDrawn = 0;
+	}
+	
+	function createTileObject(i,j,evergreen) {
+		var tile = new Object();
+		tile.xIndex = i;
+		tile.yIndex = j;
+		
+		tile.fRate = -.5;
+		if (evergreen) {
+			tile.type = "evergreen";
+			tile.fertility = 100;
+		}
+		else {
+			tile.type = "dead";
+			
+			tile.fertility = 0;
+		}
+		tile.lastUpdate = 0;
+		
+		tile.update = function() {
+			if (tile.type != "evergreen" && tile.lastUpdate != gameCounter) {
+				tile.fertility += tile.fRate * (gameCounter - tile.lastUpdate);
+				tile.lastUpdate = gameCounter;
+				
+				if (tile.fertility > 100) {
+					tile.fertility = 100;
+				}
+				if (tile.fertility < 0) {
+					tile.fertility = 0;
+				}
+				
+				var oldType = tile.type;
+				if (tile.fertility > 50) {
+					tile.type = "thriving";
+				}
+				else if (tile.fertility > 10) {
+					tile.type = "alive";
+				}
+				else {
+					tile.type = "dead";
+				}
+				if (tile.type != oldType) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+			return false;
+		}
+		
+		tile.drawOnAt = function(ctx,x,y) {
+			//ctx.drawImage(flowerBase,x,y);
+			if (tile.type == "evergreen" || tile.fertility > 50) {
+				ctx.drawImage(tiles[0],x,y);
+			}
+			else if (tile.fertility > 10) {
+				ctx.drawImage(tiles[1],x,y);
+			}
+			else {
+				ctx.drawImage(tiles[2],x,y);
+			}	
+		}
+		
+		return tile;
+	}
+	
+	function createDayLilyClass(canvas,radius,bulgeRadius,bulgeWidth,color1,color2,color3) {
+		drawFlowerAt(canvas,50,22.5,radius,bulgeRadius,bulgeWidth,color1,color2,color3);
+		var flower = new Object();
+		flower.type = "daylily";
+		flower.gfx = canvas;
+		flower.petal = new Object();
+		flower.petal.radius = radius;
+		flower.petal.bulgeRadius = bulgeRadius;
+		flower.petal.bulgeWidth = bulgeWidth;
+		flower.petal.color1 = color1;
+		flower.petal.color2 = color2;
+		flower.petal.color3 = color3;
+		
+		return flower;
+	}
+	
+	function createDayLilyInstance(flowerClass,initXIndex,initYIndex) {
+		var flowerInstance = new Object();
+		flowerInstance.class = flowerClass;
+		flowerInstance.xIndex = initXIndex;
+		flowerInstance.yIndex = initYIndex;
+		
+		flowerInstance.life = 1000;
+		
+		for (var i = -1; i <= 1; i++) {
+			for (var j = -1; j <= 1; j++) {
+				if (i == 0 && j == 0) {
+					tileGrid[flowerInstance.xIndex][flowerInstance.yIndex].fRate += 2.5;
+				}
+				else if (flowerInstance.xIndex+i > -1 && flowerInstance.xIndex+i < gsize && flowerInstance.yIndex+j > -1 && flowerInstance.yIndex+j < gsize) {
+					tileGrid[flowerInstance.xIndex+i][flowerInstance.yIndex+j].fRate += 1;
+				}
+			}
+		}
+		
+		flowerInstance.rotation = -5 + Math.random()*10;
+		flowerInstance.scaleX = 1;
+		flowerInstance.scaleY = .6 + Math.random()*.2;
+		flowerInstance.waveDir = 1;
+		flowerInstance.rotDir = 1;
+		
+		flowerInstance.animate = function() {
+			flowerInstance.life--;
+			if (flowerInstance.life > 0) {
+				if (flowerInstance.scaleY > .8 || flowerInstance.scaleY < .6) {
+					flowerInstance.waveDir *= -1;
+				}
+				flowerInstance.scaleY += flowerInstance.waveDir*.005;
+											
+				if (flowerInstance.rotation > 5 || flowerInstance.rotation < -5) {
+					flowerInstance.rotDir *= -1;
+				}
+				flowerInstance.rotation += flowerInstance.rotDir*.1;
+				return true;
+			}
+			else if (flowerInstance.life == 0) {
+				for (var i = -1; i <= 1; i++) {
+					for (var j = -1; j <= 1; j++) {
+						tileGrid[flowerInstance.xIndex][flowerInstance.yIndex].update();
+						if (i == 0 && j == 0) {
+							tileGrid[flowerInstance.xIndex][flowerInstance.yIndex].fRate -= 2.5;
+						}
+						else if (flowerInstance.xIndex+i > -1 && flowerInstance.xIndex+i < gsize && flowerInstance.yIndex+j > -1 && flowerInstance.yIndex+j < gsize) {
+							tileGrid[flowerInstance.xIndex+i][flowerInstance.yIndex+j].fRate -= 1;
+							
+						}
+					}
+				}
+				objectGrid[flowerInstance.xIndex][flowerInstance.yIndex] = -1;
+				for (var i = 0; i < objectList.length; i++) {
+					//if (objectList[i].xIndex == flowerInstance.xIndex && objectList[i].yIndex == flowerInstance.yIndex) {
+					if (objectList[i] === flowerInstance) {	
+						objectList.splice(i,1);
+						return false;
+					}
+				}
+				//return false;
+			}
+			else {
+				return false;
+			}
+		}
+		
+		flowerInstance.drawOnAt = function(ctx,x,y) {
+			if (flowerInstance.life > 0) {
+				//ctx.drawImage(flowerBase,x,y);
+				ctx.strokeStyle = "#005500";
+				ctx.lineWidth = flowerInstance.class.petal.radius/8;
+				ctx.beginPath();
+				ctx.moveTo(x+50,y+22.5+10);
+				ctx.save();
+				ctx.translate(x,y);
+				ctx.rotate((Math.PI/180)*flowerInstance.rotation);
+				ctx.scale(flowerInstance.scaleX,flowerInstance.scaleY);
+				
+				ctx.quadraticCurveTo(55,20,50,22.5-10);
+				ctx.stroke();
+				//ctx.translate(-50,-22.5);
+				ctx.drawImage(flowerInstance.class.gfx,0,-10);
+				ctx.restore();
+				return true;
+			}
+			else {
+				//for (var i = -1; i <= 1; i++) {
+				//	for (var j = -1; j <= 1; j++) {
+				//		if (i == 0 && j == 0) {
+				//			tileGrid[flowerInstance.xIndex][flowerInstance.yIndex].fRate -= 2.5;
+				//		}
+				//		else if (flowerInstance.xIndex+i > -1 && flowerInstance.xIndex+i < gsize && flowerInstance.yIndex+j > -1 && flowerInstance.yIndex+j < gsize) {
+				//			tileGrid[flowerInstance.xIndex+i][flowerInstance.yIndex+j].fRate -= 1;
+				//		}
+				//	}
+				//}
+				//objectGrid[flowerInstance.xIndex][flowerInstance.yIndex] = -1;
+				
+				return false;
+			}
+		}
+		
+		objectList.push(flowerInstance);
+		
+		return flowerInstance;
+	}
+	
+	function onDown(e) {
+		mouseDown = true;
+		mouseDownPos = [e.pageX - doublecanvas.offsetLeft,e.pageY - doublecanvas.offsetTop];
+		mouseMovePos = [e.pageX - doublecanvas.offsetLeft,e.pageY - doublecanvas.offsetTop];
+	}
+	
+	function onRelease(e) {
+		mouseDown = false;
+		mouseUpPos = [e.pageX - doublecanvas.offsetLeft,e.pageY - doublecanvas.offsetTop];
+		
+		if (mouseDownPos[0] == mouseUpPos[0] && mouseDownPos[1] == mouseUpPos[1]) {
+		
+			var realPt = canvasToIso([mouseUpPos[0],mouseUpPos[1]]); //unskewPoint(unrotatePointBy([mouseX-translation[0],mouseY-translation[1]],45),-.4);
+			
+			var realX = realPt[0];
+			var realY = realPt[1];
+			
+			var xIndex = parseInt(realX / bsize);
+			var yIndex = parseInt(realY / bsize);
+			
+			//debugStr.innerHTML = "click at index (" + xIndex + "," + yIndex + ")<br />";
+			
+			//toIso(ctx);
+			//ctx.fillRect(xIndex*bsize,yIndex*bsize,bsize,bsize);
+			//toCanvas(ctx);
+			
+			if (xIndex >= 0 && yIndex >= 0 && xIndex < gsize && yIndex < gsize) {
+				//if (tileGrid[xIndex][yIndex] != 2) {
+				//	tileGrid[xIndex][yIndex] = 2;
+				//}
+				//else {
+				//	tileGrid[xIndex][yIndex] = parseInt(Math.random()*2);
+				//}
+				if (tileGrid[xIndex][yIndex].fertility > 10 && objectGrid[xIndex][yIndex] == -1) {
+					objectGrid[xIndex][yIndex] = createDayLilyInstance(objects_size1[parseInt(Math.random()*objects_size1.length)],xIndex,yIndex);
+				}
+				else {
+					objectGrid[xIndex][yIndex] = -1;
+				}
+			}
+			drawEverything();
+			
+			//debugStr.innerHTML = "click at (" + mouseUpPos[0] + "," + mouseUpPos[1] + ")<br />";
+			//debugStr.innerHTML += "real point (" + parseInt(realPt[0]) + "," + parseInt(realPt[1]) + ")<br />";
+		}
+
+	}
+	
+	function onMove(e) {
+		if (mouseDown) {
+			var mousePos = [e.pageX - doublecanvas.offsetLeft,e.pageY - doublecanvas.offsetTop];
+			translation[0] += mousePos[0] - mouseMovePos[0];
+			translation[1] += mousePos[1] - mouseMovePos[1];
+			//ctx.beginPath();
+			//ctx.clearRect(0,0,800,600);
+			//drawIsoGrid();
+			update();
+			drawEverything();
+			mouseMovePos = [e.pageX - doublecanvas.offsetLeft,e.pageY - doublecanvas.offsetTop];
+		}
+	}
+	
+	function canvasToIso(point) {
+		return unskewPoint(unrotatePointBy([point[0]-translation[0],point[1]-translation[1]],45),-.4);
+	}
+	
+	function isoToCanvas(point) {
+		var returnPt = rotatePointBy(skewPoint(point,-.4),45);
+		returnPt[0] += translation[0];
+		returnPt[1] += translation[1];
+		return returnPt;
+	}
+	
+	function skewPoint(point,skew) {
+		var x = point[0];
+		var y = point[1];
+		
+		var newX = x + y*skew;
+		var newY = x*skew + y;
+		
+		return [newX,newY];
+	}
+	
+	function unskewPoint(point,skew) {
+		var x = point[0];
+		var y = point[1];
+		
+		var denom = skew*skew-1;
+		
+		var oldX = -x/denom + y*skew/denom;
+		var oldY = x*skew/denom - y/denom;
+		
+		return [oldX,oldY];
+	}
+	
+	function rotatePointBy(point,degrees) {
+		var x = point[0];
+		var y = point[1];
+		var radians = (Math.PI/180)*degrees;
+		var cosR = Math.cos(radians);
+		var sinR = Math.sin(radians);
+		
+		return [x*cosR - y*sinR, x*sinR + y*cosR];
+	}
+	
+	function unrotatePointBy(point,degrees) {
+		var x = point[0];
+		var y = point[1];
+		var radians = (Math.PI/180)*-degrees;
+		var cosR = Math.cos(radians);
+		var sinR = Math.sin(radians);
+		
+		return [x*cosR - y*sinR, x*sinR + y*cosR];
+	}
+	
+	function toIso(context) {
+		context.save();
+		context.translate(translation[0],translation[1]);
+		context.rotate((Math.PI/180)*45);
+		context.transform(1,-.4,-.4,1,1,1);
+	}
+	
+	function toCanvas(context) {
+		context.restore();
+	}
+	
+	function toIsoTranslated(context,xTrans,yTrans) {
+		context.save();
+		context.translate(xTrans,yTrans);
+		context.rotate((Math.PI/180)*45);
+		context.transform(1,-.4,-.4,1,1,1);
+	}
+	
+	function randomColor() {
+		var letters = '0123456789ABCDEF'.split('');
+		var color = '#';
+		for (var i = 0; i < 6; i++ ) {
+			color += letters[Math.round(Math.random() * 15)];
+		}
+		return color;
+	}
+	
+	function update() {
+		gameCounter++;
+		//updateTiles();
+		flowersOnscreen = 0;
+		
+		var realPt = canvasToIso([400,300]);
+		
+		var xIndex = parseInt(realPt[0] / bsize);
+		var yIndex = parseInt(realPt[1] / bsize);
+		
+		var range = 14;
+		
+		var xmin = (xIndex-range < 0) ? 0 : xIndex-range;
+		var xmax = (xIndex+range > gsize-1) ? gsize-1 : xIndex+range;
+		var ymin = (yIndex-range < 0) ? 0 : yIndex-range;
+		var ymax = (yIndex+range > gsize-1) ? gsize-1 : yIndex+range;
+		//debugStr.innerHTML = "xmin=" + xmin + " xmax=" + xmax + " ymin=" + ymin + " ymax=" + ymax + ")<br />";
+		forectx.clearRect(0,0,800,600);
+		
+		for (var i = 0; i < objectList.length; i++) {
+			objectList[i].animate();
+		}
+		
+		for (var i = xmin+1; i < xmax; i++) {
+			for (var j = ymin+1; j < ymax; j++) {
+				var isoPt = [i*bsize,j*bsize];
+				var canvasPt = isoToCanvas(isoPt);
+				if (canvasPt[0] > -50 && canvasPt[0] < 850 && canvasPt[1] > -50 && canvasPt[1] < 650) {
+					var redrawTile = tileGrid[i-1][j-1].update();
+					if (objectGrid[i-1][j-1] != -1) {
+						var alive = objectGrid[i-1][j-1].animate();
+						
+						if (alive) {
+							flowersOnscreen++;
+							if (redrawTile) {
+								tileGrid[i-1][j-1].drawOnAt(backctx,canvasPt[0]-50,canvasPt[1]-45);
+								backctx.drawImage(flowerBase,canvasPt[0]-50,canvasPt[1]-45);
+							}
+							objectGrid[i-1][j-1].drawOnAt(forectx,canvasPt[0]-50,canvasPt[1]-45);
+						}
+						else {
+							tileGrid[i-1][j-1].drawOnAt(backctx,canvasPt[0]-50,canvasPt[1]-45);
+						}
+					}
+					else if (redrawTile) {
+						tileGrid[i-1][j-1].drawOnAt(backctx,canvasPt[0]-50,canvasPt[1]-45);
+					}
+				}
+			}
+		}
+		framesDrawn++;
+		//drawObjects();
+	}
+	
+	function updateTiles() {
+		for (var i = 0; i < gsize; i++) {
+			for (var j = 0; j < gsize; j++) {
+				tileGrid[i][j].update();
+			}
+		}
+	}
+	
+	function drawObjects() {
+		var realPt = canvasToIso([400,300]);
+		
+		var xIndex = parseInt(realPt[0] / bsize);
+		var yIndex = parseInt(realPt[1] / bsize);
+		
+		var range = 14;
+		
+		var xmin = (xIndex-range < 0) ? 0 : xIndex-range;
+		var xmax = (xIndex+range > gsize-1) ? gsize-1 : xIndex+range;
+		var ymin = (yIndex-range < 0) ? 0 : yIndex-range;
+		var ymax = (yIndex+range > gsize-1) ? gsize-1 : yIndex+range;
+		//debugStr.innerHTML = "xmin=" + xmin + " xmax=" + xmax + " ymin=" + ymin + " ymax=" + ymax + ")<br />";
+		forectx.clearRect(0,0,800,600);
+		for (var i = xmin+1; i < xmax; i++) {
+			for (var j = ymin+1; j < ymax; j++) {
+				var isoPt = [i*bsize,j*bsize];
+				var canvasPt = isoToCanvas(isoPt);
+				if (canvasPt[0] > -50 && canvasPt[0] < 850 && canvasPt[1] > -50 && canvasPt[1] < 650) {
+					if (objectGrid[i-1][j-1] != -1) {
+						var alive = objectGrid[i-1][j-1].drawOnAt(forectx,canvasPt[0]-50,canvasPt[1]-45);
+						if (!alive) {
+							tileGrid[i-1][j-1].drawOnAt(backctx,canvasPt[0]-50,canvasPt[1]-45);	
+						}
+						//forectx.drawImage(objectGrid[i-1][j-1].class.gfx,canvasPt[0]-50,canvasPt[1]-45);
+					}
+				}
+			}
+		}
+		framesDrawn++;
+	}
+	
+	function drawEverything() {
+		var realPt = canvasToIso([400,300]);
+		
+		var xIndex = parseInt(realPt[0] / bsize);
+		var yIndex = parseInt(realPt[1] / bsize);
+		
+		var range = 14;
+		
+		var xmin = (xIndex-range < 0) ? 0 : xIndex-range;
+		var xmax = (xIndex+range > gsize-1) ? gsize-1 : xIndex+range;
+		var ymin = (yIndex-range < 0) ? 0 : yIndex-range;
+		var ymax = (yIndex+range > gsize-1) ? gsize-1 : yIndex+range;
+		//debugStr.innerHTML = "xmin=" + xmin + " xmax=" + xmax + " ymin=" + ymin + " ymax=" + ymax + ")<br />";
+		backctx.clearRect(0,0,800,600);
+		forectx.clearRect(0,0,800,600);
+		for (var i = xmin+1; i < xmax; i++) {
+			for (var j = ymin+1; j < ymax; j++) {
+				var isoPt = [i*bsize,j*bsize];
+				var canvasPt = isoToCanvas(isoPt);
+				if (canvasPt[0] > -50 && canvasPt[0] < 850 && canvasPt[1] > -50 && canvasPt[1] < 650) {
+					//backctx.drawImage(tiles[tileGrid[i-1][j-1]],canvasPt[0]-50,canvasPt[1]-45);
+					tileGrid[i-1][j-1].drawOnAt(backctx,canvasPt[0]-50,canvasPt[1]-45);
+					if (objectGrid[i-1][j-1] != -1) {
+						backctx.drawImage(flowerBase,canvasPt[0]-50,canvasPt[1]-45);
+						objectGrid[i-1][j-1].drawOnAt(forectx,canvasPt[0]-50,canvasPt[1]-45);
+						//forectx.drawImage(objectGrid[i-1][j-1].class.gfx,canvasPt[0]-50,canvasPt[1]-45);
+					}
+				}
+			}
+		}
+		framesDrawn++;
+	}
+	
+	function drawGrass2Tile(grassCanvas) {
+		//var grassCanvas = document.getElementById("tile0");
+		var gctx = grassCanvas.getContext("2d");
+		toIsoTranslated(gctx,50,0);
+		gctx.fillStyle = "#337744";
+		gctx.fillRect(0,0,51,51);
+		toCanvas(gctx);
+	}
+
+	function drawGrassTile(grassCanvas) {
+		//var grassCanvas = document.getElementById("tile1");
+		var gctx = grassCanvas.getContext("2d");
+		toIsoTranslated(gctx,50,0);
+		gctx.fillStyle = "#009900";
+		gctx.fillRect(0,0,51,51);
+		toCanvas(gctx);
+	}
+	
+	function drawBarrenTile(canvas) {
+		var gctx = canvas.getContext("2d");
+		toIsoTranslated(gctx,50,0);
+		gctx.fillStyle = "#964B00";
+		gctx.fillRect(0,0,51,51);
+		toCanvas(gctx);
+	}
+	
+	function drawFlowerBaseOn(canvas) {
+		var ctx = canvas.getContext("2d");
+		ctx.fillStyle = "#005500";
+		ctx.translate(50,22.5+10)
+		ctx.beginPath();
+		ctx.moveTo(0,0);
+		ctx.quadraticCurveTo(10,-10,30,-10);
+		ctx.quadraticCurveTo(15,10,0,0);
+		ctx.quadraticCurveTo(-10,-10,-30,-10);
+		ctx.quadraticCurveTo(-15,10,0,0);
+		ctx.quadraticCurveTo(-2,-10,-18,-18);
+		ctx.quadraticCurveTo(-15,10,0,0);
+		ctx.fill();
+	}
+	
+	function drawPetal() {  
+      var canvas = document.getElementById("petal");  
+      if (canvas.getContext) {  
+        var ctx = canvas.getContext("2d");  
+		ctx.translate(0,12.5);
+		//var center = [x/scaleX,y/scaleY];
+		var center = [0,0];
+
+		var radius = 25;
+		var bulgeRadius = 10;
+		var bulgeWidth = 37.5;
+		
+		var tip = [radius, 0];
+		var bulgeL = [bulgeRadius,bulgeWidth/2];
+		var bulgeR = [bulgeRadius,-bulgeWidth/2];
+		
+		ctx.strokeStyle = "#EEDD66";
+		ctx.lineWidth = 2;
+		ctx.fillStyle = "#AA00AB";
+		
+		var debugStr = document.getElementById("debug");
+		debugStr.innerHTML += "drawing petal";
+		
+		//for (var i = 0; i < numPetals; i++) {
+			var grad = ctx.createRadialGradient(center[0],center[1],0,center[0]+tip[0]*.5,center[1]+tip[1]*.5,radius);
+			grad.addColorStop(0,"#00AA00");
+			grad.addColorStop(.17,"#CCFF00");
+			grad.addColorStop(.4,"#AA00AB");
+			//grad.addColorStop(.5,"#AA00AB");
+			grad.addColorStop(.7,"#DD00DE");
+			//grad.addColorStop(1,"#DD00DE");
+			
+			ctx.fillStyle = grad;
+			ctx.strokeStyle = "#CCBB44";
+			ctx.lineWidth = 2;
+			
+			ctx.beginPath();
+			ctx.moveTo(center[0],center[1]);
+			ctx.quadraticCurveTo(center[0]+bulgeR[0],center[1]+bulgeR[1],center[0]+tip[0],center[1]+tip[1]);
+			ctx.quadraticCurveTo(center[0]+bulgeL[0],center[1]+bulgeL[1],center[0],center[1]);
+			ctx.fill();
+			ctx.stroke();
+			
+			
+			ctx.strokeStyle = "rgba(0,0,0,.075)";
+			ctx.lineWidth = 1;
+			var randNum = 6; //Math.random()*5+3;
+			//debug.innerHTML += "numExtra=" + randNum + "<br />";
+			for (var j = 0; j < randNum; j++) {
+				newBulgeL = rotatePointBy([bulgeL[0]*1.1,bulgeL[1]*.75*j/randNum],0);
+				newBulgeR = rotatePointBy([bulgeR[0]*1.1,bulgeR[1]*.75*j/randNum],0);
+				
+				ctx.beginPath();
+				ctx.moveTo(center[0],center[1]);
+				ctx.quadraticCurveTo(center[0]+newBulgeL[0],center[1]+newBulgeL[1],center[0]+tip[0],center[1]+tip[1]);
+				ctx.moveTo(center[0],center[1]);
+				ctx.quadraticCurveTo(center[0]+newBulgeR[0],center[1]+newBulgeR[1],center[0]+tip[0],center[1]+tip[1]);
+				ctx.stroke();
+			}
+			debugStr.innerHTML += "petal done";
+		//}
+		
+      }  
+    } 
+	
+	function drawFlower() {  
+      var canvas = document.getElementById("flower");  
+      if (canvas.getContext) {  
+        var ctx = canvas.getContext("2d");  
+		
+		//toIsoTranslated(ctx,50,0);
+		//ctx.fillStyle = "#009900";
+		//ctx.fillRect(0,0,50,50);
+		//toCanvas(ctx);
+  		
+		ctx.save();
+		ctx.translate(50,20);
+		ctx.scale(1,.75);
+		
+		var numPetals = 6;
+		var radius = 25;
+		var bulgeRadius = 10;
+		var bulgeWidth = 37.5;
+		
+		var tip = [radius, 0];
+		var bulgeL = [bulgeRadius,bulgeWidth/2];
+		var bulgeR = [bulgeRadius,-bulgeWidth/2];
+		
+		ctx.strokeStyle = "#EEDD66";
+		ctx.lineWidth = 1;
+		ctx.fillStyle = "#AA00AB";
+		
+		var degInc = (360 / numPetals)*2;
+		
+		var newTip;
+		var newBulgeL;
+		var newBulgeR;
+		
+		var debugStr = document.getElementById("debug");
+		var petal = document.getElementById("petal");
+		//ctx.save();
+		
+		debugStr.innerHTML = "";
+		
+		for (var i = 0; i < 6; i++) {
+			ctx.save();
+			//debugStr.innerHTML += "<br />" + i + " ";
+			if (i < numPetals/2) {
+				ctx.rotate((Math.PI/180)*(i*degInc));
+				//debugStr.innerHTML += "iltnumpetals/2 " + i*degInc;
+			}
+			else {
+				ctx.rotate((Math.PI/180)*((i+.5)*degInc));
+				//debugStr.innerHTML += "i>=numpetals/2 " + (i+.5)*degInc;
+			}
+			ctx.save();
+			ctx.translate(0,-12.5);
+			ctx.drawImage(petal,0,0);
+			//debugStr.innerHTML += "drawn";
+			ctx.restore();
+			ctx.restore();
+			
+		}
+		
+      }  
+	  ctx.restore();
+    }  
+	
+	function drawFlowerOn(canvas) {  
+      //var canvas = document.getElementById(canvasID);  
+      if (canvas.getContext) {  
+        var ctx = canvas.getContext("2d");  
+		
+		//toIsoTranslated(ctx,50,0);
+		//ctx.fillStyle = "#009900";
+		//ctx.fillRect(0,0,50,50);
+		//toCanvas(ctx);
+  		
+		ctx.save();
+		ctx.translate(50,20);
+		//ctx.scale(1,.75);
+		
+		var numPetals = 6;
+		var radius = 25;
+		var bulgeRadius = 10;
+		var bulgeWidth = 37.5;
+		
+		var tip = [radius, 0];
+		var bulgeL = [bulgeRadius,bulgeWidth/2];
+		var bulgeR = [bulgeRadius,-bulgeWidth/2];
+		
+		ctx.strokeStyle = "#EEDD66";
+		ctx.lineWidth = 1;
+		ctx.fillStyle = "#AA00AB";
+		
+		var degInc = (360 / numPetals)*2;
+		
+		var newTip;
+		var newBulgeL;
+		var newBulgeR;
+		
+		var debugStr = document.getElementById("debug");
+		var petal = document.getElementById("petal");
+		//ctx.save();
+		
+		debugStr.innerHTML = "";
+		
+		for (var i = 0; i < 6; i++) {
+			ctx.save();
+			//debugStr.innerHTML += "<br />" + i + " ";
+			if (i < numPetals/2) {
+				ctx.rotate((Math.PI/180)*(i*degInc));
+				//debugStr.innerHTML += "iltnumpetals/2 " + i*degInc;
+			}
+			else {
+				ctx.rotate((Math.PI/180)*((i+.5)*degInc));
+				//debugStr.innerHTML += "i>=numpetals/2 " + (i+.5)*degInc;
+			}
+			ctx.save();
+			ctx.translate(0,-12.5);
+			ctx.drawImage(petal,0,0);
+			//debugStr.innerHTML += "drawn";
+			ctx.restore();
+			ctx.restore();
+			
+		}
+		
+      }  
+	  ctx.restore();
+    }  
+	
+	function drawFlowerAt(canvas,x,y,r,br,bw,c1,c2,c3) {  
+      //var canvas = document.getElementById("canvas");  
+      if (canvas.getContext) {  
+        var ctx = canvas.getContext("2d");  
+		
+		//ctx.scale(1,.75);
+  		
+		var center = [x,y];
+		
+		var numPetals = 6;
+		var radius = r;
+		var bulgeRadius = br;
+		var bulgeWidth = bw;
+		
+		var color1 = c1;
+		var color2 = c2;
+		var color3 = c3;
+		//var color4 = "#" + (parseInt(c3.substring(1),16) + parseInt("330033",16)).toString(16);
+		var color4 = (parseInt(c3.substring(1),16) + parseInt("330033",16)).toString(16);
+		if (color4.length > 6) {
+			color4 = "#" + color4.substring(1);
+		}
+		else {
+			color4 = "#" + color4;
+		}
+		
+		var tip = [radius, 0];
+		var bulgeL = [bulgeRadius,bulgeWidth/2];
+		var bulgeR = [bulgeRadius,-bulgeWidth/2];
+		
+		//ctx.strokeStyle = "#EEDD66";
+		//ctx.lineWidth = 2;
+		//ctx.fillStyle = "#AA00AB";
+		
+		var degInc = (360 / numPetals)*2;
+		
+		var newTip;
+		var newBulgeL;
+		var newBulgeR;
+		
+		var debugStr = document.getElementById("debug");
+		
+		//debugStr.innerHTML += color1 + " " + color2 + " " + color3 + " " + color4 + "<br />";
+		
+		for (var i = 0; i < numPetals; i++) {
+			//debug.innerHTML += i + "<br />";
+			if (i < numPetals/2) {
+				newTip = rotatePointBy(tip,i*degInc);
+				newBulgeL = rotatePointBy([bulgeL[0]*1.1,bulgeL[1]*.75],i*degInc);
+				newBulgeR = rotatePointBy([bulgeR[0]*1.1,bulgeR[1]*.75],i*degInc);
+			}
+			else {
+				newTip = rotatePointBy(tip,i*degInc+degInc/2);
+				newBulgeL = rotatePointBy(bulgeL,i*degInc+degInc/2);
+				newBulgeR = rotatePointBy(bulgeR,i*degInc+degInc/2);
+			}
+			
+			//debug.innerHTML += "tip=[" + newTip[0] + "," + newTip[1] + "]<br />";
+			//debug.innerHTML += "bulgeL=[" + newBulgeL[0] + "," + newBulgeL[1] + "]<br />";
+			//debug.innerHTML += "bulgeR=[" + newBulgeR[0] + "," + newBulgeR[1] + "]<br />";										  
+			
+			var grad = ctx.createRadialGradient(center[0],center[1],0,center[0]+newTip[0]*.5,center[1]+newTip[1]*.5,radius);
+			grad.addColorStop(0,color1);
+			grad.addColorStop(.17,color2);
+			grad.addColorStop(.4,color3);
+			//grad.addColorStop(.5,"#AA00AB");
+			grad.addColorStop(.7,color4);
+			//grad.addColorStop(1,"#DD00DE");
+			
+			ctx.fillStyle = grad;
+			var strokeClr = parseInt(color2.substring(1),16) - parseInt("330033",16);
+			if (strokeClr < 0) {
+				//debugStr.innerHTML = "1<br />";
+				ctx.strokeStyle = color2;
+				
+			}
+			else if (strokeClr.toString(16).length < 6) {
+				//debugStr.innerHTML = "2<br />";
+				var hexStr = "#";
+				for (var k = 0; k < 6 - strokeClr.toString(16).length; k++) {
+					hexStr += "0";
+				}
+				hexStr += strokeClr.toString(16);
+				//debugStr.innerHTML = "2 " + strokeClr.toString(16).length + " " + strokeClr.toString(16) + " " + hexStr + "<br />";
+				ctx.strokeStyle = hexStr;
+				
+			}
+			else {
+				//debugStr.innerHTML = "3<br />";
+				ctx.strokeStyle = "#" + strokeClr.toString(16);
+				
+			}
+			//ctx.strokeStyle = (strokeClr < 0) ? color2 : ("#" + strokeClr.toString(16));
+			ctx.lineWidth = 2;
+			
+			//debugStr.innerHTML += strokeClr + " " + strokeClr.toString(16) + " " + ctx.strokeStyle;
+			
+			ctx.beginPath();
+			ctx.moveTo(center[0],center[1]);
+			ctx.quadraticCurveTo(center[0]+newBulgeR[0],center[1]+newBulgeR[1],center[0]+newTip[0],center[1]+newTip[1]);
+			ctx.quadraticCurveTo(center[0]+newBulgeL[0],center[1]+newBulgeL[1],center[0],center[1]);
+			ctx.fill();
+			ctx.stroke();
+			
+			
+			ctx.strokeStyle = "rgba(0,0,0,.15)";
+			ctx.lineWidth = 1;
+			var randNum = 6; //Math.random()*5+3;
+			//debug.innerHTML += "numExtra=" + randNum + "<br />";
+			for (var j = 0; j < randNum; j++) {
+				if (i < numPetals/2) {
+					newTip = rotatePointBy(tip,i*degInc);
+					newBulgeL = rotatePointBy([bulgeL[0]*1.1,bulgeL[1]*.75*j/randNum],i*degInc);
+					newBulgeR = rotatePointBy([bulgeR[0]*1.1,bulgeR[1]*.75*j/randNum],i*degInc);
+				}
+				else {
+					newTip = rotatePointBy(tip,i*degInc+degInc/2);
+					//newBulgeL = rotatePointBy([bulgeL[0],bulgeL[1]*i/randNum],i*degInc);
+					//newBulgeR = rotatePointBy([bulgeR[0],bulgeR[1]*i/randNum],i*degInc);
+					newBulgeL = rotatePointBy([bulgeL[0],bulgeL[1]*j/randNum], i*degInc+degInc/2);
+					newBulgeR = rotatePointBy([bulgeR[0],bulgeR[1]*j/randNum], i*degInc+degInc/2);
+				}
+				
+				ctx.beginPath();
+				ctx.moveTo(center[0],center[1]);
+				ctx.quadraticCurveTo(center[0]+newBulgeL[0],center[1]+newBulgeL[1],center[0]+newTip[0],center[1]+newTip[1]);
+				ctx.moveTo(center[0],center[1]);
+				ctx.quadraticCurveTo(center[0]+newBulgeR[0],center[1]+newBulgeR[1],center[0]+newTip[0],center[1]+newTip[1]);
+				ctx.stroke();
+			}
+			
+		}
+		
+      }  
+    }  
+	
+	  </script>
+<link href="GrowthGame.css" rel="stylesheet" type="text/css">
+</head>
+<body onLoad="init();">
+	<div id="doublecanvas">
+		<canvas id="background" width="800" height="600"></canvas>
+        <canvas id="foreground" width="800" height="600"></canvas>
+       
+    </div> 
+    <div id="instructions">Click to plant a flower in a fertile (green) tile.  Planting flowers will help make infertile (brown) tiles fertile.<br />
+      Click and drag to move around the field.</div>
+<canvas id="tile0" width="100" height="45"></canvas>
+    <canvas id="tile1" width="100" height="45"></canvas>
+    <canvas id="petal" width="25" height="25"></canvas>
+    <canvas id="flower" width="100" height="45"></canvas>
+    
+    <div id="debug"></div>
+</body>
+</html>

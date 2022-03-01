@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Audio>
+	<AudioTrack>
+		<Filename>Assets/Audio/StageClear.mp3</Filename>
+		<Alias>StageClear</Alias>
+	</AudioTrack>
+	<AudioTrack>
+		<Filename>Assets/Audio/BossStageClear.mp3</Filename>
+		<Alias>BossStageClear</Alias>
+	</AudioTrack>
+</Audio>

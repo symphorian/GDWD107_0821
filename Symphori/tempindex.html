@@ -1,0 +1,426 @@
+<html>                                                                  
+<head>   
+	<script type="text/javascript" src="Source/BlocksJS.js"></script>
+	  
+  	<script type="text/javascript">
+  		CANVASMANAGER.showErrorMessages();
+		CANVASMANAGER.setStartUpFunction(function() {
+			CANVASMANAGER.assetManager.assetsLoadedEvent.subscribe(function () {
+
+				function sweeperBehavior(obj) {
+					PARAMS.initializeValidation();
+					obj.behaviorVars["sweeperBehavior"] = PARAMS.validateVariableObject(obj.behaviorVars["sweeperBehavior"], 
+																		["forceCounter","forceMax","forceMagnitude"],
+																		[PARAMS.INTEGER, PARAMS.INTEGER, PARAMS.NUMBER],
+																		[0,8,2]);
+
+					if (obj.behaviorVars["sweeperBehavior"].forceCounter >= 0) {
+						obj.xacc = obj.behaviorVars["sweeperBehavior"].forceMagnitude;
+					}
+					else {
+						obj.xacc = 0; //-obj.behaviorVars["sweeperBehavior"].forceMagnitude;
+					}
+
+					obj.behaviorVars["sweeperBehavior"].forceCounter++;
+
+					if (obj.behaviorVars["sweeperBehavior"].forceCounter >= obj.behaviorVars["sweeperBehavior"].forceMax) {
+						obj.behaviorVars["sweeperBehavior"].forceCounter = -obj.behaviorVars["sweeperBehavior"].forceMax;
+					}
+				}
+
+				function createSweeper(relativeY) {
+
+					var sweeperBtm;
+					var sweeperTop;
+
+
+
+					var sweeper = new ActorBlock();
+					sweeper.width = 100;
+					sweeper.height = 100;
+
+					var isLeft = Math.round(Math.random());
+					var rand = Math.random();
+					var isBig = rand > 0.95;
+					if (isLeft) {
+						sweeper.x = -CANVASMANAGER.width/2 - sweeper.width*4;
+
+						if (isBig) {
+							sweeper.scaleX = 1.5;
+							sweeper.scaleY = 1.5;
+
+							sweeperBtm = new CinemaBlock("Sweep",["HelperBtm_SweepR1","HelperBtm_SweepR1",
+																	"HelperBtm_SweepR2","HelperBtm_SweepR2","HelperBtm_SweepR2","HelperBtm_SweepR2",
+																	"HelperBtm_SweepR3","HelperBtm_SweepR3","HelperBtm_SweepR3","HelperBtm_SweepR3",
+																	"HelperBtm_SweepR4","HelperBtm_SweepR4","HelperBtm_SweepR4","HelperBtm_SweepR4",
+																	"HelperBtm_SweepR5","HelperBtm_SweepR5","HelperBtm_SweepR5","HelperBtm_SweepR5",
+																	"HelperBtm_SweepR4","HelperBtm_SweepR4","HelperBtm_SweepR4","HelperBtm_SweepR4",
+																	"HelperBtm_SweepR3","HelperBtm_SweepR3","HelperBtm_SweepR3","HelperBtm_SweepR3",
+																	"HelperBtm_SweepR2","HelperBtm_SweepR2","HelperBtm_SweepR2","HelperBtm_SweepR2",
+																	"HelperBtm_SweepR1","HelperBtm_SweepR1"]
+															);
+
+							sweeperBtm.addColorFilter(150,0,255,1);
+
+							sweeperTop = new CinemaBlock("Sweep",["HelperTop_SweepR1","HelperTop_SweepR1",
+																	"HelperTop_SweepR2","HelperTop_SweepR2","HelperTop_SweepR2","HelperTop_SweepR2",
+																	"HelperTop_SweepR3","HelperTop_SweepR3","HelperTop_SweepR3","HelperTop_SweepR3",
+																	"HelperTop_SweepR4","HelperTop_SweepR4","HelperTop_SweepR4","HelperTop_SweepR4",
+																	"HelperTop_SweepR5","HelperTop_SweepR5","HelperTop_SweepR5","HelperTop_SweepR5",
+																	"HelperTop_SweepR4","HelperTop_SweepR4","HelperTop_SweepR4","HelperTop_SweepR4",
+																	"HelperTop_SweepR3","HelperTop_SweepR3","HelperTop_SweepR3","HelperTop_SweepR3",
+																	"HelperTop_SweepR2","HelperTop_SweepR2","HelperTop_SweepR2","HelperTop_SweepR2",
+																	"HelperTop_SweepR1","HelperTop_SweepR1"]
+															);
+
+							sweeper.addBehavior(sweeperBehavior, {forceCounter:-16,forceMax:16,forceMagnitude:1});
+						}
+						else {
+							sweeperBtm = new CinemaBlock("Sweep",["HelperBtm_SweepR1",
+																	"HelperBtm_SweepR2","HelperBtm_SweepR2",
+																	"HelperBtm_SweepR3","HelperBtm_SweepR3",
+																	"HelperBtm_SweepR4","HelperBtm_SweepR4",
+																	"HelperBtm_SweepR5","HelperBtm_SweepR5",
+																	"HelperBtm_SweepR4","HelperBtm_SweepR4",
+																	"HelperBtm_SweepR3","HelperBtm_SweepR3",
+																	"HelperBtm_SweepR2","HelperBtm_SweepR2",
+																	"HelperBtm_SweepR1"]
+															);
+
+							sweeperBtm.addColorFilter(150,0,255,1);
+
+							sweeperTop = new CinemaBlock("Sweep",["HelperTop_SweepR1",
+																	"HelperTop_SweepR2","HelperTop_SweepR2",
+																	"HelperTop_SweepR3","HelperTop_SweepR3",
+																	"HelperTop_SweepR4","HelperTop_SweepR4",
+																	"HelperTop_SweepR5","HelperTop_SweepR5",
+																	"HelperTop_SweepR4","HelperTop_SweepR4",
+																	"HelperTop_SweepR3","HelperTop_SweepR3",
+																	"HelperTop_SweepR2","HelperTop_SweepR2",
+																	"HelperTop_SweepR1"]
+															);
+
+							sweeper.addBehavior(sweeperBehavior, {forceCounter:0,forceMax:8,forceMagnitude:2});
+						}
+					}
+					else {
+						sweeper.x = CANVASMANAGER.width/2 + sweeper.width*4;
+						
+						if (isBig) {
+							sweeper.scaleX = 1.5;
+							sweeper.scaleY = 1.5;
+
+							sweeperBtm = new CinemaBlock("Sweep",["HelperBtm_SweepL1","HelperBtm_SweepL1",
+																	"HelperBtm_SweepL2","HelperBtm_SweepL2","HelperBtm_SweepL2","HelperBtm_SweepL2",
+																	"HelperBtm_SweepL3","HelperBtm_SweepL3","HelperBtm_SweepL3","HelperBtm_SweepL3",
+																	"HelperBtm_SweepL4","HelperBtm_SweepL4","HelperBtm_SweepL4","HelperBtm_SweepL4",
+																	"HelperBtm_SweepL5","HelperBtm_SweepL5","HelperBtm_SweepL5","HelperBtm_SweepL5",
+																	"HelperBtm_SweepL4","HelperBtm_SweepL4","HelperBtm_SweepL4","HelperBtm_SweepL4",
+																	"HelperBtm_SweepL3","HelperBtm_SweepL3","HelperBtm_SweepL3","HelperBtm_SweepL3",
+																	"HelperBtm_SweepL2","HelperBtm_SweepL2","HelperBtm_SweepL2","HelperBtm_SweepL2",
+																	"HelperBtm_SweepL1","HelperBtm_SweepL1"]
+															);
+
+							sweeperBtm.addColorFilter(150,0,255,1);
+
+							sweeperTop = new CinemaBlock("Sweep",["HelperTop_SweepL1","HelperTop_SweepL1",
+																	"HelperTop_SweepL2","HelperTop_SweepL2","HelperTop_SweepL2","HelperTop_SweepL2",
+																	"HelperTop_SweepL3","HelperTop_SweepL3","HelperTop_SweepL3","HelperTop_SweepL3",
+																	"HelperTop_SweepL4","HelperTop_SweepL4","HelperTop_SweepL4","HelperTop_SweepL4",
+																	"HelperTop_SweepL5","HelperTop_SweepL5","HelperTop_SweepL5","HelperTop_SweepL5",
+																	"HelperTop_SweepL4","HelperTop_SweepL4","HelperTop_SweepL4","HelperTop_SweepL4",
+																	"HelperTop_SweepL3","HelperTop_SweepL3","HelperTop_SweepL3","HelperTop_SweepL3",
+																	"HelperTop_SweepL2","HelperTop_SweepL2","HelperTop_SweepL2","HelperTop_SweepL2",
+																	"HelperTop_SweepL1","HelperTop_SweepL1"]
+															);
+
+							sweeper.addBehavior(sweeperBehavior, {forceCounter:-16,forceMax:16,forceMagnitude:-1});
+						}
+						else {
+							sweeperBtm = new CinemaBlock("Sweep",["HelperBtm_SweepL1",
+																	"HelperBtm_SweepL2","HelperBtm_SweepL2",
+																	"HelperBtm_SweepL3","HelperBtm_SweepL3",
+																	"HelperBtm_SweepL4","HelperBtm_SweepL4",
+																	"HelperBtm_SweepL5","HelperBtm_SweepL5",
+																	"HelperBtm_SweepL4","HelperBtm_SweepL4",
+																	"HelperBtm_SweepL3","HelperBtm_SweepL3",
+																	"HelperBtm_SweepL2","HelperBtm_SweepL2",
+																	"HelperBtm_SweepL1"]
+															);
+
+							sweeperBtm.addColorFilter(150,0,255,1);
+
+							sweeperTop = new CinemaBlock("Sweep",["HelperTop_SweepL1",
+																	"HelperTop_SweepL2","HelperTop_SweepL2",
+																	"HelperTop_SweepL3","HelperTop_SweepL3",
+																	"HelperTop_SweepL4","HelperTop_SweepL4",
+																	"HelperTop_SweepL5","HelperTop_SweepL5",
+																	"HelperTop_SweepL4","HelperTop_SweepL4",
+																	"HelperTop_SweepL3","HelperTop_SweepL3",
+																	"HelperTop_SweepL2","HelperTop_SweepL2",
+																	"HelperTop_SweepL1"]
+															);
+
+							sweeper.addBehavior(sweeperBehavior, {forceCounter:0,forceMax:8,forceMagnitude:-2});
+						}
+					}
+
+					sweeper.y = 0;
+					sweeper.z = 0;
+
+					sweeper.adoptChild(sweeperBtm);
+					sweeper.adoptChild(sweeperTop);
+					
+					sweeper.addBehavior(simplePhysicsUpdate);
+					sweeper.addBehavior(gravity);
+					sweeper.addConstraint(sweeperConstraint, { relativeY: relativeY});
+
+					sweeper.children[0].addMouseClickReaction(addRandomFilter);
+
+					return sweeper;
+				}
+
+				function relativeTopY(obj) {
+					PARAMS.initializeValidation();
+					obj.behaviorVars["relativeTopY"] = PARAMS.validateVariableObject(obj.behaviorVars["relativeTopY"], 
+																		["relativeY"],
+																		[PARAMS.INTEGER],
+																		[0]);
+					obj.y = -CANVASMANAGER.height / 2 + (obj.behaviorVars["relativeTopY"].relativeY + obj.height/2) + obj.parent.globalY();
+
+				}
+
+				function relativeBottomY(obj) {
+					PARAMS.initializeValidation();
+					obj.behaviorVars["relativeBottomY"] = PARAMS.validateVariableObject(obj.behaviorVars["relativeBottomY"], 
+																		["relativeY"],
+																		[PARAMS.INTEGER],
+																		[0]);
+					obj.y = CANVASMANAGER.height / 2 - (obj.behaviorVars["relativeBottomY"].relativeY + obj.height/2) + obj.parent.globalY();
+
+				}
+
+				function bounceConstraint(obj) {
+					PARAMS.initializeValidation();
+					obj.constraintVars["bounceConstraint"] = PARAMS.validateVariableObject(obj.constraintVars["bounceConstraint"], 
+																		["relativeY"],
+																		[PARAMS.INTEGER],
+																		[0]);
+					var bottomY = CANVASMANAGER.height / 2 - (obj.constraintVars["bounceConstraint"].relativeY + obj.height*obj.scaleX/2) - obj.parent.globalY();
+
+					var diff = obj.y - bottomY;
+					if (diff > 0) {
+						obj.y -= diff;
+						obj.yvel *= -0.50;
+						obj.xvel *= 0.50;
+						obj.zvel *= 0.50;
+					}
+				};
+
+				function sweeperConstraint(obj) {
+					PARAMS.initializeValidation();
+					obj.constraintVars["sweeperConstraint"] = PARAMS.validateVariableObject(obj.constraintVars["sweeperConstraint"], 
+																		["relativeY"],
+																		[PARAMS.INTEGER],
+																		[0]);
+					var bottomY = CANVASMANAGER.height / 2 - (obj.constraintVars["sweeperConstraint"].relativeY + obj.height*obj.scaleX/2) - obj.parent.globalY();
+
+					var diff = obj.y - bottomY;
+					if (diff > 0) {
+						obj.y -= diff;
+						// obj.yvel *= -0.50;
+						obj.xvel *= 0.85;
+						// obj.zvel *= 0.50;
+					}
+				};
+
+				function sweepAway(obj) {
+					PARAMS.initializeValidation();
+					obj.behaviorVars["sweepAway"] = PARAMS.validateVariableObject(obj.behaviorVars["sweepAway"], 
+																		["sweeper"],
+																		[PARAMS.BLOCK],
+																		[null]);
+
+					for (var i = 0; i < obj.parent.children.length; i++) {
+						var sweepee = obj.parent.children[i];
+						if (sweepee != obj.behaviorVars["sweepAway"].sweeper) {
+							var mag = sweepee.x - obj.behaviorVars["sweepAway"].sweeper.x;
+
+							if (Math.abs(mag) < 40) {
+								sweepee.xacc += (Math.abs(mag)/mag) * 0.05;
+								sweepee.yacc += -0.025;
+							}
+						}
+					}
+				}
+
+				function gravity(obj) {
+					obj.yacc = 0.75;
+				}
+
+				function destroyWhenSweptAway(obj) {
+					var shouldDestroy = true;
+					for (var i = 0; i < obj.children.length; i++) {
+						if (Math.abs(obj.children[i].x) < CANVASMANAGER.width) {
+							shouldDestroy = false;
+							break;
+						}
+					}
+					if (shouldDestroy) {
+						//obj.parent.orphanChild(obj);
+						// obj.removeBehavior(destroyWhenSweptAway);
+
+						obj.destroy();
+
+						
+					}
+				}
+
+				function secondBreak(obj) {
+					PARAMS.initializeValidation();
+					obj.behaviorVars["secondBreak"] = PARAMS.validateVariableObject(obj.behaviorVars["secondBreak"], 
+																		["relativeY"],
+																		[PARAMS.INTEGER],
+																		[0]);
+					var bottomY = CANVASMANAGER.height / 2 - (obj.behaviorVars["secondBreak"].relativeY + obj.height/2) - obj.parent.globalY();
+					var relativeY = obj.behaviorVars["secondBreak"].relativeY;
+					if (obj.y > bottomY) {
+						obj.removeBehavior(secondBreak);
+						obj.removeBehavior(simplePhysicsUpdate);
+						obj.removeConstraint(bounceConstraint);
+						obj.shatter(10);
+
+						var sweeper = createSweeper(relativeY);
+						
+						for (var i = 0; i < obj.children.length; i++) {
+							// obj.children[i].x += Math.random() * 20 - 10;
+							// obj.children[i].y += Math.random() * 20 - 10;
+							// obj.children[i].z += Math.random() * 0.1;
+
+							obj.children[i].addBehavior(forcefulPhysicsUpdate);
+							obj.children[i].addBehavior(gravity);
+							obj.children[i].xvel = Math.random() * 4 - 2;
+							obj.children[i].yvel = -4;
+							obj.children[i].zvel = Math.random() * 0.01 - 0.005;
+
+							obj.children[i].addBehavior(sweepAway,{sweeper:sweeper});
+							obj.children[i].addConstraint(bounceConstraint, { relativeY: relativeY});
+						}
+
+						obj.adoptChild(sweeper);
+						//obj.addBehavior(relativeBottomY, { relativeY: 50});
+						obj.addBehavior(destroyWhenSweptAway);
+					}
+					
+				}
+
+				function break1(obj,e) {
+					if (!obj.shattered) {
+						obj.shatter(100);
+						shatteredCount = obj.children.length;
+
+						var randIndex = Math.floor(Math.random()*obj.children.length);
+
+
+
+						// for (var i = 0; i < obj.children.length; i++) {
+							// obj.children[i].x += Math.random() * 20 - 10;
+							// obj.children[i].y += Math.random() * 20 - 10;
+							// obj.children[i].z += Math.random() * 0.1;
+
+							obj.children[randIndex].addBehavior(simplePhysicsUpdate);
+							obj.children[randIndex].xvel = Math.random() * 4 - 2;
+							obj.children[randIndex].yacc = 0.5;
+							obj.children[randIndex].zvel = Math.random() * 0.01 - 0.005;
+
+							//obj.children[i].addConstraint(bounceConstraint);
+
+							obj.children[randIndex].addBehavior(secondBreak, { relativeY: 150 });
+						// }
+
+						destroyedCount++;
+						// backgroundCover.resetFilters();
+						// backgroundCover.addColorFilter(255,255,255,(shatteredCount - destroyedCount) / shatteredCount);
+						backgroundCover.clearDrawingCommands();
+						backgroundCover.clearUndrawingCommands();
+						backgroundCover.addDrawingCommand("setFillStyle",["rgba(255,255,255," + ((shatteredCount - destroyedCount) / shatteredCount) + ")"]);
+						backgroundCover.addDrawingCommand("fillRect",[0,0,CANVASMANAGER.width,CANVASMANAGER.height]);
+						backgroundCover.addUndrawingCommand("clearRect",[0,0,CANVASMANAGER.width,CANVASMANAGER.height]);
+					}
+					else if (Math.random() < 0.015) {
+
+						var randIndex = Math.floor(Math.random()*obj.children.length);
+
+						if (!obj.children[randIndex].shattered) {
+							obj.children[randIndex].addBehavior(simplePhysicsUpdate);
+							obj.children[randIndex].xvel = Math.random() * 4 - 2;
+							obj.children[randIndex].yacc = 0.5;
+							obj.children[randIndex].zvel = Math.random() * 0.01 - 0.005;
+
+							obj.children[randIndex].addBehavior(secondBreak, { relativeY: 150 });
+						}
+
+						destroyedCount++;
+						// backgroundCover.resetFilters();
+						// backgroundCover.addColorFilter(255,255,255,(shatteredCount - destroyedCount) / shatteredCount);
+
+						backgroundCover.clearDrawingCommands();
+						backgroundCover.clearUndrawingCommands();
+						backgroundCover.addDrawingCommand("setFillStyle",["rgba(255,255,255," + ((shatteredCount - destroyedCount) / shatteredCount) + ")"]);
+						backgroundCover.addDrawingCommand("fillRect",[0,0,CANVASMANAGER.width,CANVASMANAGER.height]);
+						backgroundCover.addUndrawingCommand("clearRect",[0,0,CANVASMANAGER.width,CANVASMANAGER.height]);
+					}
+				}
+
+				function addBrokenBehavior(obj) {
+					obj.removeMouseClickReaction(addBrokenBehavior);
+					obj.addBehavior(break1);
+				}
+
+				var destroyedCount = 0;
+				var shatteredCount = 1;
+
+				var background = new MovieBlock("BetterBackground");
+				
+
+				var backgroundCover = new DrawingBlock();
+				backgroundCover.width = CANVASMANAGER.width;
+				backgroundCover.height = CANVASMANAGER.height;
+				backgroundCover.addDrawingCommand("setFillStyle",["rgba(255,255,255,1)"]);
+				backgroundCover.addDrawingCommand("fillRect",[0,0,CANVASMANAGER.width,CANVASMANAGER.height]);
+				backgroundCover.addUndrawingCommand("clearRect",[0,0,CANVASMANAGER.width,CANVASMANAGER.height]);
+
+				var bkgd = new MovieBlock("IndexBackground");
+				bkgd.y = -100;
+
+				bkgd.addMouseClickReaction(addBrokenBehavior);
+				bkgd.addBehavior(relativeTopY, { relativeY: 50 });
+				
+
+
+				CANVASMANAGER.addNewCanvasFrame();
+
+				CANVASMANAGER.adoptBlockChild(background,0);
+				CANVASMANAGER.adoptBlockChild(backgroundCover,0);
+				CANVASMANAGER.adoptBlockChild(bkgd,1);
+				// CANVASMANAGER.adoptBlockChild(t1,1);
+				// CANVASMANAGER.adoptBlockChild(t2,1);
+				//CANVASMANAGER.adoptBlockChild(sweeper,0);
+
+				CANVASMANAGER.start(30);
+			});
+
+			CANVASMANAGER.loadAssets("tempIndexImages.xml");
+
+		});
+
+
+	</script> 
+
+</head>                                                                 
+<body style="margin:0px;background-color:#EEEEEE;">                            
+</body>     
+
+    
+
+</html>

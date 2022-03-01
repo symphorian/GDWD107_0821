@@ -1,0 +1,118 @@
+@charset "utf-8";
+.banner {
+	width: 800px;
+	height: 155px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	background-color: #000;
+}
+.container {
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	border-top-width: thick;
+	border-right-width: thin;
+	border-bottom-width: thin;
+	border-left-width: thin;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000;
+	border-right-color: #000;
+	border-bottom-color: #000;
+	border-left-color: #000;
+	top: -2px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small;
+}
+.bigcontainer {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	top: -2px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small;
+	border: thin solid #000;
+}
+.bigcontainertop {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	border-top-width: medium;
+	border-right-width: thin;
+	border-bottom-width: thin;
+	border-left-width: thin;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000;
+	border-right-color: #000;
+	border-bottom-color: #000;
+	border-left-color: #000;
+	top: -2px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small;
+	background-color: #000000;
+}
+#apDiv1 {
+	position:absolute;
+	left:175px;
+	top:110px;
+	width:150px;
+	height:40px;
+	z-index:1;
+}
+#aboutme {
+	width: 698px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+
+#apDiv2 {
+	position:absolute;
+	left:325px;
+	top:110px;
+	width:150px;
+	height:40px;
+	z-index:1;
+}
+#apDiv3 {
+	position:absolute;
+	left:475px;
+	top:110px;
+	width:150px;
+	height:40px;
+	z-index:1;
+}
+#apDiv4 {
+	position:absolute;
+	left:0px;
+	top:114px;
+	width:800px;
+	height:40px;
+	z-index:-1;
+}
+
+#apDiv5 {
+	position:absolute;
+	left:640px;
+	top:114px;
+	width:160px;
+	height:34px;
+	z-index:1;
+}
+#apDiv6 {
+	position:absolute;
+	left:640px;
+	top:0px;
+	width:160px;
+	height:115px;
+	z-index:1;
+}

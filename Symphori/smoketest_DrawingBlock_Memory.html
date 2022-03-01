@@ -1,0 +1,105 @@
+<html>                                                                  
+<head>   
+	<script type="text/javascript" src="Source/BlocksJS.js"></script>
+	  
+  	<script type="text/javascript">
+  		//CANVASMANAGER.showNoMessages();
+  		//CANVASMANAGER.showInfoMessages();
+  		CANVASMANAGER.showErrorMessages();
+  		//LOG.setDisplayObjects(true);
+  		//LOG.setDisplayBlocks(true);
+		LOG.write("Starting smoketest 1");
+		CANVASMANAGER.setStartUpFunction(function() {
+			LOG.write("smoketest 1 onstartup called")
+			CANVASMANAGER.assetManager.assetsLoadedEvent.subscribe(function () {
+				var db = new DrawingBlock(200,200);
+				db.z = 1;
+				
+				db.setMemoryCapacity(1000);
+				db.showDebuggingDisplay = true;
+				
+				var t1 = new TextBlock("DrawingBlock - Movement/Memory Test", "Verdana", 36, "red","center");
+				t1.z = 1;
+				t1.y = -200;
+
+				var t2 = new ParagraphBlock(CANVASMANAGER.width,"Move drawing through space using LEFT, RIGHT, UP, DOWN.\nRotate drawing through space using (A) for CCW and (S) for CW.\nPut drawing to sleep and wake it using (1).\nWhile the drawing is sleeping, move back through memory\nusing (2) and forward using (3).", "Verdana", 36, "red","center");
+				t2.z = 1.5;
+				t2.y = 150;
+
+				db.addDrawingCommand("setFillStyle",["rgba(0,255,0,1)"]);
+				db.addDrawingCommand("fillRect", [0,0,20,20]);
+				db.addDrawingCommand("setFillStyle",["rgba(0,100,0,1)"]);
+				db.addDrawingCommand("beginPath");
+				db.addDrawingCommand("arc",[100,75,50,0,2*Math.PI]);
+				db.addDrawingCommand("closePath");
+				db.addDrawingCommand("fill");
+				db.addDrawingCommand("setFillStyle",["rgba(120,100,250,1)"]);
+				db.addDrawingCommand("setFont",["24px Hymmnos"]);
+				db.addDrawingCommand("fillText",["Hello world!",0,120]);
+				db.addDrawingCommand("setStrokeStyle",["rgba(200,50,100,1)"]);
+				db.addDrawingCommand("beginPath");
+				db.addDrawingCommand("moveTo",[20,20]);
+				db.addDrawingCommand("lineTo",[100,20]);
+				db.addDrawingCommand("arcTo",[150,20,150,70,50]);
+				db.addDrawingCommand("lineTo",[150,120]);
+				db.addDrawingCommand("stroke");
+				db.addDrawingCommand("closePath");
+				db.addDrawingCommand("save");
+				db.addDrawingCommand("moveTo",[0, 0]);
+				db.addDrawingCommand("translate",[0,-50]);
+				db.addDrawingCommand("rotate",[50*Math.PI/180]);
+				db.addDrawingCommand("beginPath");
+			    db.addDrawingCommand("bezierCurveTo",[80, 6, 186, 80, 88, 50]);
+			    db.addDrawingCommand("setLineWidth",[10]);
+			    db.addDrawingCommand("setStrokeStyle",["purple"]);
+			    db.addDrawingCommand("stroke");
+			    db.addDrawingCommand("closePath");
+			    db.addDrawingCommand("restore");
+				
+				db.addBehavior(simplePhysicsUpdate);
+				db.addConstraint(dampVelocity);
+				db.addKeyDownReaction(KEYCODES.LEFT, applyForceLeft);
+				db.addKeyDownReaction(KEYCODES.RIGHT, applyForceRight);
+				db.addKeyDownReaction(KEYCODES.UP, applyForceAway);
+				db.addKeyDownReaction(KEYCODES.DOWN, applyForceToward);
+				db.addKeyUpReaction(KEYCODES.LEFT, removeForceLeft);
+				db.addKeyUpReaction(KEYCODES.RIGHT, removeForceRight);
+				db.addKeyUpReaction(KEYCODES.UP, removeForceAway);
+				db.addKeyUpReaction(KEYCODES.DOWN, removeForceToward);
+				db.addKeyDownReaction(KEYCODES.A, applyForceCCW);
+				db.addKeyDownReaction(KEYCODES.S, applyForceCW);
+				db.addKeyUpReaction(KEYCODES.A, removeForceCCW);
+				db.addKeyUpReaction(KEYCODES.S, removeForceCW);
+				db.addKeyPressReaction(KEYCODES.ONE, toggleObjectSleepState);
+				db.addKeyPressReaction(KEYCODES.TWO, moveObjectInTime);
+				db.addKeyPressReaction(KEYCODES.THREE, moveObjectInTime);
+				db.addKeyPressReaction(KEYCODES.FOUR, toggleObjectDebugDisplay);
+				
+
+				var bkgd = new MovieBlock("Background");
+
+
+				CANVASMANAGER.addNewCanvasFrame();
+
+				CANVASMANAGER.adoptBlockChild(bkgd,0);
+				CANVASMANAGER.adoptBlockChild(t1,1);
+				CANVASMANAGER.adoptBlockChild(t2,1);
+				CANVASMANAGER.adoptBlockChild(db,1);
+
+				CANVASMANAGER.start(30);
+			});
+
+			CANVASMANAGER.loadAssets("imgXMLsmoketest.xml","audioXMLsmoketest.xml","videoXMLsmoketest.xml");
+
+		});
+
+
+	</script> 
+
+</head>                                                                 
+<body style="margin:0px">                            
+</body>     
+
+    
+
+</html>

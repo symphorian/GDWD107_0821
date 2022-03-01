@@ -1,0 +1,170 @@
+@charset "utf-8";
+.main_container {
+	background-color: #003;
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+.header {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 72px;
+	font-weight: bold;
+	color: #FFF;
+	background-color: #003;
+	width: 750px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	text-align: center;
+	padding-top: 20px;
+}
+.description {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #FFF;
+	width: 750px;
+	position: relative;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 10px;
+	padding-bottom: 40px;
+}
+.UNDO_header {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	font-weight: bolder;
+	width: 350px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	color: #903;
+	text-align: center;
+}
+#UNDO_submit {
+	width: 350px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	height: 200px;
+}
+.UNDO_subheader {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-style: italic;
+	color: #903;
+	text-align: center;
+	height: 40px;
+}
+.UNDO_text {
+	height: 125px;
+	width: 225px;
+	position: absolute;
+	left: 100px;
+	top: 59px;
+	overflow: auto;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #FFF;
+}
+.main_container .UN_RE_Table tr td #UNDO_submit form input {
+	position: absolute;
+	right: 0px;
+	top: 12px;
+}
+#REDO_submit {
+	width: 350px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	height: 200px;
+}
+.main_container .UN_RE_Table tr td #REDO_submit form textarea {
+	margin-right: 0px;
+	position: absolute;
+	right: 0px;
+}
+.main_container .UN_RE_Table tr td #REDO_submit form input {
+	position: absolute;
+	left: 0px;
+	top: 15px;
+}
+.UN_RE_Table {
+	width: 750px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.REDO_subheader {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-style: italic;
+	color: #60F;
+	height: 40px;
+	text-align: center;
+}
+#UNDO_content {
+	width: 350px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+.REDO_post {
+	background-image: url(REDOpost.png);
+	height: 200px;
+	width: 350px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+#REDO_content {
+	width: 350px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+.REDO_text {
+	height: 125px;
+	width: 225px;
+	position: absolute;
+	top: 59px;
+	right: 100px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #FFF;
+}
+.REDO_header {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	font-weight: bolder;
+	width: 350px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	color: #60F;
+	text-align: center;
+}
+.UNDO_post {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #00F;
+	width: 350px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	height: 200px;
+	background-image: url(UNDOpost.png);
+}
+.intro_container {
+	height: 450px;
+	width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	margin-top: 25px;
+}
+.background {
+	background-color: #000;
+}

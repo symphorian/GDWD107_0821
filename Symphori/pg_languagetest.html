@@ -1,0 +1,123 @@
+<html>                                                                  
+<head>
+	<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>-->
+	<script type="text/javascript">
+		//$(window).ready(function() {
+		window.onload = function() {
+			var domains = ["b","d","g","j","p","t","tth"];
+			//var funct1s = ["l","m","n","r","v","z","zh"];
+			//var funct2s = ["f","h","k","s","sh","ch","th"];
+			var functs = ["l","m","n","r","v","z","zh","f","h","k","s","sh","ch","th"];
+			var vowels = ["oo","o","uh","ih","ay","ah","ee","eh","aw"];
+
+			var domainCodes = ["D1","D2","D3","D4","D5","D6","D7"];
+			//var funct1Codes = ["F01","F02","F03","F04","F05","F06","F07"];
+			//var funct2Codes = ["F08","F09","F10","F11","F12","F13","F14"];
+			var functCodes = ["F01","F02","F03","F04","F05","F06","F07","F08","F09","F10","F11","F12","F13","F14"];
+			var vowelCodes = ["V0","V1","V2","V3","V4","V5","V6","V7","V8"];
+
+			function shuffle(array) {
+				var cpy = array.slice();
+				var newArray = [];
+				for (var i = 0; i < array.length; i++) {
+					var index = Math.floor(Math.random() * cpy.length);
+					newArray[i] = cpy[index];
+					cpy.splice(index,1);
+				}
+
+				return newArray;
+			}
+
+			function vowelShuffle(array) {
+				var cpy = array.slice();
+				var newArray = [];
+				var vowelSetIndex;
+				var vowelCounter = 0;
+				for (var i = 0; i < array.length; i++) {
+					if (i % 3 == 0) {
+						vowelSetIndex = Math.floor(Math.random()*cpy.length/3);
+						//vowelCounter = 0;
+					}
+					var index = vowelSetIndex*3; // + vowelCounter;
+					newArray[i] = cpy[index];
+					cpy.splice(index,1);
+					//vowelCounter++;
+				}
+
+				return newArray;
+			}
+
+			function replace(string, charsToFind, charsToSwitch) {
+				var cpy = string;
+				while(cpy.indexOf(charsToFind) >= 0) {
+					cpy = cpy.replace(charsToFind, charsToSwitch);
+				}
+				return cpy;
+			}
+
+			var dShuffle = shuffle(domains);
+			//var f1Shuffle = shuffle(funct1s);
+			//var f2Shuffle = shuffle(funct2s);
+			var fShuffle = shuffle(functs);
+			var vShuffle = vowelShuffle(vowels);
+
+			var mappings = "";
+
+			//var p1Copy = $("#original1").text();
+			//var p2Copy = $("#original2").text();
+
+			var p1Copy = document.getElementById("original1").innerHTML;
+			var p2Copy = document.getElementById("original2").innerHTML;
+
+			for (var i = 0; i < domainCodes.length; i++) {
+				p1Copy = replace(p1Copy, domainCodes[i],dShuffle[i]);
+				p2Copy = replace(p2Copy, domainCodes[i],dShuffle[i]);
+				mappings += domainCodes[i] + " : " + dShuffle[i] + "<br />";
+			}
+			// for (var i = 0; i < funct1Codes.length; i++) {
+			// 	p1Copy = replace(p1Copy, funct1Codes[i],f1Shuffle[i]);
+			// 	p2Copy = replace(p2Copy, funct1Codes[i],f1Shuffle[i]);
+			// 	mappings += funct1Codes[i] + " : " + f1Shuffle[i] + "<br />";
+			// }
+			// for (var i = 0; i < funct2Codes.length; i++) {
+			// 	p1Copy = replace(p1Copy, funct2Codes[i],f2Shuffle[i]);
+			// 	p2Copy = replace(p2Copy, funct2Codes[i],f2Shuffle[i]);
+			// 	mappings += funct2Codes[i] + " : " + f2Shuffle[i] + "<br />";
+			// }
+			for (var i = 0; i < functCodes.length; i++) {
+				p1Copy = replace(p1Copy, functCodes[i],fShuffle[i]);
+				p2Copy = replace(p2Copy, functCodes[i],fShuffle[i]);
+				mappings += functCodes[i] + " : " + fShuffle[i] + "<br />";
+			}
+			for (var i = 0; i < vowelCodes.length; i++) {
+				p1Copy = replace(p1Copy, vowelCodes[i],vShuffle[i]);
+				p2Copy = replace(p2Copy, vowelCodes[i],vShuffle[i]);
+				mappings += vowelCodes[i] + " : " + vShuffle[i] + "<br />";
+			}
+
+			//$("#mappings").html(mappings);
+			document.getElementById("mappings").innerHTML = mappings;
+
+			//$("#new1").text(p1Copy);
+			//$("#new2").text(p2Copy);
+
+			document.getElementById("new1").innerHTML = p1Copy;
+			document.getElementById("new2").innerHTML = p2Copy;
+		//});
+		};
+
+	</script>
+
+</head>
+
+<body>
+	<div id="original1" style="color:red; font-weight:bold;">F01'F13V4 F07'F04V8F03V7 F01'F01V5D4V3'F02 F01'F02V6 F01V7D1V0-V0'F03 F11V4</div>
+	<div id="original2" style="color:blue; font-weight:bold">F01'F13V4 F08'F01'F08V3D1V0-V7 F07'F09V5 F01D2V3-V6 F08'F01'F08V7D4V0-V4'F02 F11V4</div>	
+
+	<div id="new1" style="color:red"></div>
+	<div id="new2" style="color:blue"></div>
+
+	<div id="mappings"></div>
+
+</body>
+</html>

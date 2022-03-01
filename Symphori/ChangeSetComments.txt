@@ -1,0 +1,44 @@
+todo*****************************************************************************************************
+
+- use private scope variables (var rather than this) to hold REAL x, y, z, text, shattered variables?
+- use private scope variables to fix undraw behavior when moving backwards through time?
+
+- create smoketest for adding/removing behaviors/reactions/constraints
+
+- use JSON.stringify to store the drawing/undrawing commands in drawingblock/imagedrawingblock
+- rethink how to use private variables with drawingblock/imagedrawingblock and their commands
+
+- update Video class to make onload a private variable?
+
+- run some tests to see if requestAnimationFrame is being used correctly/effectively
+
+- memory smoketests - moving backwards/forwards through time (sometimes) causes cycle, rather than ending at start/end memory
+- putting to sleep moves back to previous frame? should stay at current
+
+- implement ImageBlock interface (getCurrentFrame(), getFrame()) ?
+- implement promise-like interface for behaviors? like addTask(taskFunction, taskCondition, taskSuccessor)?
+
+
+- need to update removal of key reactions to unsubscribe the block from the key event if it has no more reactions
+- change (color?) filter methods to handle blocks with no frames?
+- update addReaction method to include propagation parameter OR add addReactionToChildren method
+- if adding block to undefined canvasframe, just auto create it
+
+
+- adjust Z-axis so that it is more in line with x/y axes (100 rather than 1.0)
+- add depth property?
+
+- add a CalculateZRatio function to utilities?
+
+fixed****************************************************************************************************
+- merge ActorBlock changes in xampp and GoogleDrive folders
+
+- log functions were crashing page in Firefox; fixed based on Firefox's error.stack implementation, although Firefox is really slow with tempindex2
+
+-***for all behavior, reactions, constraints that use bind, add a _____Name property to match back to when adding or removing behaviors, reactions, constraints***
+
+- need to update shatter methods to handle case of a shattered block resulting from a shattered block (created Fragment blocks)
+
+- removeAllBehaviors/Reactions/Constraints probably doesn't work, due to collection modification while iterating through (used while loop and kept removing the first one til none are left)
+
+- update shatter methods in shatterable objects (had to implement additional method in VideoBlock...tricky little bugger)

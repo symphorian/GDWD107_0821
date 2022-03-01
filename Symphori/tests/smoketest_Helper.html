@@ -1,0 +1,356 @@
+<html>                                                                  
+<head>   
+	<script type="text/javascript" src="Source/Utilities.js"></script>
+	<script type="text/javascript" src="Source/AudioTrack.js"></script>
+	<script type="text/javascript" src="Source/Video.js"></script>
+	<script type="text/javascript" src="Source/Memory.js"></script> 
+	<script type="text/javascript" src="Source/Event.js"></script>
+	<script type="text/javascript" src="Source/BlockEvent.js"></script>
+	<script type="text/javascript" src="Source/MouseEvent.js"></script>
+	<script type="text/javascript" src="Source/KeyboardEvent.js"></script>
+	<script type="text/javascript" src="Source/AssetManager.js"></script>
+	<script type="text/javascript" src="Source/Block.js"></script>
+	<script type="text/javascript" src="Source/ActorBlock.js"></script>
+	<script type="text/javascript" src="Source/PlayerBlock.js"></script>
+	<script type="text/javascript" src="Source/SoundBlock.js"></script>
+	<script type="text/javascript" src="Source/StereoBlock.js"></script>
+	<script type="text/javascript" src="Source/MovieBlock.js"></script>
+	<script type="text/javascript" src="Source/CinemaBlock.js"></script>
+	<script type="text/javascript" src="Source/TextBlock.js"></script>
+	<script type="text/javascript" src="Source/ImageTextBlock.js"></script>
+	<script type="text/javascript" src="Source/ParagraphBlock.js"></script>
+	<script type="text/javascript" src="Source/ImageParagraphBlock.js"></script>
+	<script type="text/javascript" src="Source/VideoBlock.js"></script>
+	<script type="text/javascript" src="Source/DrawingBlock.js"></script>
+	<script type="text/javascript" src="Source/ImageDrawingBlock.js"></script>
+	<script type="text/javascript" src="Source/CanvasFrame.js"></script>
+	<script type="text/javascript" src="Source/CanvasManager.js"></script>
+	<script type="text/javascript" src="Source/SmokeTestBehaviors.js"></script>
+	<script type="text/javascript" src="Source/SmokeTestConstraints.js"></script>
+	  
+  	<script type="text/javascript">
+  		//CANVASMANAGER.showNoMessages();
+  		//CANVASMANAGER.showInfoMessages();
+  		CANVASMANAGER.showErrorMessages();
+  		//LOG.setDisplayObjects(true);
+  		//LOG.setDisplayBlocks(true);
+		LOG.write("Starting smoketest 1");
+		CANVASMANAGER.setStartUpFunction(function() {
+			LOG.write("smoketest 1 onstartup called")
+			CANVASMANAGER.assetManager.assetsLoadedEvent.subscribe(function () {
+				var helperBtm = new CinemaBlock("Walk_Left",["HelperBtm_WalkL1","HelperBtm_WalkL1","HelperBtm_WalkL1",
+																"HelperBtm_WalkL2","HelperBtm_WalkL2","HelperBtm_WalkL2",
+																"HelperBtm_WalkL3","HelperBtm_WalkL3","HelperBtm_WalkL3",
+																"HelperBtm_WalkL4","HelperBtm_WalkL4","HelperBtm_WalkL4",
+																"HelperBtm_WalkL5","HelperBtm_WalkL5","HelperBtm_WalkL5",
+																"HelperBtm_WalkL4","HelperBtm_WalkL4","HelperBtm_WalkL4",
+																"HelperBtm_WalkL3","HelperBtm_WalkL3","HelperBtm_WalkL3",
+																"HelperBtm_WalkL2","HelperBtm_WalkL2","HelperBtm_WalkL2"],
+												"Walk_Right",["HelperBtm_WalkR1","HelperBtm_WalkR1","HelperBtm_WalkR1",
+																"HelperBtm_WalkR2","HelperBtm_WalkR2","HelperBtm_WalkR2",
+																"HelperBtm_WalkR3","HelperBtm_WalkR3","HelperBtm_WalkR3",
+																"HelperBtm_WalkR4","HelperBtm_WalkR4","HelperBtm_WalkR4",
+																"HelperBtm_WalkR5","HelperBtm_WalkR5","HelperBtm_WalkR5",
+																"HelperBtm_WalkR4","HelperBtm_WalkR4","HelperBtm_WalkR4",
+																"HelperBtm_WalkR3","HelperBtm_WalkR3","HelperBtm_WalkR3",
+																"HelperBtm_WalkR2","HelperBtm_WalkR2","HelperBtm_WalkR2"],
+												"Idle1_Left",["HelperIdle4Btm_L1","HelperIdle4Btm_L1","HelperIdle4Btm_L1",
+																	"HelperIdle4Btm_L1","HelperIdle4Btm_L1","HelperIdle4Btm_L1",
+																	"HelperIdle4Btm_L1","HelperIdle4Btm_L1","HelperIdle4Btm_L1",
+																	"HelperIdle4Btm_L1","HelperIdle4Btm_L1","HelperIdle4Btm_L1",
+																	"HelperIdle4Btm_L1","HelperIdle4Btm_L1","HelperIdle4Btm_L1"],
+												"Idle1ToIdle1_Left",["HelperIdle4Btm_L1","HelperIdle4Btm_L1","HelperIdle4Btm_L1",
+																	"HelperIdle4Btm_L2","HelperIdle4Btm_L2","HelperIdle4Btm_L2",
+																	"HelperIdle4Btm_L3","HelperIdle4Btm_L3","HelperIdle4Btm_L3",
+																	"HelperIdle4Btm_L4","HelperIdle4Btm_L4","HelperIdle4Btm_L4",
+																	"HelperIdle4Btm_L5","HelperIdle4Btm_L5","HelperIdle4Btm_L5"],
+												"Idle1ToIdle2_Left",["HelperIdle1Btm_L1","HelperIdle1Btm_L1","HelperIdle1Btm_L1",
+																	"HelperIdle1Btm_L2","HelperIdle1Btm_L2","HelperIdle1Btm_L2",
+																	"HelperIdle1Btm_L3","HelperIdle1Btm_L3","HelperIdle1Btm_L3",
+																	"HelperIdle1Btm_L4","HelperIdle1Btm_L4","HelperIdle1Btm_L4",
+																	"HelperIdle1Btm_L5","HelperIdle1Btm_L5","HelperIdle1Btm_L5"],
+												"Idle2_Left",["HelperIdle1Btm_L5","HelperIdle1Btm_L5","HelperIdle1Btm_L5",
+																	"HelperIdle1Btm_L5","HelperIdle1Btm_L5","HelperIdle1Btm_L5",
+																	"HelperIdle1Btm_L5","HelperIdle1Btm_L5","HelperIdle1Btm_L5",
+																	"HelperIdle1Btm_L5","HelperIdle1Btm_L5","HelperIdle1Btm_L5",
+																	"HelperIdle1Btm_L5","HelperIdle1Btm_L5","HelperIdle1Btm_L5"],
+												"Idle2ToIdle1_Left",["HelperIdle1Btm_L5","HelperIdle1Btm_L5","HelperIdle1Btm_L5",
+																	"HelperIdle1Btm_L4","HelperIdle1Btm_L4","HelperIdle1Btm_L4",
+																	"HelperIdle1Btm_L3","HelperIdle1Btm_L3","HelperIdle1Btm_L3",
+																	"HelperIdle1Btm_L2","HelperIdle1Btm_L2","HelperIdle1Btm_L2",
+																	"HelperIdle1Btm_L1","HelperIdle1Btm_L1","HelperIdle1Btm_L1"],
+												"Idle2ToIdle3_Left",["HelperIdle2Btm_L1","HelperIdle2Btm_L1","HelperIdle2Btm_L1",
+																	"HelperIdle2Btm_L2","HelperIdle2Btm_L2","HelperIdle2Btm_L2",
+																	"HelperIdle2Btm_L3","HelperIdle2Btm_L3","HelperIdle2Btm_L3",
+																	"HelperIdle2Btm_L4","HelperIdle2Btm_L4","HelperIdle2Btm_L4",
+																	"HelperIdle2Btm_L5","HelperIdle2Btm_L5","HelperIdle2Btm_L5"],
+												"Idle3_Left",["HelperIdle2Btm_L5","HelperIdle2Btm_L5","HelperIdle2Btm_L5",
+																	"HelperIdle2Btm_L5","HelperIdle2Btm_L5","HelperIdle2Btm_L5",
+																	"HelperIdle2Btm_L5","HelperIdle2Btm_L5","HelperIdle2Btm_L5",
+																	"HelperIdle2Btm_L5","HelperIdle2Btm_L5","HelperIdle2Btm_L5",
+																	"HelperIdle2Btm_L5","HelperIdle2Btm_L5","HelperIdle2Btm_L5"],
+												"Idle3ToIdle2_Left",["HelperIdle2Btm_L5","HelperIdle2Btm_L5","HelperIdle2Btm_L5",
+																	"HelperIdle2Btm_L4","HelperIdle2Btm_L4","HelperIdle2Btm_L4",
+																	"HelperIdle2Btm_L3","HelperIdle2Btm_L3","HelperIdle2Btm_L3",
+																	"HelperIdle2Btm_L2","HelperIdle2Btm_L2","HelperIdle2Btm_L2",
+																	"HelperIdle2Btm_L1","HelperIdle2Btm_L1","HelperIdle2Btm_L1"],
+												"Idle3ToIdle1_Left",["HelperIdle3Btm_L1","HelperIdle3Btm_L1","HelperIdle3Btm_L1",
+																	"HelperIdle3Btm_L2","HelperIdle3Btm_L2","HelperIdle3Btm_L2",
+																	"HelperIdle3Btm_L3","HelperIdle3Btm_L3","HelperIdle3Btm_L3",
+																	"HelperIdle3Btm_L4","HelperIdle3Btm_L4","HelperIdle3Btm_L4",
+																	"HelperIdle3Btm_L5","HelperIdle3Btm_L5","HelperIdle3Btm_L5"],
+												"Idle1ToIdle3_Left",["HelperIdle3Btm_L5","HelperIdle3Btm_L5","HelperIdle3Btm_L5",
+																	"HelperIdle3Btm_L4","HelperIdle3Btm_L4","HelperIdle3Btm_L4",
+																	"HelperIdle3Btm_L3","HelperIdle3Btm_L3","HelperIdle3Btm_L3",
+																	"HelperIdle3Btm_L2","HelperIdle3Btm_L2","HelperIdle3Btm_L2",
+																	"HelperIdle3Btm_L1","HelperIdle3Btm_L1","HelperIdle3Btm_L1"],
+												"Idle1_Right",["HelperIdle4Btm_R1","HelperIdle4Btm_R1","HelperIdle4Btm_R1",
+																	"HelperIdle4Btm_R1","HelperIdle4Btm_R1","HelperIdle4Btm_R1",
+																	"HelperIdle4Btm_R1","HelperIdle4Btm_R1","HelperIdle4Btm_R1",
+																	"HelperIdle4Btm_R1","HelperIdle4Btm_R1","HelperIdle4Btm_R1",
+																	"HelperIdle4Btm_R1","HelperIdle4Btm_R1","HelperIdle4Btm_R1"],
+												"Idle1ToIdle1_Right",["HelperIdle4Btm_R1","HelperIdle4Btm_R1","HelperIdle4Btm_R1",
+																	"HelperIdle4Btm_R2","HelperIdle4Btm_R2","HelperIdle4Btm_R2",
+																	"HelperIdle4Btm_R3","HelperIdle4Btm_R3","HelperIdle4Btm_R3",
+																	"HelperIdle4Btm_R4","HelperIdle4Btm_R4","HelperIdle4Btm_R4",
+																	"HelperIdle4Btm_R5","HelperIdle4Btm_R5","HelperIdle4Btm_R5"],
+												"Idle1ToIdle2_Right",["HelperIdle1Btm_R1","HelperIdle1Btm_R1","HelperIdle1Btm_R1",
+																	"HelperIdle1Btm_R2","HelperIdle1Btm_R2","HelperIdle1Btm_R2",
+																	"HelperIdle1Btm_R3","HelperIdle1Btm_R3","HelperIdle1Btm_R3",
+																	"HelperIdle1Btm_R4","HelperIdle1Btm_R4","HelperIdle1Btm_R4",
+																	"HelperIdle1Btm_R5","HelperIdle1Btm_R5","HelperIdle1Btm_R5"],
+												"Idle2_Right",["HelperIdle1Btm_R5","HelperIdle1Btm_R5","HelperIdle1Btm_R5",
+																	"HelperIdle1Btm_R5","HelperIdle1Btm_R5","HelperIdle1Btm_R5",
+																	"HelperIdle1Btm_R5","HelperIdle1Btm_R5","HelperIdle1Btm_R5",
+																	"HelperIdle1Btm_R5","HelperIdle1Btm_R5","HelperIdle1Btm_R5",
+																	"HelperIdle1Btm_R5","HelperIdle1Btm_R5","HelperIdle1Btm_R5"],
+												"Idle2ToIdle1_Right",["HelperIdle1Btm_R5","HelperIdle1Btm_R5","HelperIdle1Btm_R5",
+																	"HelperIdle1Btm_R4","HelperIdle1Btm_R4","HelperIdle1Btm_R4",
+																	"HelperIdle1Btm_R3","HelperIdle1Btm_R3","HelperIdle1Btm_R3",
+																	"HelperIdle1Btm_R2","HelperIdle1Btm_R2","HelperIdle1Btm_R2",
+																	"HelperIdle1Btm_R1","HelperIdle1Btm_R1","HelperIdle1Btm_R1"],
+												"Idle2ToIdle3_Right",["HelperIdle2Btm_R1","HelperIdle2Btm_R1","HelperIdle2Btm_R1",
+																	"HelperIdle2Btm_R2","HelperIdle2Btm_R2","HelperIdle2Btm_R2",
+																	"HelperIdle2Btm_R3","HelperIdle2Btm_R3","HelperIdle2Btm_R3",
+																	"HelperIdle2Btm_R4","HelperIdle2Btm_R4","HelperIdle2Btm_R4",
+																	"HelperIdle2Btm_R5","HelperIdle2Btm_R5","HelperIdle2Btm_R5"],
+												"Idle3_Right",["HelperIdle2Btm_R5","HelperIdle2Btm_R5","HelperIdle2Btm_R5",
+																	"HelperIdle2Btm_R5","HelperIdle2Btm_R5","HelperIdle2Btm_R5",
+																	"HelperIdle2Btm_R5","HelperIdle2Btm_R5","HelperIdle2Btm_R5",
+																	"HelperIdle2Btm_R5","HelperIdle2Btm_R5","HelperIdle2Btm_R5",
+																	"HelperIdle2Btm_R5","HelperIdle2Btm_R5","HelperIdle2Btm_R5"],
+												"Idle3ToIdle2_Right",["HelperIdle2Btm_R5","HelperIdle2Btm_R5","HelperIdle2Btm_R5",
+																	"HelperIdle2Btm_R4","HelperIdle2Btm_R4","HelperIdle2Btm_R4",
+																	"HelperIdle2Btm_R3","HelperIdle2Btm_R3","HelperIdle2Btm_R3",
+																	"HelperIdle2Btm_R2","HelperIdle2Btm_R2","HelperIdle2Btm_R2",
+																	"HelperIdle2Btm_R1","HelperIdle2Btm_R1","HelperIdle2Btm_R1"],
+												"Idle3ToIdle1_Right",["HelperIdle3Btm_R1","HelperIdle3Btm_R1","HelperIdle3Btm_R1",
+																	"HelperIdle3Btm_R2","HelperIdle3Btm_R2","HelperIdle3Btm_R2",
+																	"HelperIdle3Btm_R3","HelperIdle3Btm_R3","HelperIdle3Btm_R3",
+																	"HelperIdle3Btm_R4","HelperIdle3Btm_R4","HelperIdle3Btm_R4",
+																	"HelperIdle3Btm_R5","HelperIdle3Btm_R5","HelperIdle3Btm_R5"],
+												"Idle1ToIdle3_Right",["HelperIdle3Btm_R5","HelperIdle3Btm_R5","HelperIdle3Btm_R5",
+																	"HelperIdle3Btm_R4","HelperIdle3Btm_R4","HelperIdle3Btm_R4",
+																	"HelperIdle3Btm_R3","HelperIdle3Btm_R3","HelperIdle3Btm_R3",
+																	"HelperIdle3Btm_R2","HelperIdle3Btm_R2","HelperIdle3Btm_R2",
+																	"HelperIdle3Btm_R1","HelperIdle3Btm_R1","HelperIdle3Btm_R1"]
+												);
+
+				helperBtm.addColorFilter(150,0,255,1);
+
+				var helperTop = new CinemaBlock("Walk_Left",["HelperTop_WalkL1","HelperTop_WalkL1","HelperTop_WalkL1",
+																"HelperTop_WalkL2","HelperTop_WalkL2","HelperTop_WalkL2",
+																"HelperTop_WalkL3","HelperTop_WalkL3","HelperTop_WalkL3",
+																"HelperTop_WalkL4","HelperTop_WalkL4","HelperTop_WalkL4",
+																"HelperTop_WalkL5","HelperTop_WalkL5","HelperTop_WalkL5",
+																"HelperTop_WalkL4","HelperTop_WalkL4","HelperTop_WalkL4",
+																"HelperTop_WalkL3","HelperTop_WalkL3","HelperTop_WalkL3",
+																"HelperTop_WalkL2","HelperTop_WalkL2","HelperTop_WalkL2"],
+												"Walk_Right",["HelperTop_WalkR1","HelperTop_WalkR1","HelperTop_WalkR1",
+																"HelperTop_WalkR2","HelperTop_WalkR2","HelperTop_WalkR2",
+																"HelperTop_WalkR3","HelperTop_WalkR3","HelperTop_WalkR3",
+																"HelperTop_WalkR4","HelperTop_WalkR4","HelperTop_WalkR4",
+																"HelperTop_WalkR5","HelperTop_WalkR5","HelperTop_WalkR5",
+																"HelperTop_WalkR4","HelperTop_WalkR4","HelperTop_WalkR4",
+																"HelperTop_WalkR3","HelperTop_WalkR3","HelperTop_WalkR3",
+																"HelperTop_WalkR2","HelperTop_WalkR2","HelperTop_WalkR2"],
+												"Idle1_Left",["HelperIdle4Top_L1","HelperIdle4Top_L1","HelperIdle4Top_L1",
+																	"HelperIdle4Top_L1","HelperIdle4Top_L1","HelperIdle4Top_L1",
+																	"HelperIdle4Top_L1","HelperIdle4Top_L1","HelperIdle4Top_L1",
+																	"HelperIdle4Top_L1","HelperIdle4Top_L1","HelperIdle4Top_L1",
+																	"HelperIdle4Top_L1","HelperIdle4Top_L1","HelperIdle4Top_L1"],
+												"Idle1ToIdle1_Left",["HelperIdle4Top_L1","HelperIdle4Top_L1","HelperIdle4Top_L1",
+																	"HelperIdle4Top_L2","HelperIdle4Top_L2","HelperIdle4Top_L2",
+																	"HelperIdle4Top_L3","HelperIdle4Top_L3","HelperIdle4Top_L3",
+																	"HelperIdle4Top_L4","HelperIdle4Top_L4","HelperIdle4Top_L4",
+																	"HelperIdle4Top_L5","HelperIdle4Top_L5","HelperIdle4Top_L5"],
+												"Idle1ToIdle2_Left",["HelperIdle1Top_L1","HelperIdle1Top_L1","HelperIdle1Top_L1",
+																	"HelperIdle1Top_L2","HelperIdle1Top_L2","HelperIdle1Top_L2",
+																	"HelperIdle1Top_L3","HelperIdle1Top_L3","HelperIdle1Top_L3",
+																	"HelperIdle1Top_L4","HelperIdle1Top_L4","HelperIdle1Top_L4",
+																	"HelperIdle1Top_L5","HelperIdle1Top_L5","HelperIdle1Top_L5"],
+												"Idle2_Left",["HelperIdle1Top_L5","HelperIdle1Top_L5","HelperIdle1Top_L5",
+																	"HelperIdle1Top_L5","HelperIdle1Top_L5","HelperIdle1Top_L5",
+																	"HelperIdle1Top_L5","HelperIdle1Top_L5","HelperIdle1Top_L5",
+																	"HelperIdle1Top_L5","HelperIdle1Top_L5","HelperIdle1Top_L5",
+																	"HelperIdle1Top_L5","HelperIdle1Top_L5","HelperIdle1Top_L5"],
+												"Idle2ToIdle1_Left",["HelperIdle1Top_L5","HelperIdle1Top_L5","HelperIdle1Top_L5",
+																	"HelperIdle1Top_L4","HelperIdle1Top_L4","HelperIdle1Top_L4",
+																	"HelperIdle1Top_L3","HelperIdle1Top_L3","HelperIdle1Top_L3",
+																	"HelperIdle1Top_L2","HelperIdle1Top_L2","HelperIdle1Top_L2",
+																	"HelperIdle1Top_L1","HelperIdle1Top_L1","HelperIdle1Top_L1"],
+												"Idle2ToIdle3_Left",["HelperIdle2Top_L1","HelperIdle2Top_L1","HelperIdle2Top_L1",
+																	"HelperIdle2Top_L2","HelperIdle2Top_L2","HelperIdle2Top_L2",
+																	"HelperIdle2Top_L3","HelperIdle2Top_L3","HelperIdle2Top_L3",
+																	"HelperIdle2Top_L4","HelperIdle2Top_L4","HelperIdle2Top_L4",
+																	"HelperIdle2Top_L5","HelperIdle2Top_L5","HelperIdle2Top_L5"],
+												"Idle3_Left",["HelperIdle2Top_L5","HelperIdle2Top_L5","HelperIdle2Top_L5",
+																	"HelperIdle2Top_L5","HelperIdle2Top_L5","HelperIdle2Top_L5",
+																	"HelperIdle2Top_L5","HelperIdle2Top_L5","HelperIdle2Top_L5",
+																	"HelperIdle2Top_L5","HelperIdle2Top_L5","HelperIdle2Top_L5",
+																	"HelperIdle2Top_L5","HelperIdle2Top_L5","HelperIdle2Top_L5"],
+												"Idle3ToIdle2_Left",["HelperIdle2Top_L5","HelperIdle2Top_L5","HelperIdle2Top_L5",
+																	"HelperIdle2Top_L4","HelperIdle2Top_L4","HelperIdle2Top_L4",
+																	"HelperIdle2Top_L3","HelperIdle2Top_L3","HelperIdle2Top_L3",
+																	"HelperIdle2Top_L2","HelperIdle2Top_L2","HelperIdle2Top_L2",
+																	"HelperIdle2Top_L1","HelperIdle2Top_L1","HelperIdle2Top_L1"],
+												"Idle3ToIdle1_Left",["HelperIdle3Top_L1","HelperIdle3Top_L1","HelperIdle3Top_L1",
+																	"HelperIdle3Top_L2","HelperIdle3Top_L2","HelperIdle3Top_L2",
+																	"HelperIdle3Top_L3","HelperIdle3Top_L3","HelperIdle3Top_L3",
+																	"HelperIdle3Top_L4","HelperIdle3Top_L4","HelperIdle3Top_L4",
+																	"HelperIdle3Top_L5","HelperIdle3Top_L5","HelperIdle3Top_L5"],
+												"Idle1ToIdle3_Left",["HelperIdle3Top_L5","HelperIdle3Top_L5","HelperIdle3Top_L5",
+																	"HelperIdle3Top_L4","HelperIdle3Top_L4","HelperIdle3Top_L4",
+																	"HelperIdle3Top_L3","HelperIdle3Top_L3","HelperIdle3Top_L3",
+																	"HelperIdle3Top_L2","HelperIdle3Top_L2","HelperIdle3Top_L2",
+																	"HelperIdle3Top_L1","HelperIdle3Top_L1","HelperIdle3Top_L1"],
+												"Idle1_Right",["HelperIdle4Top_R1","HelperIdle4Top_R1","HelperIdle4Top_R1",
+																	"HelperIdle4Top_R1","HelperIdle4Top_R1","HelperIdle4Top_R1",
+																	"HelperIdle4Top_R1","HelperIdle4Top_R1","HelperIdle4Top_R1",
+																	"HelperIdle4Top_R1","HelperIdle4Top_R1","HelperIdle4Top_R1",
+																	"HelperIdle4Top_R1","HelperIdle4Top_R1","HelperIdle4Top_R1"],
+												"Idle1ToIdle1_Right",["HelperIdle4Top_R1","HelperIdle4Top_R1","HelperIdle4Top_R1",
+																	"HelperIdle4Top_R2","HelperIdle4Top_R2","HelperIdle4Top_R2",
+																	"HelperIdle4Top_R3","HelperIdle4Top_R3","HelperIdle4Top_R3",
+																	"HelperIdle4Top_R4","HelperIdle4Top_R4","HelperIdle4Top_R4",
+																	"HelperIdle4Top_R5","HelperIdle4Top_R5","HelperIdle4Top_R5"],
+												"Idle1ToIdle2_Right",["HelperIdle1Top_R1","HelperIdle1Top_R1","HelperIdle1Top_R1",
+																	"HelperIdle1Top_R2","HelperIdle1Top_R2","HelperIdle1Top_R2",
+																	"HelperIdle1Top_R3","HelperIdle1Top_R3","HelperIdle1Top_R3",
+																	"HelperIdle1Top_R4","HelperIdle1Top_R4","HelperIdle1Top_R4",
+																	"HelperIdle1Top_R5","HelperIdle1Top_R5","HelperIdle1Top_R5"],
+												"Idle2_Right",["HelperIdle1Top_R5","HelperIdle1Top_R5","HelperIdle1Top_R5",
+																	"HelperIdle1Top_R5","HelperIdle1Top_R5","HelperIdle1Top_R5",
+																	"HelperIdle1Top_R5","HelperIdle1Top_R5","HelperIdle1Top_R5",
+																	"HelperIdle1Top_R5","HelperIdle1Top_R5","HelperIdle1Top_R5",
+																	"HelperIdle1Top_R5","HelperIdle1Top_R5","HelperIdle1Top_R5"],
+												"Idle2ToIdle1_Right",["HelperIdle1Top_R5","HelperIdle1Top_R5","HelperIdle1Top_R5",
+																	"HelperIdle1Top_R4","HelperIdle1Top_R4","HelperIdle1Top_R4",
+																	"HelperIdle1Top_R3","HelperIdle1Top_R3","HelperIdle1Top_R3",
+																	"HelperIdle1Top_R2","HelperIdle1Top_R2","HelperIdle1Top_R2",
+																	"HelperIdle1Top_R1","HelperIdle1Top_R1","HelperIdle1Top_R1"],
+												"Idle2ToIdle3_Right",["HelperIdle2Top_R1","HelperIdle2Top_R1","HelperIdle2Top_R1",
+																	"HelperIdle2Top_R2","HelperIdle2Top_R2","HelperIdle2Top_R2",
+																	"HelperIdle2Top_R3","HelperIdle2Top_R3","HelperIdle2Top_R3",
+																	"HelperIdle2Top_R4","HelperIdle2Top_R4","HelperIdle2Top_R4",
+																	"HelperIdle2Top_R5","HelperIdle2Top_R5","HelperIdle2Top_R5"],
+												"Idle3_Right",["HelperIdle2Top_R5","HelperIdle2Top_R5","HelperIdle2Top_R5",
+																	"HelperIdle2Top_R5","HelperIdle2Top_R5","HelperIdle2Top_R5",
+																	"HelperIdle2Top_R5","HelperIdle2Top_R5","HelperIdle2Top_R5",
+																	"HelperIdle2Top_R5","HelperIdle2Top_R5","HelperIdle2Top_R5",
+																	"HelperIdle2Top_R5","HelperIdle2Top_R5","HelperIdle2Top_R5"],
+												"Idle3ToIdle2_Right",["HelperIdle2Top_R5","HelperIdle2Top_R5","HelperIdle2Top_R5",
+																	"HelperIdle2Top_R4","HelperIdle2Top_R4","HelperIdle2Top_R4",
+																	"HelperIdle2Top_R3","HelperIdle2Top_R3","HelperIdle2Top_R3",
+																	"HelperIdle2Top_R2","HelperIdle2Top_R2","HelperIdle2Top_R2",
+																	"HelperIdle2Top_R1","HelperIdle2Top_R1","HelperIdle2Top_R1"],
+												"Idle3ToIdle1_Right",["HelperIdle3Top_R1","HelperIdle3Top_R1","HelperIdle3Top_R1",
+																	"HelperIdle3Top_R2","HelperIdle3Top_R2","HelperIdle3Top_R2",
+																	"HelperIdle3Top_R3","HelperIdle3Top_R3","HelperIdle3Top_R3",
+																	"HelperIdle3Top_R4","HelperIdle3Top_R4","HelperIdle3Top_R4",
+																	"HelperIdle3Top_R5","HelperIdle3Top_R5","HelperIdle3Top_R5"],
+												"Idle1ToIdle3_Right",["HelperIdle3Top_R5","HelperIdle3Top_R5","HelperIdle3Top_R5",
+																	"HelperIdle3Top_R4","HelperIdle3Top_R4","HelperIdle3Top_R4",
+																	"HelperIdle3Top_R3","HelperIdle3Top_R3","HelperIdle3Top_R3",
+																	"HelperIdle3Top_R2","HelperIdle3Top_R2","HelperIdle3Top_R2",
+																	"HelperIdle3Top_R1","HelperIdle3Top_R1","HelperIdle3Top_R1"]
+												);
+
+
+
+				var helper = new ActorBlock();
+
+
+				helper.z = 2;
+
+				helper.adoptChild(helperBtm);
+				helper.adoptChild(helperTop);
+
+				helperBtm.setMemoryCapacity(1000);
+				helperTop.setMemoryCapacity(1000);
+				helper.setMemoryCapacity(1000);
+				//helper.showDebuggingDisplay = true;
+				
+				// var t1 = new TextBlock("MovieBlock - Movement/Memory Test", "Verdana", 36, "red","center");
+				// t1.z = 1;
+				// t1.y = -200;
+
+				// var t2 = new ParagraphBlock(CANVASMANAGER.width,"Move bird through space using LEFT, RIGHT, UP, DOWN.\nRotate bird through space using (A) for CCW and (S) for CW.\nPut bird to sleep and wake it using (1).\nWhile the bird is sleeping, move back through memory\nusing (2) and forward using (3).", "Verdana", 36, "red","center");
+				// t2.z = 1.5;
+				// t2.y = 150;
+
+				
+				helper.addBehavior(simplePhysicsUpdate);
+				helper.addConstraint(dampVelocity);
+				helper.addKeyDownReaction(KEYCODES.LEFT, applyForceLeft, { force:0.05 });
+				helper.addKeyDownReaction(KEYCODES.LEFT, playHelperLeft);
+				helper.addKeyDownReaction(KEYCODES.RIGHT, applyForceRight, { force:0.05 });
+				helper.addKeyDownReaction(KEYCODES.RIGHT, playHelperRight);
+				helper.addKeyDownReaction(KEYCODES.UP, applyForceAway, { force:0.0002 });
+				helper.addKeyDownReaction(KEYCODES.DOWN, applyForceToward, { force:0.0002 });
+				helper.addKeyUpReaction(KEYCODES.LEFT, removeForceLeft, { force:0.05 });
+				helper.addKeyUpReaction(KEYCODES.RIGHT, removeForceRight, { force:0.05 });
+				helper.addKeyUpReaction(KEYCODES.UP, removeForceAway, { force:0.0002 });
+				helper.addKeyUpReaction(KEYCODES.DOWN, removeForceToward, { force:0.0002 });
+				// helper.addKeyDownReaction(KEYCODES.A, applyForceCCW);
+				// helper.addKeyDownReaction(KEYCODES.S, applyForceCW);
+				// helper.addKeyUpReaction(KEYCODES.A, removeForceCCW);
+				// helper.addKeyUpReaction(KEYCODES.S, removeForceCW);
+				helper.addKeyPressReaction(KEYCODES.ONE, toggleObjectSleepState);
+				helper.addKeyPressReaction(KEYCODES.TWO, moveObjectInTime);
+				helper.addKeyPressReaction(KEYCODES.THREE, moveObjectInTime);
+				helper.addKeyPressReaction(KEYCODES.FOUR, toggleObjectDebugDisplay);
+
+				helper.addBehavior(helper_ManageState);
+				helper.addBehavior(helper_ApplyState);
+
+				helper.children[0].addMouseClickReaction(addRandomFilter);
+				
+
+				var bkgd = new MovieBlock("Background");
+
+
+				CANVASMANAGER.addNewCanvasFrame();
+
+				CANVASMANAGER.adoptBlockChild(bkgd,0);
+				// CANVASMANAGER.adoptBlockChild(t1,1);
+				// CANVASMANAGER.adoptBlockChild(t2,1);
+				CANVASMANAGER.adoptBlockChild(helper,1);
+
+				CANVASMANAGER.start(30);
+			});
+
+			CANVASMANAGER.loadAssets("imgXMLsmoketest.xml","audioXMLsmoketest.xml","videoXMLsmoketest.xml");
+
+		});
+
+
+	</script> 
+
+</head>                                                                 
+<body style="margin:0px">                            
+</body>     
+
+    
+
+</html>

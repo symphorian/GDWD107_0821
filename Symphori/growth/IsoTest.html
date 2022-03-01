@@ -1,0 +1,376 @@
+<html>
+<head>  
+  <script type="application/javascript"> 
+  	var canvas;
+	var ctx;
+	var debugStr;
+	var gsize = 100
+	var bsize = 50;
+	
+	var tiles;
+	var tileGrid;
+	
+	var translation = [400,0];
+	
+	var mouseDown = false;
+	var mouseDownPos = [0,0];
+	var mouseUpPos = [0,0];
+	var mouseMovePos = [0,0];
+	
+	function init() {
+		drawPetal();
+		drawFlower();
+		drawSoilTile();
+		drawGrassTile();
+		
+		tiles = [document.getElementById("tile0"),document.getElementById("tile1"),document.getElementById("flower")];
+		tileGrid = new Array(gsize);
+		for (var i = 0; i < gsize; i++) {
+			tileGrid[i] = new Array(gsize);
+			for (var j = 0; j < gsize; j++) {
+				if (Math.random() > .9) {
+					tileGrid[i][j] = 2;
+				}
+				else {
+					tileGrid[i][j] = parseInt(Math.random()*2);
+				}
+			}
+		}
+		
+		canvas = document.getElementById("canvas");
+		canvas.addEventListener("mousedown",onDown,false);
+		canvas.addEventListener("mouseup",onRelease,false);
+		canvas.addEventListener("mousemove",onMove,false);
+		ctx = canvas.getContext("2d");
+		debugStr = document.getElementById("debug");
+		
+		ctx.fillStyle = "#FF0000";
+		
+		drawSquares();
+	}
+	
+	function onDown(e) {
+		mouseDown = true;
+		mouseDownPos = [e.pageX - canvas.offsetLeft,e.pageY - canvas.offsetTop];
+		mouseMovePos = [e.pageX - canvas.offsetLeft,e.pageY - canvas.offsetTop];
+	}
+	
+	function onRelease(e) {
+		mouseDown = false;
+		mouseUpPos = [e.pageX - canvas.offsetLeft,e.pageY - canvas.offsetTop];
+		
+		if (mouseDownPos[0] == mouseUpPos[0] && mouseDownPos[1] == mouseUpPos[1]) {
+		
+			var realPt = canvasToIso([mouseUpPos[0],mouseUpPos[1]]); //unskewPoint(unrotatePointBy([mouseX-translation[0],mouseY-translation[1]],45),-.4);
+			
+			var realX = realPt[0];
+			var realY = realPt[1];
+			
+			var xIndex = parseInt(realX / bsize);
+			var yIndex = parseInt(realY / bsize);
+			
+			//debugStr.innerHTML = "click at index (" + xIndex + "," + yIndex + ")<br />";
+			
+			//toIso(ctx);
+			//ctx.fillRect(xIndex*bsize,yIndex*bsize,bsize,bsize);
+			//toCanvas(ctx);
+			
+			if (xIndex >= 0 && yIndex >= 0 && xIndex < gsize && yIndex < gsize) {
+				if (tileGrid[xIndex][yIndex] != 2) {
+					tileGrid[xIndex][yIndex] = 2;
+				}
+				else {
+					tileGrid[xIndex][yIndex] = parseInt(Math.random()*2);
+				}
+			}
+			drawSquares();
+			
+			//debugStr.innerHTML = "click at (" + mouseUpPos[0] + "," + mouseUpPos[1] + ")<br />";
+			//debugStr.innerHTML += "real point (" + parseInt(realPt[0]) + "," + parseInt(realPt[1]) + ")<br />";
+		}
+
+	}
+	
+	function onMove(e) {
+		if (mouseDown) {
+			var mousePos = [e.pageX - canvas.offsetLeft,e.pageY - canvas.offsetTop];
+			translation[0] += mousePos[0] - mouseMovePos[0];
+			translation[1] += mousePos[1] - mouseMovePos[1];
+			//ctx.beginPath();
+			//ctx.clearRect(0,0,800,600);
+			//drawIsoGrid();
+			drawSquares();
+			mouseMovePos = [e.pageX - canvas.offsetLeft,e.pageY - canvas.offsetTop];
+		}
+	}
+	
+	function canvasToIso(point) {
+		return unskewPoint(unrotatePointBy([point[0]-translation[0],point[1]-translation[1]],45),-.4);
+	}
+	
+	function isoToCanvas(point) {
+		var returnPt = rotatePointBy(skewPoint(point,-.4),45);
+		returnPt[0] += translation[0];
+		returnPt[1] += translation[1];
+		return returnPt;
+	}
+	
+	function skewPoint(point,skew) {
+		var x = point[0];
+		var y = point[1];
+		
+		var newX = x + y*skew;
+		var newY = x*skew + y;
+		
+		return [newX,newY];
+	}
+	
+	function unskewPoint(point,skew) {
+		var x = point[0];
+		var y = point[1];
+		
+		var denom = skew*skew-1;
+		
+		var oldX = -x/denom + y*skew/denom;
+		var oldY = x*skew/denom - y/denom;
+		
+		return [oldX,oldY];
+	}
+	
+	function rotatePointBy(point,degrees) {
+		var x = point[0];
+		var y = point[1];
+		var radians = (Math.PI/180)*degrees;
+		var cosR = Math.cos(radians);
+		var sinR = Math.sin(radians);
+		
+		return [x*cosR - y*sinR, x*sinR + y*cosR];
+	}
+	
+	function unrotatePointBy(point,degrees) {
+		var x = point[0];
+		var y = point[1];
+		var radians = (Math.PI/180)*-degrees;
+		var cosR = Math.cos(radians);
+		var sinR = Math.sin(radians);
+		
+		return [x*cosR - y*sinR, x*sinR + y*cosR];
+	}
+	
+	function toIso(context) {
+		context.save();
+		context.translate(translation[0],translation[1]);
+		context.rotate((Math.PI/180)*45);
+		context.transform(1,-.4,-.4,1,1,1);
+	}
+	
+	function toCanvas(context) {
+		context.restore();
+	}
+	
+	function toIsoTranslated(context,xTrans,yTrans) {
+		context.save();
+		context.translate(xTrans,yTrans);
+		context.rotate((Math.PI/180)*45);
+		context.transform(1,-.4,-.4,1,1,1);
+	}
+	
+	function drawIsoGrid() {
+		toIso(ctx);
+		drawGrid();
+		toCanvas(ctx);
+	}
+	
+	function drawGrid() {
+		for (var i = 0; i < gsize+1; i++) {
+			ctx.moveTo(i*bsize,0);
+			ctx.lineTo(i*bsize,gsize*bsize);
+			ctx.moveTo(0,i*bsize);
+			ctx.lineTo(gsize*bsize,i*bsize);
+		}
+		ctx.stroke();
+	}
+	
+	function drawSquares() {
+		var realPt = canvasToIso([400,300]);
+		
+		var xIndex = parseInt(realPt[0] / bsize);
+		var yIndex = parseInt(realPt[1] / bsize);
+		
+		var range = 14;
+		
+		var xmin = (xIndex-range < 0) ? 0 : xIndex-range;
+		var xmax = (xIndex+range > gsize-1) ? gsize-1 : xIndex+range;
+		var ymin = (yIndex-range < 0) ? 0 : yIndex-range;
+		var ymax = (yIndex+range > gsize-1) ? gsize-1 : yIndex+range;
+		//debugStr.innerHTML = "xmin=" + xmin + " xmax=" + xmax + " ymin=" + ymin + " ymax=" + ymax + ")<br />";
+		ctx.clearRect(0,0,800,600);
+		for (var i = xmin+1; i < xmax; i++) {
+			for (var j = ymin+1; j < ymax; j++) {
+				var isoPt = [i*bsize,j*bsize];
+				var canvasPt = isoToCanvas(isoPt);
+				if (canvasPt[0] > -50 && canvasPt[0] < 850 && canvasPt[1] > -50 && canvasPt[1] < 650) {
+					ctx.drawImage(tiles[tileGrid[i-1][j-1]],canvasPt[0]-50,canvasPt[1]-45);
+				}
+			}
+		}
+	}
+	
+	function drawSoilTile() {
+		var grassCanvas = document.getElementById("tile0");
+		var gctx = grassCanvas.getContext("2d");
+		toIsoTranslated(gctx,50,0);
+		gctx.fillStyle = "#337744";
+		gctx.fillRect(0,0,50,50);
+		toCanvas(gctx);
+	}
+
+	function drawGrassTile() {
+		var grassCanvas = document.getElementById("tile1");
+		var gctx = grassCanvas.getContext("2d");
+		toIsoTranslated(gctx,50,0);
+		gctx.fillStyle = "#009900";
+		gctx.fillRect(0,0,50,50);
+		toCanvas(gctx);
+	}
+	
+	function drawPetal() {  
+      var canvas = document.getElementById("petal");  
+      if (canvas.getContext) {  
+        var ctx = canvas.getContext("2d");  
+		ctx.translate(0,12.5);
+		//var center = [x/scaleX,y/scaleY];
+		var center = [0,0];
+
+		var radius = 25;
+		var bulgeRadius = 10;
+		var bulgeWidth = 37.5;
+		
+		var tip = [radius, 0];
+		var bulgeL = [bulgeRadius,bulgeWidth/2];
+		var bulgeR = [bulgeRadius,-bulgeWidth/2];
+		
+		ctx.strokeStyle = "#EEDD66";
+		ctx.lineWidth = 2;
+		ctx.fillStyle = "#AA00AB";
+		
+		var debugStr = document.getElementById("debug");
+		debugStr.innerHTML += "drawing petal";
+		
+		//for (var i = 0; i < numPetals; i++) {
+			var grad = ctx.createRadialGradient(center[0],center[1],0,center[0]+tip[0]*.5,center[1]+tip[1]*.5,radius);
+			grad.addColorStop(0,"#00AA00");
+			grad.addColorStop(.17,"#CCFF00");
+			grad.addColorStop(.4,"#AA00AB");
+			//grad.addColorStop(.5,"#AA00AB");
+			grad.addColorStop(.7,"#DD00DE");
+			//grad.addColorStop(1,"#DD00DE");
+			
+			ctx.fillStyle = grad;
+			ctx.strokeStyle = "#CCBB44";
+			ctx.lineWidth = 2;
+			
+			ctx.beginPath();
+			ctx.moveTo(center[0],center[1]);
+			ctx.quadraticCurveTo(center[0]+bulgeR[0],center[1]+bulgeR[1],center[0]+tip[0],center[1]+tip[1]);
+			ctx.quadraticCurveTo(center[0]+bulgeL[0],center[1]+bulgeL[1],center[0],center[1]);
+			ctx.fill();
+			ctx.stroke();
+			
+			
+			ctx.strokeStyle = "rgba(0,0,0,.075)";
+			ctx.lineWidth = 1;
+			var randNum = 6; //Math.random()*5+3;
+			//debug.innerHTML += "numExtra=" + randNum + "<br />";
+			for (var j = 0; j < randNum; j++) {
+				newBulgeL = rotatePointBy([bulgeL[0]*1.1,bulgeL[1]*.75*j/randNum],0);
+				newBulgeR = rotatePointBy([bulgeR[0]*1.1,bulgeR[1]*.75*j/randNum],0);
+				
+				ctx.beginPath();
+				ctx.moveTo(center[0],center[1]);
+				ctx.quadraticCurveTo(center[0]+newBulgeL[0],center[1]+newBulgeL[1],center[0]+tip[0],center[1]+tip[1]);
+				ctx.moveTo(center[0],center[1]);
+				ctx.quadraticCurveTo(center[0]+newBulgeR[0],center[1]+newBulgeR[1],center[0]+tip[0],center[1]+tip[1]);
+				ctx.stroke();
+			}
+			debugStr.innerHTML += "petal done";
+		//}
+		
+      }  
+    } 
+	
+	function drawFlower() {  
+      var canvas = document.getElementById("flower");  
+      if (canvas.getContext) {  
+        var ctx = canvas.getContext("2d");  
+		
+		toIsoTranslated(ctx,50,0);
+		ctx.fillStyle = "#009900";
+		ctx.fillRect(0,0,50,50);
+		toCanvas(ctx);
+  		
+		ctx.save();
+		ctx.translate(50,20);
+		ctx.scale(1,.75);
+		
+		var numPetals = 6;
+		var radius = 25;
+		var bulgeRadius = 10;
+		var bulgeWidth = 37.5;
+		
+		var tip = [radius, 0];
+		var bulgeL = [bulgeRadius,bulgeWidth/2];
+		var bulgeR = [bulgeRadius,-bulgeWidth/2];
+		
+		ctx.strokeStyle = "#EEDD66";
+		ctx.lineWidth = 1;
+		ctx.fillStyle = "#AA00AB";
+		
+		var degInc = (360 / numPetals)*2;
+		
+		var newTip;
+		var newBulgeL;
+		var newBulgeR;
+		
+		var debugStr = document.getElementById("debug");
+		var petal = document.getElementById("petal");
+		//ctx.save();
+		
+		debugStr.innerHTML = "";
+		
+		for (var i = 0; i < 6; i++) {
+			ctx.save();
+			//debugStr.innerHTML += "<br />" + i + " ";
+			if (i < numPetals/2) {
+				ctx.rotate((Math.PI/180)*(i*degInc));
+				//debugStr.innerHTML += "iltnumpetals/2 " + i*degInc;
+			}
+			else {
+				ctx.rotate((Math.PI/180)*((i+.5)*degInc));
+				//debugStr.innerHTML += "i>=numpetals/2 " + (i+.5)*degInc;
+			}
+			ctx.save();
+			ctx.translate(0,-12.5);
+			ctx.drawImage(petal,0,0);
+			//debugStr.innerHTML += "drawn";
+			ctx.restore();
+			ctx.restore();
+			
+		}
+		
+      }  
+	  ctx.restore();
+    }  
+	
+	  </script>
+</head>
+<body onLoad="init();">
+	<canvas id="canvas" width="800" height="600"></canvas>
+    <canvas id="tile0" width="100" height="45"></canvas>
+    <canvas id="tile1" width="100" height="45"></canvas>
+    <canvas id="petal" width="25" height="25"></canvas>
+    <canvas id="flower" width="100" height="45"></canvas>
+    
+    <div id="debug"></div>
+</body>
+</html>

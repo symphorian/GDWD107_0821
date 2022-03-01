@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Videos>
+	<Video>
+		<Source>
+			<Filename>Assets/Videos/BigBuckBunny.ogg</Filename>
+			<Type>video/ogg</Type>
+		</Source>
+		<Alias>BigBuckBunny</Alias>
+	</Video>
+</Videos>

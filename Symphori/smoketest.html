@@ -1,0 +1,267 @@
+<html>                                                                  
+<head>   
+	<script type="text/javascript" src="Source/BlocksJS.js"></script>
+	  
+  	<script type="text/javascript">
+  		//CANVASMANAGER.showNoMessages();
+  		//CANVASMANAGER.showInfoMessages();
+  		CANVASMANAGER.showErrorMessages();
+  		//LOG.setDisplayObjects(true);
+  		//LOG.setDisplayBlocks(true);
+		LOG.write("Starting smoketest app");
+		CANVASMANAGER.setStartUpFunction(function() {
+			LOG.write("smoketest app onstartup called")
+			CANVASMANAGER.assetManager.assetsLoadedEvent.subscribe(function () {
+				var bird = new MovieBlock("Bird1","Bird2","Bird3","Bird4","Bird5","Bird6","Bird7","Bird8","Bird9");
+				//var bird = new MovieMaskBlock("wall","Bird1PNG","Bird2PNG","Bird3PNG","Bird4PNG","Bird5PNG","Bird6PNG","Bird7PNG","Bird8PNG","Bird9PNG");
+				bird.x = 400;
+				bird.z = 1;
+				
+				bird.addColorFilter(255,255,0,.2);
+				bird.addImageFilter("Dice");
+
+				//bird.addWindowMask("Bird1PNG","Bird2PNG","Bird3PNG","Bird4PNG","Bird5PNG","Bird6PNG","Bird7PNG","Bird8PNG","Bird9PNG");
+				bird.addWallMask("Bird1PNG","Bird2PNG","Bird3PNG","Bird4PNG","Bird5PNG","Bird6PNG","Bird7PNG","Bird8PNG","Bird9PNG");
+
+				//bird.resetFiltersAndMasks();
+
+				var b = new CinemaBlock("BirdLeft",["Bird1","Bird2","Bird3","Bird4","Bird5","Bird6","Bird7","Bird8","Bird9"], "BirdRight", ["Bird1R","Bird2R","Bird3R","Bird4R","Bird5R","Bird6R","Bird7R","Bird8R","Bird9R"]);
+				//var b = new CinemaMaskBlock("window","BirdLeft",["Bird1PNG","Bird2PNG","Bird3PNG","Bird4PNG","Bird5PNG","Bird6PNG","Bird7PNG","Bird8PNG","Bird9PNG"], "BirdRight", ["Bird1RPNG","Bird2RPNG","Bird3RPNG","Bird4RPNG","Bird5RPNG","Bird6RPNG","Bird7RPNG","Bird8RPNG","Bird9RPNG"]);
+
+				b.z = 1;
+				b.setMemoryCapacity(1000);
+
+				//b.addImageFilterToMovie("BirdLeft","Dice");
+				//b.addImageFilterToMovies("Dice", "BirdLeft", "BirdRight");
+				//b.addImageFiltersToMovies("BirdLeft", ["abstract","preview","preview","preview","preview","preview","preview","preview","preview"], "BirdRight", ["preview","abstract","abstract","abstract","abstract","abstract","abstract","abstract","abstract"]);
+				b.addImageFilter("Dice");
+
+				//b.addColorFilterToMovie("BirdLeft",0,255,255,.4);
+				//b.addColorFilterToMovies(0,255,255,.4, "BirdLeft", "BirdRight");
+				//b.addColorFiltersToMovies("BirdLeft",255,0,255,.2,"BirdRight",0,255,0,.3);
+				b.addColorFilter(0,255,255,.4);
+
+				//b.addWindowMaskToMovie("BirdLeft","Bird1PNG","Bird2PNG","Bird3PNG","Bird4PNG","Bird5PNG","Bird6PNG","Bird7PNG","Bird8PNG","Bird9PNG");
+				//b.addWindowMaskToMovies(["Bird1PNG","Bird2PNG","Bird3PNG","Bird4PNG","Bird5PNG","Bird6PNG","Bird7PNG","Bird8PNG","Bird9PNG"],"BirdLeft","BirdRight");
+				b.addWindowMasksToMovies("BirdLeft",["Bird1PNG","Bird2PNG","Bird3PNG","Bird4PNG","Bird5PNG","Bird6PNG","Bird7PNG","Bird8PNG","Bird9PNG"],"BirdRight",["Bird1RPNG","Bird2RPNG","Bird3RPNG","Bird4RPNG","Bird5RPNG","Bird6RPNG","Bird7RPNG","Bird8RPNG","Bird9RPNG"]);
+				//b.addWindowMask("Dice");
+
+				//b.addWallMaskToMovie("BirdLeft","Bird1PNG","Bird2PNG","Bird3PNG","Bird4PNG","Bird5PNG","Bird6PNG","Bird7PNG","Bird8PNG","Bird9PNG");
+				//b.addWallMaskToMovies(["Bird1PNG","Bird2PNG","Bird3PNG","Bird4PNG","Bird5PNG","Bird6PNG","Bird7PNG","Bird8PNG","Bird9PNG"],"BirdLeft","BirdRight");
+				//b.addWallMasksToMovies("BirdLeft",["Bird1PNG","Bird2PNG","Bird3PNG","Bird4PNG","Bird5PNG","Bird6PNG","Bird7PNG","Bird8PNG","Bird9PNG"],"BirdRight",["Bird1RPNG","Bird2RPNG","Bird3RPNG","Bird4RPNG","Bird5RPNG","Bird6RPNG","Bird7RPNG","Bird8RPNG","Bird9RPNG"]);
+				//b.addWallMask("Dice");
+
+				//b.resetFiltersForMovie("BirdLeft");
+				//b.resetFiltersForMovies("BirdLeft", "BirdRight");
+				//b.resetFilters();
+
+				//b.resetMasksForMovie("BirdLeft");
+				//b.resetMasksForMovies("BirdLeft","BirdRight");
+				//b.resetMasks();
+
+				//b.resetFiltersAndMasksForMovie("BirdLeft");
+				//b.resetFiltersAndMasksForMovies("BirdLeft","BirdRight");
+
+				//b.resetFiltersAndMasks();
+
+				//var sound = new SoundBlock("StageClear");
+				//sound.addBehavior(setVolumeBasedOnZ);
+				//sound.setLooping(true);
+				//sound.play();
+				//b.adoptChild(sound);
+
+				//var stereo = new StereoBlock("StageClear","BossStageClear");
+				//stereo.addKeyDownReaction(KEYCODES.O,function(){stereo.play("StageClear");});
+				//stereo.addKeyDownReaction(KEYCODES.P,function(){stereo.play("BossStageClear");});
+				//stereo.addKeyDownReaction(KEYCODES.SPACE,function(){stereo.pause();});
+				//stereo.addBehavior(setVolumeBasedOnZ);
+				//b.adoptChild(stereo);
+				
+				var t1 = new ImageTextBlock("Hello World", "Verdana", 36, "red","left");
+				t1.z = 1;
+				t1.x = 0;
+				//t1.maskMode = "wall";
+				//t1.maskMode = "window";
+
+				t1.setMemoryCapacity(1000);
+
+				var t2 = new TextBlock("GoodBye", "Hymmnos", 36, "red","left");
+				t2.z = 1;
+				t2.x = -300;
+				//t2.maskMode = "wall";
+				//t2.maskMode = "window"; // doesn't work...
+
+				t2.setMemoryCapacity(1000);
+				
+
+				// mouse tests
+
+				//b.addBehavior(zpace, {away:true,increment:0.01});
+
+				// mouse click test
+				//b.addMouseClickReaction(togglePause);
+
+				// mouse over/out test
+				//b.addMouseOverReaction(togglePause);
+				//b.addMouseOutReaction(togglePause);
+
+				// mouse down test
+				//b.addMouseDownReaction(togglePause);
+
+				// mouse up test
+				//b.addMouseUpReaction(togglePause);
+
+
+
+				// key tests
+
+				// any key down test
+				//b.addAnyKeyDownReaction(togglePause);
+
+				// any key up test
+				//b.addAnyKeyUpReaction(togglePause);
+
+				// 'F' key down test
+				//b.addKeyDownReaction(KEYCODES.F, togglePause);
+
+				// 'F' key up test
+				//b.addKeyUpReaction(KEYCODES.F, togglePause);
+
+				// 'ASD' key combination test
+				//b.addKeyCombinationReaction([KEYCODES.A,KEYCODES.S,KEYCODES.D], togglePause);
+				
+
+				// shatter test
+				//b.shatter(5);
+				//b.addBehavior(followMouseThenReturnHome,{},true);
+
+
+				
+
+
+				
+				b.addBehavior(simplePhysicsUpdate);
+				b.addConstraint(dampVelocity);
+				b.addKeyDownReaction(KEYCODES.LEFT, applyForceLeft);
+				b.addKeyDownReaction(KEYCODES.LEFT, playBirdLeft);
+				b.addKeyDownReaction(KEYCODES.RIGHT, applyForceRight);
+				b.addKeyDownReaction(KEYCODES.RIGHT, playBirdRight);
+				b.addKeyDownReaction(KEYCODES.UP, applyForceAway);
+				b.addKeyDownReaction(KEYCODES.DOWN, applyForceToward);
+				b.addKeyUpReaction(KEYCODES.LEFT, removeForceLeft);
+				b.addKeyUpReaction(KEYCODES.RIGHT, removeForceRight);
+				b.addKeyUpReaction(KEYCODES.UP, removeForceAway);
+				b.addKeyUpReaction(KEYCODES.DOWN, removeForceToward);
+				//b.addKeyPressReaction(KEYCODES.ONE, toggleObjectSleepState);
+				b.addKeyPressReaction(KEYCODES.TWO, moveObjectInTime);
+				b.addKeyPressReaction(KEYCODES.THREE, moveObjectInTime);
+
+				//b.addMouseClickReaction(toggleObjectSleepState);
+				b.addMouseClickReaction(applyRandomColorFilter);
+				
+
+
+				t1.addBehavior(simplePhysicsUpdate);
+				t1.addConstraint(dampVelocity);
+				t1.addKeyDownReaction(KEYCODES.A, applyForceLeft);
+				t1.addKeyDownReaction(KEYCODES.D, applyForceRight);
+				t1.addKeyDownReaction(KEYCODES.W, applyForceAway);
+				t1.addKeyDownReaction(KEYCODES.S, applyForceToward);
+				t1.addKeyUpReaction(KEYCODES.A, removeForceLeft);
+				t1.addKeyUpReaction(KEYCODES.D, removeForceRight);
+				t1.addKeyUpReaction(KEYCODES.W, removeForceAway);
+				t1.addKeyUpReaction(KEYCODES.S, removeForceToward);
+				t1.addAnyKeyPressReaction(typeIntoObject);
+				t1.addKeyPressReaction(KEYCODES.ONE, toggleTypeable);
+				t1.addKeyPressReaction(KEYCODES.TWO, moveObjectInTime);
+				t1.addKeyPressReaction(KEYCODES.THREE, moveObjectInTime);
+
+				//t1.addMouseClickReaction(toggleObjectSleepState);
+				t1.addMouseClickReaction(setRandomTextColor);
+				
+				/*
+				t2.addBehavior(simplePhysicsUpdate);
+				t2.addConstraint(dampVelocity);
+				t2.addKeyDownReaction(KEYCODES.A, applyForceLeft);
+				t2.addKeyDownReaction(KEYCODES.D, applyForceRight);
+				t2.addKeyDownReaction(KEYCODES.W, applyForceAway);
+				t2.addKeyDownReaction(KEYCODES.S, applyForceToward);
+				t2.addKeyUpReaction(KEYCODES.A, removeForceLeft);
+				t2.addKeyUpReaction(KEYCODES.D, removeForceRight);
+				t2.addKeyUpReaction(KEYCODES.W, removeForceAway);
+				t2.addKeyUpReaction(KEYCODES.S, removeForceToward);
+				t2.addAnyKeyPressReaction(typeIntoObject);
+				t2.addKeyPressReaction(KEYCODES.ONE, toggleTypeable);
+				t2.addKeyPressReaction(KEYCODES.TWO, moveObjectInTime);
+				t2.addKeyPressReaction(KEYCODES.THREE, moveObjectInTime);
+				t2.addMouseClickReaction(toggleObjectSleepState);
+*/
+
+				t2.addMouseClickReaction(setRandomTextColor);
+				
+
+				var bkgd = new MovieBlock("Background");
+				//var b = new MovieBlock(CANVASMANAGER.getImageAssetData("Butterfly1","Butterfly1","Butterfly2","Butterfly2","Butterfly3","Butterfly3","Butterfly2","Butterfly2"));
+				//b.addBehavior(simpleVelocityUpdate);
+				//b.addBehavior(pace,{left:-400,right:400});
+				//b.addBehavior(spin);
+				//b.addBehavior(growAndShrink);
+				//b.addBehavior(zpace);
+				//b.addConstraint(bounceOffBoundaries,{leftedge:-CANVASMANAGER.width/2,rightedge:CANVASMANAGER.width/2,topedge:-CANVASMANAGER.height/2,bottomedge:CANVASMANAGER.height/2});
+
+				CANVASMANAGER.addNewCanvasFrame();
+
+				CANVASMANAGER.adoptBlockChild(bkgd,0);
+				CANVASMANAGER.adoptBlockChild(b,1);
+				CANVASMANAGER.adoptBlockChild(t1,1);
+				CANVASMANAGER.adoptBlockChild(t2,1);
+				CANVASMANAGER.adoptBlockChild(bird,1);
+				CANVASMANAGER.canvasFrameStack[1].addMouseClickReaction(createButterfly);
+
+
+				// Butterfly grid
+				/*
+				var range = 500;
+
+				for (var i = -range; i <= range; i += 100) {
+					//for (var j = -range; j <= range; j += 100) {
+						for (var k = 0; k <= 50; k += 1) {
+							var b = new MovieBlock("Butterfly1","Butterfly1","Butterfly2","Butterfly2","Butterfly3","Butterfly3","Butterfly2","Butterfly2");
+							b.x = i;
+							b.y = 100;
+							b.z = k;
+							CANVASMANAGER.adoptBlockChild(b,0);
+						}
+					//}
+				}
+				*/
+
+
+				// audio test
+				//CANVASMANAGER.canvasFrameStack[1].addKeyDownReaction(KEYCODES.ONE, playStageClear);
+				//CANVASMANAGER.canvasFrameStack[1].addKeyDownReaction(KEYCODES.TWO, playBossStageClear);
+				//CANVASMANAGER.canvasFrameStack[1].addKeyDownReaction(KEYCODES.P,pauseStageClear);
+				//CANVASMANAGER.canvasFrameStack[1].addKeyDownReaction(KEYCODES.W,increaseStageClearVolume);
+				//CANVASMANAGER.canvasFrameStack[1].addKeyDownReaction(KEYCODES.S,decreaseStageClearVolume);
+
+				//CANVASMANAGER.canvasFrameStack[0].addBehavior(spin);
+				//CANVASMANAGER.canvasFrameStack[1].addMouseClickReaction(toggleObjectSleepState);
+
+
+				CANVASMANAGER.start(30);
+				//b.addMouseClickBehavior(addRedFilter);
+			});
+			CANVASMANAGER.loadAssets("imgXMLsmoketest.xml","audioXMLsmoketest.xml");
+
+		});
+
+
+	</script> 
+
+</head>                                                                 
+<body style="margin:0px">                            
+</body>     
+
+    
+
+</html>

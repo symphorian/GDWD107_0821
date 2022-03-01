@@ -1,0 +1,32 @@
+[03-Sep-2012 11:04:35] PHP Warning:  readfile(http://www.google.com/ig/api?weather=60201) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/symphor1/public_html/weather/weather.php on line 20
+[03-Sep-2012 11:04:42] PHP Warning:  readfile(http://www.google.com/ig/api?weather=60201) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/symphor1/public_html/weather/weather.php on line 20
+[03-Sep-2012 11:04:58] PHP Warning:  readfile(http://www.google.com/ig/api?weather=60201) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/symphor1/public_html/weather/weather.php on line 20
+[03-Sep-2012 11:04:59] PHP Warning:  readfile(http://www.google.com/ig/api?weather=60201) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/symphor1/public_html/weather/weather.php on line 20
+[03-Sep-2012 11:04:59] PHP Warning:  readfile(http://www.google.com/ig/api?weather=60201) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/symphor1/public_html/weather/weather.php on line 20
+[03-Sep-2012 11:04:59] PHP Warning:  readfile(http://www.google.com/ig/api?weather=60201) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/symphor1/public_html/weather/weather.php on line 20
+[03-Sep-2012 11:04:59] PHP Warning:  readfile(http://www.google.com/ig/api?weather=60201) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/symphor1/public_html/weather/weather.php on line 20
+[03-Sep-2012 11:05:00] PHP Warning:  readfile(http://www.google.com/ig/api?weather=60201) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/symphor1/public_html/weather/weather.php on line 20
+[06-Feb-2013 01:30:45] PHP Warning:  readfile(http://www.google.com/ig/api?weather=) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/symphor1/public_html/weather/weather.php on line 20
+[05-Mar-2013 16:33:09] PHP Warning:  readfile(http://www.google.com/ig/api?weather=) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/symphor1/public_html/weather/weather.php on line 20
+[30-Mar-2013 15:52:16] PHP Warning:  readfile(http://www.google.com/ig/api?weather=) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/symphor1/public_html/weather/weather.php on line 20
+[13-Apr-2013 22:29:01] PHP Warning:  readfile(http://www.google.com/ig/api?weather=60201) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/symphor1/public_html/weather/weather.php on line 20
+[13-Apr-2013 22:29:14] PHP Warning:  readfile(http://www.google.com/ig/api?weather=60201) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/symphor1/public_html/weather/weather.php on line 20
+[13-Apr-2013 22:29:15] PHP Warning:  readfile(http://www.google.com/ig/api?weather=60201) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/symphor1/public_html/weather/weather.php on line 20
+[11-Jun-2013 10:14:47] PHP Warning:  readfile(http://www.google.com/ig/api?weather=60438) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/symphor1/public_html/weather/weather.php on line 20
+[11-Jun-2013 10:14:53] PHP Warning:  readfile(http://www.google.com/ig/api?weather=60438) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: HTTP request failed! HTTP/1.0 403 Forbidden
+ in /home2/symphor1/public_html/weather/weather.php on line 20

@@ -1,0 +1,129 @@
+<html>  
+ <head>  
+  <script type="application/javascript">  
+  
+  	function init() {
+		var canvas = document.getElementById("canvas");
+		canvas.addEventListener("click",onClick,false);
+	
+	}
+	function onClick(e) {
+		document.getElementById("debug").innerHTML += "click";
+		var mouseX = e.pageX - canvas.offsetLeft;
+		var mouseY = e.pageY - canvas.offsetTop;
+		document.getElementById("debug").innerHTML += "click at (" + mouseX + "," + mouseY + ")<br />";
+		drawAt(mouseX,mouseY);
+	}
+  
+  	function rotatePointBy(point,degrees) {
+		var x = point[0];
+		var y = point[1];
+		var radians = (Math.PI/180)*degrees;
+		var cosR = Math.cos(radians);
+		var sinR = Math.sin(radians);
+		
+		return [x*cosR - y*sinR, x*sinR + y*cosR];
+	}
+	
+    function drawAt(x,y) {  
+      var canvas = document.getElementById("canvas");  
+      if (canvas.getContext) {  
+        var ctx = canvas.getContext("2d");  
+  		
+		var center = [x,y];
+		
+		var numPetals = 6;
+		var radius = 100;
+		var bulgeRadius = 40;
+		var bulgeWidth = 150;
+		
+		var tip = [radius, 0];
+		var bulgeL = [bulgeRadius,bulgeWidth/2];
+		var bulgeR = [bulgeRadius,-bulgeWidth/2];
+		
+		ctx.strokeStyle = "#EEDD66";
+		ctx.lineWidth = 2;
+		ctx.fillStyle = "#AA00AB";
+		
+		var degInc = (360 / numPetals)*2;
+		
+		var newTip;
+		var newBulgeL;
+		var newBulgeR;
+		
+		var debugStr = document.getElementById("debug");
+		
+		for (var i = 0; i < numPetals; i++) {
+			//debug.innerHTML += i + "<br />";
+			if (i < numPetals/2) {
+				newTip = rotatePointBy(tip,i*degInc);
+				newBulgeL = rotatePointBy([bulgeL[0]*1.1,bulgeL[1]*.75],i*degInc);
+				newBulgeR = rotatePointBy([bulgeR[0]*1.1,bulgeR[1]*.75],i*degInc);
+			}
+			else {
+				newTip = rotatePointBy(tip,i*degInc+degInc/2);
+				newBulgeL = rotatePointBy(bulgeL,i*degInc+degInc/2);
+				newBulgeR = rotatePointBy(bulgeR,i*degInc+degInc/2);
+			}
+			
+			//debug.innerHTML += "tip=[" + newTip[0] + "," + newTip[1] + "]<br />";
+			//debug.innerHTML += "bulgeL=[" + newBulgeL[0] + "," + newBulgeL[1] + "]<br />";
+			//debug.innerHTML += "bulgeR=[" + newBulgeR[0] + "," + newBulgeR[1] + "]<br />";										  
+			
+			var grad = ctx.createRadialGradient(center[0],center[1],0,center[0]+newTip[0]*.5,center[1]+newTip[1]*.5,radius);
+			grad.addColorStop(0,"#00AA00");
+			grad.addColorStop(.17,"#CCFF00");
+			grad.addColorStop(.4,"#AA00AB");
+			//grad.addColorStop(.5,"#AA00AB");
+			grad.addColorStop(.7,"#DD00DE");
+			//grad.addColorStop(1,"#DD00DE");
+			
+			ctx.fillStyle = grad;
+			ctx.strokeStyle = "#CCBB44";
+			ctx.lineWidth = 2;
+			
+			ctx.beginPath();
+			ctx.moveTo(center[0],center[1]);
+			ctx.quadraticCurveTo(center[0]+newBulgeR[0],center[1]+newBulgeR[1],center[0]+newTip[0],center[1]+newTip[1]);
+			ctx.quadraticCurveTo(center[0]+newBulgeL[0],center[1]+newBulgeL[1],center[0],center[1]);
+			ctx.fill();
+			ctx.stroke();
+			
+			
+			ctx.strokeStyle = "rgba(0,0,0,.075)";
+			ctx.lineWidth = 1;
+			var randNum = 6; //Math.random()*5+3;
+			//debug.innerHTML += "numExtra=" + randNum + "<br />";
+			for (var j = 0; j < randNum; j++) {
+				if (i < numPetals/2) {
+					newTip = rotatePointBy(tip,i*degInc);
+					newBulgeL = rotatePointBy([bulgeL[0]*1.1,bulgeL[1]*.75*j/randNum],i*degInc);
+					newBulgeR = rotatePointBy([bulgeR[0]*1.1,bulgeR[1]*.75*j/randNum],i*degInc);
+				}
+				else {
+					newTip = rotatePointBy(tip,i*degInc+degInc/2);
+					//newBulgeL = rotatePointBy([bulgeL[0],bulgeL[1]*i/randNum],i*degInc);
+					//newBulgeR = rotatePointBy([bulgeR[0],bulgeR[1]*i/randNum],i*degInc);
+					newBulgeL = rotatePointBy([bulgeL[0],bulgeL[1]*j/randNum], i*degInc+degInc/2);
+					newBulgeR = rotatePointBy([bulgeR[0],bulgeR[1]*j/randNum], i*degInc+degInc/2);
+				}
+				
+				ctx.beginPath();
+				ctx.moveTo(center[0],center[1]);
+				ctx.quadraticCurveTo(center[0]+newBulgeL[0],center[1]+newBulgeL[1],center[0]+newTip[0],center[1]+newTip[1]);
+				ctx.moveTo(center[0],center[1]);
+				ctx.quadraticCurveTo(center[0]+newBulgeR[0],center[1]+newBulgeR[1],center[0]+newTip[0],center[1]+newTip[1]);
+				ctx.stroke();
+			}
+			
+		}
+		
+      }  
+    }  
+  </script>  
+ </head>  
+ <body onload="init();">  
+   <canvas id="canvas" width="800" height="800"></canvas>  
+   <div id="debug">debug<br /></div>
+ </body>  
+</html>

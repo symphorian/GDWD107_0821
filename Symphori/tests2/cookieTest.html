@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<script>
+			var createCookie = function() {
+				var name = "cookieTest";
+				var value = "test1";
+
+				var request;
+
+				if (window.XMLHttpRequest) {
+					request = new XMLHttpRequest();
+				}
+				else {
+					request = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+
+				request.onreadystatechange = function() {
+					if (request.readyState == 4 && request.status == 200) {
+						document.getElementById("result").innerHTML = "Done setting cookie";
+					}
+					else {
+						document.getElementById("result").innerHTML = "Done setting cookie (problem occurred)";
+					}
+				}
+
+				request.open("POST", "setCookie.php", true);
+				request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				request.send("name=" + name + "&value=" + value);
+
+			}
+
+			var retrieveCookie = function() {
+				var name = "cookieTest";
+
+				var request;
+
+				if (window.XMLHttpRequest) {
+					request = new XMLHttpRequest();
+				}
+				else {
+					request = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+
+				request.onreadystatechange = function() {
+					if (request.readyState == 4 && request.status == 200) {
+						document.getElementById("result").innerHTML = "Cookie=" + request.responseText;
+					}
+					else {
+						document.getElementById("result").innerHTML = "Cookie=" + request.responseText + "(problem occurred)";
+					}
+				}
+
+				request.open("POST", "getCookie.php", true);
+				request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				request.send("name=" + name);
+			}
+
+			var deleteCookie = function() {
+				var name = "cookieTest";
+
+				var request;
+
+				if (window.XMLHttpRequest) {
+					request = new XMLHttpRequest();
+				}
+				else {
+					request = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+
+				request.onreadystatechange = function() {
+					if (request.readyState == 4 && request.status == 200) {
+						document.getElementById("result").innerHTML = "Cookie deletion complete";
+					}
+					else {
+						document.getElementById("result").innerHTML = "Cookie deletion complete (problem occurred)";
+					}
+				}
+
+				request.open("POST", "deleteCookie.php", true);
+				request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				request.send("name=" + name);
+			}
+		</script>
+	</head>
+
+	<body>
+		<button onclick="createCookie();">Create Cookie</button>
+		<button onclick="retrieveCookie();">Retrieve Cookie</button>
+		<button onclick="deleteCookie();">Delete Cookie</button>
+		<div id="result" />
+	</body>
+
+</html>

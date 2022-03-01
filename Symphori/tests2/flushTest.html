@@ -1,0 +1,31 @@
+<html>
+	<head>
+
+		<script type="text/javascript" src="Request.js"></script>
+		<script>
+			var viewImages = function() {
+
+				var i = 0;
+
+				REQUEST.callPHPFileAsync("flushTest.php", null, function(request)
+				{
+					if (request.readyState == 4 && request.status == 200 && document.getElementById("result") != null) {
+						document.getElementById("result").innerHTML += "Good response" + request.responseText;
+					}
+					else if (document.getElementById("result") != null) {
+						document.getElementById("result").innerHTML += i + ' - ' + request.responseText;
+						i++;
+					}
+				});
+
+			}
+
+			viewImages();
+		</script>
+	</head>
+
+	<body>
+		<span id="result" />
+	</body>
+
+</html>

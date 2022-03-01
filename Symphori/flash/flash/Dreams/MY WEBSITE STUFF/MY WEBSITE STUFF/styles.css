@@ -1,0 +1,144 @@
+@charset "utf-8";
+#container {
+	height: 600px;
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+#containerWOlilypads {
+	height: 900px;
+	width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+#containerWOlilypads #home h1 a:link {
+	color: #FFF;
+	text-decoration: none;
+}
+#containerWOlilypads #home h1 a:visited {
+	color: #FFF;
+	text-decoration: none;
+}
+
+
+body {
+	background-color: #CFF;
+}
+#home {
+	position:absolute;
+	width:1000px;
+	height:200px;
+	z-index:1;
+	left: 51px;
+	top: 23px;
+	color: #FFF;
+	font-size: 18px;
+}
+#container #home h1 {
+	font-family: "Courier New", Courier, monospace;
+}
+#container #home h1 a:link {
+	color: #FFF;
+	text-decoration: none;
+}
+#container #home h1 a:visited {
+	color: #FFF;
+	text-decoration: none;
+}
+#critiquePad {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:2;
+	left: 57px;
+	top: 499px;
+}
+#container #critiquePad {
+	font-family: "Courier New", Courier, monospace;
+}
+#processingPad {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:3;
+	left: 337px;
+	top: 655px;
+}
+.PadText {
+	font-family: "Courier New", Courier, monospace;
+	color: #FFF;
+}
+#flashPad {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:4;
+	left: 560px;
+	top: 478px;
+}
+#finalPad {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:5;
+	left: 754px;
+	top: 668px;
+}
+#linksPad {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:6;
+	left: 956px;
+	top: 499px;
+}
+#containerWOlilypads #home h1 {
+	font-family: "Courier New", Courier, monospace;
+}
+#containerWOlilypads #critiques h2 {
+	color: #FFF;
+}
+#containerWOlilypads #critiques h2 a:link {
+	color: #FFF;
+	text-decoration: underline;
+}
+#containerWOlilypads #critiques h2 a:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+#containerWOlilypads #critiques h2 a:visited {
+	color: #000;
+	text-decoration: underline;
+	text-align: right;
+}
+#containerWOlilypads #critiques p {
+	color: #FFF;
+}
+.selected {
+	font-family: "Courier New", Courier, monospace;
+	color: #000;
+}
+#container #critiquePad h2 a:link {
+	color: #FFF;
+	text-decoration: none;
+}
+#container #critiquePad h2 a:visited {
+	color: #FFF;
+	text-decoration: none;
+}
+#nimbitcontainer {
+	height: 400px;
+	width: 550px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+.skydraContainer {
+	height: 600px;
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}

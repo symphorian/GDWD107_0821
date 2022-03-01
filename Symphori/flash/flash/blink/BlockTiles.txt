@@ -1,0 +1,7 @@
+grass.png 123 214 200 200
+smallgrass.png 62 105 100 100
+cloud.png 174.5 123 200 200
+smallcloud.png 87.5 61.5 100 100
+rocks.png 168.5 135.5 200 200
+pondtop.png 100 160 200 200
+

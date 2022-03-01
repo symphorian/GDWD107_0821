@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<script type="text/javascript" src="Request.js"></script>
+		<script>
+			var uploadImage = function() {
+				var maxFileUploads = 10;
+				REQUEST.callPHPFileSync('getMaxFileUploads.php',null,function(request) {
+					maxFileUploads = request.responseText;
+				});
+
+				var images = document.getElementById("images").files;
+
+				var formData = new FormData();
+
+				var count = 0;
+				for (var i = 0; i < images.length; i++) {
+					var imageFile = images[i];
+					if (count < maxFileUploads) {
+						
+
+						// check file type
+
+						formData.append('images[]', imageFile, imageFile.name);
+
+						count++;
+					}
+					else {
+						REQUEST.callPHPFileAsync("uploadImages.php", formData, function(request) {
+							if (request.readyState == 4 && request.status == 200) {
+								document.getElementById("result").innerHTML += request.responseText;
+							}
+							else {
+								//document.getElementById("result").innerHTML = request.responseText;
+							}
+						});
+
+						formData = new FormData();
+						count = 0;
+						// check file type
+
+						formData.append('images[]', imageFile, imageFile.name);
+
+						count++;
+					}
+				}
+				
+				REQUEST.callPHPFileAsync("uploadImages.php", formData, function(request) {
+							if (request.readyState == 4 && request.status == 200) {
+								document.getElementById("result").innerHTML += request.responseText;
+							}
+							else {
+								//document.getElementById("result").innerHTML = request.responseText;
+							}
+						});
+				
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<form>
+			<input type="hidden" name="MAX_FILE_SIZE" value="2100000" />
+			File to upload:<input type="file" multiple="multiple" id="images" name="images[]" />
+			<input type="button" onclick="uploadImage();" value="Send File" />
+		</form>
+		<div id="result" />
+	</body>
+
+</html>

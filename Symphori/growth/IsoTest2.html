@@ -1,0 +1,642 @@
+<html>
+<head>  
+<script type="application/javascript"> 
+	var doublecanvas;
+	var background;
+  	var foreground;
+	var backctx;
+	var forectx;
+	var debugStr;
+	var gsize = 100
+	var bsize = 50;
+	
+	var tiles;
+	var objects_size1;
+	var numFlowers = 100;
+	var tileGrid;
+	var objectGrid;
+	
+	var translation = [400,0];
+	
+	var mouseDown = false;
+	var mouseDownPos = [0,0];
+	var mouseUpPos = [0,0];
+	var mouseMovePos = [0,0];
+	
+	var newCanvas;
+	
+	function init() {
+		//drawPetal();
+		//drawFlower();
+		//drawSoilTile();
+		//drawGrassTile();
+		
+		newCanvas = document.createElement("canvas");
+		newCanvas.setAttribute("id","newCanvas");
+		newCanvas.setAttribute("width","100");
+		newCanvas.setAttribute("height","45");
+		
+		//document.body.appendChild(newCanvas);
+		
+		drawFlowerOn(newCanvas);
+		
+		tiles = new Array(2);
+		tiles[0] = document.createElement("canvas");
+		tiles[0].setAttribute("width","100");
+		tiles[0].setAttribute("height","45");
+		drawSoilTile(tiles[0]);
+		tiles[1] = document.createElement("canvas");
+		tiles[1].setAttribute("width","100");
+		tiles[1].setAttribute("height","45");
+		drawGrassTile(tiles[1]);
+		
+		objects_size1 = new Array(numFlowers);
+		
+		for (var i = 0; i < numFlowers; i++) {
+			objects_size1[i] = document.createElement("canvas");
+			var radius = Math.random()*10 + 15;
+			var bulgeRadius = radius * (2/5) + Math.random()*radius/5;
+			var bulgeWidth = Math.random()*radius + radius/2;
+			objects_size1[i].setAttribute("width","100");
+			objects_size1[i].setAttribute("height","45");
+			drawFlowerAt(objects_size1[i],50,25,radius,bulgeRadius,bulgeWidth,randomColor(),randomColor(),randomColor());
+			//document.body.appendChild(objects_size1[i]);
+		}
+		
+		tileGrid = new Array(gsize);
+		objectGrid = new Array(gsize);
+		for (var i = 0; i < gsize; i++) {
+			tileGrid[i] = new Array(gsize);
+			objectGrid[i] = new Array(gsize);
+			for (var j = 0; j < gsize; j++) {
+				if (Math.random() > .9) {
+					objectGrid[i][j] = parseInt(Math.random()*objects_size1.length);
+				}
+				else {
+					objectGrid[i][j] = -1;
+				}
+				
+				tileGrid[i][j] = parseInt(Math.random()*2);
+				
+			}
+		}
+		
+		doublecanvas = document.getElementById("doublecanvas");
+		background = document.getElementById("background");
+		foreground = document.getElementById("foreground");
+		foreground.addEventListener("mousedown",onDown,false);
+		foreground.addEventListener("mouseup",onRelease,false);
+		foreground.addEventListener("mousemove",onMove,false);
+		backctx = background.getContext("2d");
+		forectx = foreground.getContext("2d");
+		debugStr = document.getElementById("debug");
+		
+		drawSquares();
+	}
+	
+	function onDown(e) {
+		mouseDown = true;
+		mouseDownPos = [e.pageX - doublecanvas.offsetLeft,e.pageY - doublecanvas.offsetTop];
+		mouseMovePos = [e.pageX - doublecanvas.offsetLeft,e.pageY - doublecanvas.offsetTop];
+	}
+	
+	function onRelease(e) {
+		mouseDown = false;
+		mouseUpPos = [e.pageX - doublecanvas.offsetLeft,e.pageY - doublecanvas.offsetTop];
+		
+		if (mouseDownPos[0] == mouseUpPos[0] && mouseDownPos[1] == mouseUpPos[1]) {
+		
+			var realPt = canvasToIso([mouseUpPos[0],mouseUpPos[1]]); //unskewPoint(unrotatePointBy([mouseX-translation[0],mouseY-translation[1]],45),-.4);
+			
+			var realX = realPt[0];
+			var realY = realPt[1];
+			
+			var xIndex = parseInt(realX / bsize);
+			var yIndex = parseInt(realY / bsize);
+			
+			//debugStr.innerHTML = "click at index (" + xIndex + "," + yIndex + ")<br />";
+			
+			//toIso(ctx);
+			//ctx.fillRect(xIndex*bsize,yIndex*bsize,bsize,bsize);
+			//toCanvas(ctx);
+			
+			if (xIndex >= 0 && yIndex >= 0 && xIndex < gsize && yIndex < gsize) {
+				//if (tileGrid[xIndex][yIndex] != 2) {
+				//	tileGrid[xIndex][yIndex] = 2;
+				//}
+				//else {
+				//	tileGrid[xIndex][yIndex] = parseInt(Math.random()*2);
+				//}
+				if (objectGrid[xIndex][yIndex] == -1) {
+					objectGrid[xIndex][yIndex] = parseInt(objects_size1.length*Math.random());
+				}
+			}
+			drawSquares();
+			
+			//debugStr.innerHTML = "click at (" + mouseUpPos[0] + "," + mouseUpPos[1] + ")<br />";
+			//debugStr.innerHTML += "real point (" + parseInt(realPt[0]) + "," + parseInt(realPt[1]) + ")<br />";
+		}
+
+	}
+	
+	function onMove(e) {
+		if (mouseDown) {
+			var mousePos = [e.pageX - doublecanvas.offsetLeft,e.pageY - doublecanvas.offsetTop];
+			translation[0] += mousePos[0] - mouseMovePos[0];
+			translation[1] += mousePos[1] - mouseMovePos[1];
+			//ctx.beginPath();
+			//ctx.clearRect(0,0,800,600);
+			//drawIsoGrid();
+			drawSquares();
+			mouseMovePos = [e.pageX - doublecanvas.offsetLeft,e.pageY - doublecanvas.offsetTop];
+		}
+	}
+	
+	function canvasToIso(point) {
+		return unskewPoint(unrotatePointBy([point[0]-translation[0],point[1]-translation[1]],45),-.4);
+	}
+	
+	function isoToCanvas(point) {
+		var returnPt = rotatePointBy(skewPoint(point,-.4),45);
+		returnPt[0] += translation[0];
+		returnPt[1] += translation[1];
+		return returnPt;
+	}
+	
+	function skewPoint(point,skew) {
+		var x = point[0];
+		var y = point[1];
+		
+		var newX = x + y*skew;
+		var newY = x*skew + y;
+		
+		return [newX,newY];
+	}
+	
+	function unskewPoint(point,skew) {
+		var x = point[0];
+		var y = point[1];
+		
+		var denom = skew*skew-1;
+		
+		var oldX = -x/denom + y*skew/denom;
+		var oldY = x*skew/denom - y/denom;
+		
+		return [oldX,oldY];
+	}
+	
+	function rotatePointBy(point,degrees) {
+		var x = point[0];
+		var y = point[1];
+		var radians = (Math.PI/180)*degrees;
+		var cosR = Math.cos(radians);
+		var sinR = Math.sin(radians);
+		
+		return [x*cosR - y*sinR, x*sinR + y*cosR];
+	}
+	
+	function unrotatePointBy(point,degrees) {
+		var x = point[0];
+		var y = point[1];
+		var radians = (Math.PI/180)*-degrees;
+		var cosR = Math.cos(radians);
+		var sinR = Math.sin(radians);
+		
+		return [x*cosR - y*sinR, x*sinR + y*cosR];
+	}
+	
+	function toIso(context) {
+		context.save();
+		context.translate(translation[0],translation[1]);
+		context.rotate((Math.PI/180)*45);
+		context.transform(1,-.4,-.4,1,1,1);
+	}
+	
+	function toCanvas(context) {
+		context.restore();
+	}
+	
+	function toIsoTranslated(context,xTrans,yTrans) {
+		context.save();
+		context.translate(xTrans,yTrans);
+		context.rotate((Math.PI/180)*45);
+		context.transform(1,-.4,-.4,1,1,1);
+	}
+	
+	function drawIsoGrid() {
+		toIso(backctx);
+		drawGrid();
+		toCanvas(backctx);
+	}
+	
+	function randomColor() {
+		var letters = '0123456789ABCDEF'.split('');
+		var color = '#';
+		for (var i = 0; i < 6; i++ ) {
+			color += letters[Math.round(Math.random() * 15)];
+		}
+		return color;
+	}
+	
+	function drawGrid() {
+		for (var i = 0; i < gsize+1; i++) {
+			backctx.moveTo(i*bsize,0);
+			backctx.lineTo(i*bsize,gsize*bsize);
+			backctx.moveTo(0,i*bsize);
+			backctx.lineTo(gsize*bsize,i*bsize);
+		}
+		backctx.stroke();
+	}
+	
+	function drawSquares() {
+		var realPt = canvasToIso([400,300]);
+		
+		var xIndex = parseInt(realPt[0] / bsize);
+		var yIndex = parseInt(realPt[1] / bsize);
+		
+		var range = 14;
+		
+		var xmin = (xIndex-range < 0) ? 0 : xIndex-range;
+		var xmax = (xIndex+range > gsize-1) ? gsize-1 : xIndex+range;
+		var ymin = (yIndex-range < 0) ? 0 : yIndex-range;
+		var ymax = (yIndex+range > gsize-1) ? gsize-1 : yIndex+range;
+		//debugStr.innerHTML = "xmin=" + xmin + " xmax=" + xmax + " ymin=" + ymin + " ymax=" + ymax + ")<br />";
+		backctx.clearRect(0,0,800,600);
+		forectx.clearRect(0,0,800,600);
+		for (var i = xmin+1; i < xmax; i++) {
+			for (var j = ymin+1; j < ymax; j++) {
+				var isoPt = [i*bsize,j*bsize];
+				var canvasPt = isoToCanvas(isoPt);
+				if (canvasPt[0] > -50 && canvasPt[0] < 850 && canvasPt[1] > -50 && canvasPt[1] < 650) {
+					backctx.drawImage(tiles[tileGrid[i-1][j-1]],canvasPt[0]-50,canvasPt[1]-45);
+					if (objectGrid[i-1][j-1] >= 0) {
+						forectx.drawImage(objects_size1[objectGrid[i-1][j-1]],canvasPt[0]-50,canvasPt[1]-45);
+					}
+				}
+			}
+		}
+	}
+	
+	function drawSoilTile(grassCanvas) {
+		//var grassCanvas = document.getElementById("tile0");
+		var gctx = grassCanvas.getContext("2d");
+		toIsoTranslated(gctx,50,0);
+		gctx.fillStyle = "#337744";
+		gctx.fillRect(0,0,50,50);
+		toCanvas(gctx);
+	}
+
+	function drawGrassTile(grassCanvas) {
+		//var grassCanvas = document.getElementById("tile1");
+		var gctx = grassCanvas.getContext("2d");
+		toIsoTranslated(gctx,50,0);
+		gctx.fillStyle = "#009900";
+		gctx.fillRect(0,0,50,50);
+		toCanvas(gctx);
+	}
+	
+	function drawPetal() {  
+      var canvas = document.getElementById("petal");  
+      if (canvas.getContext) {  
+        var ctx = canvas.getContext("2d");  
+		ctx.translate(0,12.5);
+		//var center = [x/scaleX,y/scaleY];
+		var center = [0,0];
+
+		var radius = 25;
+		var bulgeRadius = 10;
+		var bulgeWidth = 37.5;
+		
+		var tip = [radius, 0];
+		var bulgeL = [bulgeRadius,bulgeWidth/2];
+		var bulgeR = [bulgeRadius,-bulgeWidth/2];
+		
+		ctx.strokeStyle = "#EEDD66";
+		ctx.lineWidth = 2;
+		ctx.fillStyle = "#AA00AB";
+		
+		var debugStr = document.getElementById("debug");
+		debugStr.innerHTML += "drawing petal";
+		
+		//for (var i = 0; i < numPetals; i++) {
+			var grad = ctx.createRadialGradient(center[0],center[1],0,center[0]+tip[0]*.5,center[1]+tip[1]*.5,radius);
+			grad.addColorStop(0,"#00AA00");
+			grad.addColorStop(.17,"#CCFF00");
+			grad.addColorStop(.4,"#AA00AB");
+			//grad.addColorStop(.5,"#AA00AB");
+			grad.addColorStop(.7,"#DD00DE");
+			//grad.addColorStop(1,"#DD00DE");
+			
+			ctx.fillStyle = grad;
+			ctx.strokeStyle = "#CCBB44";
+			ctx.lineWidth = 2;
+			
+			ctx.beginPath();
+			ctx.moveTo(center[0],center[1]);
+			ctx.quadraticCurveTo(center[0]+bulgeR[0],center[1]+bulgeR[1],center[0]+tip[0],center[1]+tip[1]);
+			ctx.quadraticCurveTo(center[0]+bulgeL[0],center[1]+bulgeL[1],center[0],center[1]);
+			ctx.fill();
+			ctx.stroke();
+			
+			
+			ctx.strokeStyle = "rgba(0,0,0,.075)";
+			ctx.lineWidth = 1;
+			var randNum = 6; //Math.random()*5+3;
+			//debug.innerHTML += "numExtra=" + randNum + "<br />";
+			for (var j = 0; j < randNum; j++) {
+				newBulgeL = rotatePointBy([bulgeL[0]*1.1,bulgeL[1]*.75*j/randNum],0);
+				newBulgeR = rotatePointBy([bulgeR[0]*1.1,bulgeR[1]*.75*j/randNum],0);
+				
+				ctx.beginPath();
+				ctx.moveTo(center[0],center[1]);
+				ctx.quadraticCurveTo(center[0]+newBulgeL[0],center[1]+newBulgeL[1],center[0]+tip[0],center[1]+tip[1]);
+				ctx.moveTo(center[0],center[1]);
+				ctx.quadraticCurveTo(center[0]+newBulgeR[0],center[1]+newBulgeR[1],center[0]+tip[0],center[1]+tip[1]);
+				ctx.stroke();
+			}
+			debugStr.innerHTML += "petal done";
+		//}
+		
+      }  
+    } 
+	
+	function drawFlower() {  
+      var canvas = document.getElementById("flower");  
+      if (canvas.getContext) {  
+        var ctx = canvas.getContext("2d");  
+		
+		//toIsoTranslated(ctx,50,0);
+		//ctx.fillStyle = "#009900";
+		//ctx.fillRect(0,0,50,50);
+		//toCanvas(ctx);
+  		
+		ctx.save();
+		ctx.translate(50,20);
+		ctx.scale(1,.75);
+		
+		var numPetals = 6;
+		var radius = 25;
+		var bulgeRadius = 10;
+		var bulgeWidth = 37.5;
+		
+		var tip = [radius, 0];
+		var bulgeL = [bulgeRadius,bulgeWidth/2];
+		var bulgeR = [bulgeRadius,-bulgeWidth/2];
+		
+		ctx.strokeStyle = "#EEDD66";
+		ctx.lineWidth = 1;
+		ctx.fillStyle = "#AA00AB";
+		
+		var degInc = (360 / numPetals)*2;
+		
+		var newTip;
+		var newBulgeL;
+		var newBulgeR;
+		
+		var debugStr = document.getElementById("debug");
+		var petal = document.getElementById("petal");
+		//ctx.save();
+		
+		debugStr.innerHTML = "";
+		
+		for (var i = 0; i < 6; i++) {
+			ctx.save();
+			//debugStr.innerHTML += "<br />" + i + " ";
+			if (i < numPetals/2) {
+				ctx.rotate((Math.PI/180)*(i*degInc));
+				//debugStr.innerHTML += "iltnumpetals/2 " + i*degInc;
+			}
+			else {
+				ctx.rotate((Math.PI/180)*((i+.5)*degInc));
+				//debugStr.innerHTML += "i>=numpetals/2 " + (i+.5)*degInc;
+			}
+			ctx.save();
+			ctx.translate(0,-12.5);
+			ctx.drawImage(petal,0,0);
+			//debugStr.innerHTML += "drawn";
+			ctx.restore();
+			ctx.restore();
+			
+		}
+		
+      }  
+	  ctx.restore();
+    }  
+	
+	function drawFlowerOn(canvas) {  
+      //var canvas = document.getElementById(canvasID);  
+      if (canvas.getContext) {  
+        var ctx = canvas.getContext("2d");  
+		
+		//toIsoTranslated(ctx,50,0);
+		//ctx.fillStyle = "#009900";
+		//ctx.fillRect(0,0,50,50);
+		//toCanvas(ctx);
+  		
+		ctx.save();
+		ctx.translate(50,20);
+		ctx.scale(1,.75);
+		
+		var numPetals = 6;
+		var radius = 25;
+		var bulgeRadius = 10;
+		var bulgeWidth = 37.5;
+		
+		var tip = [radius, 0];
+		var bulgeL = [bulgeRadius,bulgeWidth/2];
+		var bulgeR = [bulgeRadius,-bulgeWidth/2];
+		
+		ctx.strokeStyle = "#EEDD66";
+		ctx.lineWidth = 1;
+		ctx.fillStyle = "#AA00AB";
+		
+		var degInc = (360 / numPetals)*2;
+		
+		var newTip;
+		var newBulgeL;
+		var newBulgeR;
+		
+		var debugStr = document.getElementById("debug");
+		var petal = document.getElementById("petal");
+		//ctx.save();
+		
+		debugStr.innerHTML = "";
+		
+		for (var i = 0; i < 6; i++) {
+			ctx.save();
+			//debugStr.innerHTML += "<br />" + i + " ";
+			if (i < numPetals/2) {
+				ctx.rotate((Math.PI/180)*(i*degInc));
+				//debugStr.innerHTML += "iltnumpetals/2 " + i*degInc;
+			}
+			else {
+				ctx.rotate((Math.PI/180)*((i+.5)*degInc));
+				//debugStr.innerHTML += "i>=numpetals/2 " + (i+.5)*degInc;
+			}
+			ctx.save();
+			ctx.translate(0,-12.5);
+			ctx.drawImage(petal,0,0);
+			//debugStr.innerHTML += "drawn";
+			ctx.restore();
+			ctx.restore();
+			
+		}
+		
+      }  
+	  ctx.restore();
+    }  
+	
+	function drawFlowerAt(canvas,x,y,r,br,bw,c1,c2,c3) {  
+      //var canvas = document.getElementById("canvas");  
+      if (canvas.getContext) {  
+        var ctx = canvas.getContext("2d");  
+		
+		ctx.scale(1,.75);
+  		
+		var center = [x,y];
+		
+		var numPetals = 6;
+		var radius = r;
+		var bulgeRadius = br;
+		var bulgeWidth = bw;
+		
+		var color1 = c1;
+		var color2 = c2;
+		var color3 = c3;
+		//var color4 = "#" + (parseInt(c3.substring(1),16) + parseInt("330033",16)).toString(16);
+		var color4 = (parseInt(c3.substring(1),16) + parseInt("330033",16)).toString(16);
+		if (color4.length > 6) {
+			color4 = "#" + color4.substring(1);
+		}
+		else {
+			color4 = "#" + color4;
+		}
+		
+		var tip = [radius, 0];
+		var bulgeL = [bulgeRadius,bulgeWidth/2];
+		var bulgeR = [bulgeRadius,-bulgeWidth/2];
+		
+		//ctx.strokeStyle = "#EEDD66";
+		//ctx.lineWidth = 2;
+		//ctx.fillStyle = "#AA00AB";
+		
+		var degInc = (360 / numPetals)*2;
+		
+		var newTip;
+		var newBulgeL;
+		var newBulgeR;
+		
+		var debugStr = document.getElementById("debug");
+		
+		//debugStr.innerHTML += color1 + " " + color2 + " " + color3 + " " + color4 + "<br />";
+		
+		for (var i = 0; i < numPetals; i++) {
+			//debug.innerHTML += i + "<br />";
+			if (i < numPetals/2) {
+				newTip = rotatePointBy(tip,i*degInc);
+				newBulgeL = rotatePointBy([bulgeL[0]*1.1,bulgeL[1]*.75],i*degInc);
+				newBulgeR = rotatePointBy([bulgeR[0]*1.1,bulgeR[1]*.75],i*degInc);
+			}
+			else {
+				newTip = rotatePointBy(tip,i*degInc+degInc/2);
+				newBulgeL = rotatePointBy(bulgeL,i*degInc+degInc/2);
+				newBulgeR = rotatePointBy(bulgeR,i*degInc+degInc/2);
+			}
+			
+			//debug.innerHTML += "tip=[" + newTip[0] + "," + newTip[1] + "]<br />";
+			//debug.innerHTML += "bulgeL=[" + newBulgeL[0] + "," + newBulgeL[1] + "]<br />";
+			//debug.innerHTML += "bulgeR=[" + newBulgeR[0] + "," + newBulgeR[1] + "]<br />";										  
+			
+			var grad = ctx.createRadialGradient(center[0],center[1],0,center[0]+newTip[0]*.5,center[1]+newTip[1]*.5,radius);
+			grad.addColorStop(0,color1);
+			grad.addColorStop(.17,color2);
+			grad.addColorStop(.4,color3);
+			//grad.addColorStop(.5,"#AA00AB");
+			grad.addColorStop(.7,color4);
+			//grad.addColorStop(1,"#DD00DE");
+			
+			ctx.fillStyle = grad;
+			var strokeClr = parseInt(color2.substring(1),16) - parseInt("330033",16);
+			if (strokeClr < 0) {
+				//debugStr.innerHTML = "1<br />";
+				ctx.strokeStyle = color2;
+				
+			}
+			else if (strokeClr.toString(16).length < 6) {
+				//debugStr.innerHTML = "2<br />";
+				var hexStr = "#";
+				for (var k = 0; k < 6 - strokeClr.toString(16).length; k++) {
+					hexStr += "0";
+				}
+				hexStr += strokeClr.toString(16);
+				//debugStr.innerHTML = "2 " + strokeClr.toString(16).length + " " + strokeClr.toString(16) + " " + hexStr + "<br />";
+				ctx.strokeStyle = hexStr;
+				
+			}
+			else {
+				//debugStr.innerHTML = "3<br />";
+				ctx.strokeStyle = "#" + strokeClr.toString(16);
+				
+			}
+			//ctx.strokeStyle = (strokeClr < 0) ? color2 : ("#" + strokeClr.toString(16));
+			ctx.lineWidth = 2;
+			
+			//debugStr.innerHTML += strokeClr + " " + strokeClr.toString(16) + " " + ctx.strokeStyle;
+			
+			ctx.beginPath();
+			ctx.moveTo(center[0],center[1]);
+			ctx.quadraticCurveTo(center[0]+newBulgeR[0],center[1]+newBulgeR[1],center[0]+newTip[0],center[1]+newTip[1]);
+			ctx.quadraticCurveTo(center[0]+newBulgeL[0],center[1]+newBulgeL[1],center[0],center[1]);
+			ctx.fill();
+			ctx.stroke();
+			
+			
+			ctx.strokeStyle = "rgba(0,0,0,.15)";
+			ctx.lineWidth = 1;
+			var randNum = 6; //Math.random()*5+3;
+			//debug.innerHTML += "numExtra=" + randNum + "<br />";
+			for (var j = 0; j < randNum; j++) {
+				if (i < numPetals/2) {
+					newTip = rotatePointBy(tip,i*degInc);
+					newBulgeL = rotatePointBy([bulgeL[0]*1.1,bulgeL[1]*.75*j/randNum],i*degInc);
+					newBulgeR = rotatePointBy([bulgeR[0]*1.1,bulgeR[1]*.75*j/randNum],i*degInc);
+				}
+				else {
+					newTip = rotatePointBy(tip,i*degInc+degInc/2);
+					//newBulgeL = rotatePointBy([bulgeL[0],bulgeL[1]*i/randNum],i*degInc);
+					//newBulgeR = rotatePointBy([bulgeR[0],bulgeR[1]*i/randNum],i*degInc);
+					newBulgeL = rotatePointBy([bulgeL[0],bulgeL[1]*j/randNum], i*degInc+degInc/2);
+					newBulgeR = rotatePointBy([bulgeR[0],bulgeR[1]*j/randNum], i*degInc+degInc/2);
+				}
+				
+				ctx.beginPath();
+				ctx.moveTo(center[0],center[1]);
+				ctx.quadraticCurveTo(center[0]+newBulgeL[0],center[1]+newBulgeL[1],center[0]+newTip[0],center[1]+newTip[1]);
+				ctx.moveTo(center[0],center[1]);
+				ctx.quadraticCurveTo(center[0]+newBulgeR[0],center[1]+newBulgeR[1],center[0]+newTip[0],center[1]+newTip[1]);
+				ctx.stroke();
+			}
+			
+		}
+		
+      }  
+    }  
+	
+	  </script>
+<link href="GrowthGame.css" rel="stylesheet" type="text/css">
+</head>
+<body onLoad="init();">
+	<div id="doublecanvas">
+		<canvas id="background" width="800" height="600"></canvas>
+        <canvas id="foreground" width="800" height="600"></canvas>
+       
+    </div> 
+    <div id="instructions">Click to place a flower in an empty tile.  Click and drag to move around the field.</div>
+<canvas id="tile0" width="100" height="45"></canvas>
+    <canvas id="tile1" width="100" height="45"></canvas>
+    <canvas id="petal" width="25" height="25"></canvas>
+    <canvas id="flower" width="100" height="45"></canvas>
+    
+    <div id="debug"></div>
+</body>
+</html>
