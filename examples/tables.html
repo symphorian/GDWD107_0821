@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>HTML Tables Example</title>
+    <style>
+      #uglyTable,
+      #uglyTable caption,
+      #uglyTable th,
+      #uglyTable td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 12px;
+      }
+      #uglyTable {
+        margin-bottom: 48px;
+      }
+
+      #lessUglyTable {
+        border-collapse: collapse;
+      }
+      #lessUglyTable th {
+        padding-bottom: 12px;
+        padding-right: 24px;
+      }
+      #lessUglyTable td {
+        padding: 4px 0;
+      }
+      #lessUglyTable tr:nth-child(even) {
+        background-color: #F0F0F0;
+        border-bottom: 1px solid transparent;
+        border-top: 1px solid transparent;
+      }
+      #lessUglyTable tr:hover {
+        border-bottom: 1px solid gray;
+        border-top: 1px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="uglyTable">
+      <caption>I am an ugly table</caption>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Favorite Animal</th>
+        <th>Least Favorite Food</th>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Smith</td>
+        <td>Dog</td>
+        <td>Fettuccine</td>
+      </tr>
+      <tr>
+        <td>Jane</td>
+        <td>Doe</td>
+        <td>Panther</td>
+        <td>Steak</td>
+      </tr>
+      <tr>
+        <td>Victor</td>
+        <td>Van Dort</td>
+        <td>Butterfly</td>
+        <td>Fish</td>
+      </tr>
+      <tr>
+        <td>Victoria</td>
+        <td>Everglot</td>
+        <td>Raven</td>
+        <td>Soup</td>
+      </tr>
+    </table>
+    <table id="lessUglyTable">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Favorite Animal</th>
+        <th>Least Favorite Food</th>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Smith</td>
+        <td>Dog</td>
+        <td>Fettuccine</td>
+      </tr>
+      <tr>
+        <td>Jane</td>
+        <td>Doe</td>
+        <td>Panther</td>
+        <td>Steak</td>
+      </tr>
+      <tr>
+        <td>Victor</td>
+        <td>Van Dort</td>
+        <td>Butterfly</td>
+        <td>Fish</td>
+      </tr>
+      <tr>
+        <td>Victoria</td>
+        <td>Everglot</td>
+        <td>Raven</td>
+        <td>Soup</td>
+      </tr>
+    </table>
+  </body>
+</html>
