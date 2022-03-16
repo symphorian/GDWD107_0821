@@ -27,13 +27,48 @@
       }
       #lessUglyTable tr:nth-child(even) {
         background-color: #F0F0F0;
-        border-bottom: 1px solid transparent;
-        border-top: 1px solid transparent;
       }
       #lessUglyTable tr:hover {
-        border-bottom: 1px solid gray;
-        border-top: 1px solid gray;
+        background-color: #E0FFE0;
       }
+
+      #oldLayout {
+        border-collapse: collapse;
+        margin-top: 48px;
+      }
+      #oldLayout #header {
+        background-color: lightgreen;
+        padding: 12px 24px
+      }
+      #oldLayout #nav {
+        background-color: #DDFFDD;
+        padding: 12px 24px
+      }
+      #oldLayout #nav a {
+        padding-right: 36px;
+      }
+      #oldLayout #content {
+        padding: 36px;
+      }
+      #oldLayout #footer {
+        background-color: green;
+        padding: 12px 24px
+      }
+      #cat {
+        float: right;
+        margin-left: 12px;
+        width: 300px;
+      }
+      #dog {
+        float: left;
+        margin-right: 12px;
+        width: 300px;
+      }
+      #clear {
+        clear: both;
+        margin: 48px;
+      }
+
     </style>
   </head>
   <body>
@@ -66,7 +101,7 @@
       <tr>
         <td>Victoria</td>
         <td>Everglot</td>
-        <td>Raven</td>
+        <td>Otter</td>
         <td>Soup</td>
       </tr>
     </table>
@@ -98,8 +133,54 @@
       <tr>
         <td>Victoria</td>
         <td>Everglot</td>
-        <td>Raven</td>
+        <td>Otter</td>
         <td>Soup</td>
+      </tr>
+    </table>
+
+    <table id="oldLayout">
+      <tr>
+        <td id="header" colspan="2">
+          <h1>This is how page layouts used to be done</h1>
+        </td>
+      </tr>
+      <tr>
+        <td id="nav">
+          <div><a href="#">Home</a></div>
+          <div><a href="#">Gallery</a></div>
+          <div><a href="#">About Me</a></div>
+          <div><a href="#">Contact</a></div>
+        </td>
+        <td id="content" colspan="1">
+          <img id="cat" src="../images/cat.png" alt="cat" />
+          <div>
+            Cillum instituendarum commodo aute laboris, veniam ingeniis
+            familiaritatem. Sint non proident e deserunt consectetur hic
+            vidisse. Ea duis senserit deserunt.Cernantur anim
+            expetendis, consequat quem ullamco, occaecat ea multos
+            eiusmod eu veniam laboris o iudicem. Deserunt tempor dolore
+            laboris illum, ab nostrud te singulis. Ingeniis export ita
+            doctrina voluptatibus hic officia o irure, eu nostrud
+            consectetur, nam iis enim dolor minim.
+          </div>
+          <div id="clear"></div>
+          <img id="dog" src="../images/dog.jpeg" alt="dog" />
+          <div>
+            Cillum instituendarum commodo aute laboris, veniam ingeniis
+            familiaritatem. Sint non proident e deserunt consectetur hic
+            vidisse. Ea duis senserit deserunt.Cernantur anim
+            expetendis, consequat quem ullamco, occaecat ea multos
+            eiusmod eu veniam laboris o iudicem. Deserunt tempor dolore
+            laboris illum, ab nostrud te singulis. Ingeniis export ita
+            doctrina voluptatibus hic officia o irure, eu nostrud
+            consectetur, nam iis enim dolor minim.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td id="footer" colspan="2">
+          copyright &copy; Symphori Games 2022
+        </td>
       </tr>
     </table>
   </body>
