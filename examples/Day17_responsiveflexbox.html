@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Responsive Flexbox Example</title>
+    <style>
+
+      @media screen and (min-width: 480px) and (max-width: 799px) {
+        #header {
+          font-size: 24px;
+        }
+        #mediumScreen {
+          background-color: darkgreen;
+          color: white;
+        }
+        #largeScreen,
+        #smallScreen {
+          background-color: grey;
+          color: grey;
+        }
+      }
+
+      @media screen and (max-width: 479px) {
+        #header {
+          font-size: 16px;
+        }
+        #smallScreen {
+          background-color: blue;
+          color: white;
+        }
+        #largeScreen,
+        #mediumScreen {
+          background-color: grey;
+          color: grey;
+        }
+        #footer {
+          display: none;
+        }
+      }
+
+      #header {
+        background-color: skyblue;
+        padding: 12px 48px;
+      }
+      #smallScreen,
+      #mediumScreen,
+      #largeScreen {
+        padding: 48px;
+      }
+      #footer {
+        background-color: lavender;
+        padding: 12px 48px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Response Flexbox Example</h1>
+    </header>
+    <nav>
+      <div>Important Link 1</div>
+      <div>Link 1</div>
+      <div>Link 2</div>
+      <div>Link 3</div>
+      <div>Link 4</div>
+      <div>Important Link 2</div>
+    </nav>
+    <main>
+      <p>
+        Ad summis do dolore est tamen officia ne tamen culpa,
+        probant illum nulla pariatur quem qui litteris malis te
+        ullamco transferrem. Sunt eiusmod quo quae aute, nam enim
+        non tamen. Non quorum culpa eram officia ut mandaremus
+        noster appellat, multos se qui elit doctrina, id irure
+        occaecat.Incurreret philosophari a nescius de dolore admodum
+        praesentibus id dolor aliquip qui arbitrantur e dolor
+        cernantur ut officia. Litteris tamen minim a dolor, ut dolor
+        quem se appellat ut in summis praesentibus, quid eu non anim
+        occaecat. Nisi e incididunt.
+      </p>
+    </main>
+    <footer>
+      <p>Thanks for stopping by.  Hope this helped!</p>
+    </footer>
+  </body>
+</html>
