@@ -1,0 +1,26 @@
+HTML -> NOUNS
+
+CSS ->  ADJECTIVES
+
+Javascript -> NOUNS, ADJECTIVES, VERBS
+
+
+Spot, sit.                    spot.sit();
+
+Spot, speak!                  spot.speak();
+
+Spot, say "Hello"!            spot.speak("Hello");
+
+Spot's nickname is "Spotty".  spot.nickname = "Spotty";
+
+That dog is Spot.             let thatDog = spot;
+
+That dog, play dead.          thatDog.playDead();
+
+NOUN  VERB                    OBJECT FUNCTION (METHOD)
+
+GRAMMAR                       SYNTAX
+SENTENCE                      STATEMENT
+'s                            . -> dot operator (accessor operator)
+                              () -> execute function
+. or !                        ;  -> termination symbol
