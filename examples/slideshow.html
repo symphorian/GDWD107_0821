@@ -5,14 +5,25 @@
     <link type="text/css" rel="stylesheet" href="../css/slideshow.css">
   </head>
   <body>
-    <div id="slideshowImages">
-      <img class="slideshowImage" src="../images/cat.png" />
-      <img class="slideshowImage" src="../images/dog.jpeg" />
-      <img class="slideshowImage" src="../images/forest.gif" />
-      <img class="slideshowImage" src="../images/clouds.gif" />
+    <div id="slideshow">
+      <img id="slide1" class="slideshowImage" src="../images/cat.png" />
+      <img id="slide2" class="slideshowImage" src="../images/dog.jpeg" />
+      <img id="slide3" class="slideshowImage" src="../images/forest.gif" />
+      <img id="slide4" class="slideshowImage" src="../images/clouds.gif" />
     </div>
-    <input type="button" id="left" value="left" onclick="showPreviousSlide()">
-    <input type="button" id="right" value="right" onclick="showNextSlide()">
+    <input
+      type="button"
+      id="previous"
+      value="Previous"
+      onclick="showPreviousSlide()"
+    >
+    <input
+      type="button"
+      id="next"
+      value="Next"
+      onclick="showNextSlide()"
+    >
+
     <script type="text/javascript" src="../js/slideshow.js"></script>
   </body>
 </html>

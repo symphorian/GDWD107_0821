@@ -1,7 +1,8 @@
-#slideshowImages {
+#slideshow {
   height: 400px;
   text-align: center;
 }
-#slideshowImages img {
+
+.slideshowImage {
   width: 500px;
 }
