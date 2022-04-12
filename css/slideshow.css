@@ -1,0 +1,7 @@
+#slideshowImages {
+  height: 400px;
+  text-align: center;
+}
+#slideshowImages img {
+  width: 500px;
+}
